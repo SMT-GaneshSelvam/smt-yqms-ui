@@ -2,166 +2,108 @@
     background-color: white;
     border-radius: 3px;
     padding: 0px 0px;
-    /* background-size: 103% 100%; */
     overflow-x: scroll;
     border: 1px solid #e6e4e4;
     min-height: 22px;
     margin-top: 0px;
     label {
-        color: #252525;
-        font-weight: normal;
-        margin-top: 6px;
-    }
-    .button_wrap {
-        padding: 25px 15px 0 15px;
-        a {
-            margin: 0 0 0 20px;
-        }
-        a:hover {
-            cursor: pointer;
-        }
+      color: #252525;
+      font-weight: normal;
+      margin-top: 6px;
     }
     .arrow_style {
-        float: right;
-        position: relative;
-        bottom: 5px;
-        left: 4px;
-        height: 20px;
-        color: #337ab7;
-        cursor: pointer;
+      position: relative;
+      bottom: 5px;
+      left: 0px;
+      height: 15px;
+      color: #337ab7;
+      cursor: pointer;
     }
     .arrow_style:hover {
-        color: green;
+      color: green;
     }
-}
-
-.button_style {
+  }
+  
+  .button_style {
     float: left;
     margin: 0 10px 0 0;
-}
-
-.reset_block {
+  }
+  
+  .reset_block {
     display: inline;
-}
-
-.button_wrapper {
+  }
+  
+  .button_wrapper {
     margin: 2% 0 0 0;
     p {
-        cursor: pointer;
-        line-height: 32px;
-        color: #419137;
-        font-size: 14px;
-        font-weight: bold;
+      cursor: pointer;
+      line-height: 20px;
+      color: #419137;
+      font-size: 14px;
+      font-weight: bold;
     }
-}
-
-.arrow:nth-of-type(odd) {
-    position: relative;
-    margin-top: 3%;
-}
-
-.arrow:nth-of-type(1):before {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 46px solid transparent;
-    border-bottom: 51px solid transparent;
-    border-left: 17px solid #009424;
-    position: absolute;
-    top: 50%;
-    margin-top: -43px;
-    margin-left: -7px;
-    left: 100%;
-    z-index: 1;
-}
-
-.arrow:nth-of-type(2):before {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 46px solid transparent;
-    border-bottom: 51px solid transparent;
-    border-left: 17px solid #009424;
-    position: absolute;
-    top: 50%;
-    margin-top: -43px;
-    margin-left: -7px;
-    left: 100%;
-    z-index: 1;
-}
-
-span.glyphicon.glyphicon-refresh {
+  }
+  
+    
+  span.glyphicon.glyphicon-refresh {
     margin-right: 10px;
     color: #419137;
     font-size: 14px;
     font-weight: bold;
     display: inline;
     cursor: pointer;
-}
-
-.hide_label {
+  }
+  
+  .hide_label {
     font-size: 14px;
     margin: 0 10px 0 0;
-}
-
-.col1 {
-    padding: 0 10% 0 0;
-}
-
-.col2 {
-    padding: 0 4% 0 0;
-}
-
-.col3 {
-    padding: 0 0 0 10%;
-}
-
-.expendCollapse {
+  }
+  
+ 
+  .expendCollapse {
     padding-bottom: 10px;
-}
-
-.expendCollapse .filterheading {
+  }
+  
+  .expendCollapse .filterheading {
     color: #419137;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
     display: block;
     cursor: pointer;
-}
-
-.glyphicon {
+  }
+  
+  .glyphicon {
     top: 4px;
-}
-
-.glyphicon.glyphicon-chevron-up {
+  }
+  
+  .glyphicon.glyphicon-chevron-up {
     right: 4px;
-}
-
-.box-center {
+  }
+  
+  .box-center {
     padding-left: 11%;
-}
-
-::ng-deep .multiselect-dropdown .dropdown-btn .selected-item {
+  }
+  
+  ::ng-deep .multiselect-dropdown .dropdown-btn .selected-item {
     background: #007bff !important;
     border: #007bff !important;
     color: #fff !important;
-}
-
-::ng-deep .multiselect-dropdown span.placeholderLabel {
+  }
+  
+  ::ng-deep .multiselect-dropdown span.placeholderLabel {
     background: #007bff !important;
     border: #007bff !important;
     color: #fff !important;
-}
-
-::ng-deep .multiselect-dropdown .btn .selected-item a {
+  }
+  
+  ::ng-deep .multiselect-dropdown .btn .selected-item a {
     color: #fff !important;
-}
-
-::ng-deep .multiselect-dropdown .btn .selected-item:hover {
+  }
+  
+  ::ng-deep .multiselect-dropdown .btn .selected-item:hover {
     color: #007bff;
     box-shadow: #007bff !important;
     -webkit-box-shadow: #007bff !important;
-}
-
+  }
+  

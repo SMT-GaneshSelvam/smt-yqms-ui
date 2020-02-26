@@ -5,8 +5,8 @@
   }
   
   #sidebar {
-    min-width: 270px;
-    max-width: 270px;
+    min-width: 200px;
+    max-width: 200px;
     background: #007bff;
     color: #fff;
     -webkit-transition: all 0.3s;
@@ -18,7 +18,7 @@
     color: #fff;
   }
   #sidebar.active {
-    margin-left: -270px;
+    margin-left: -200px;
   }
   #sidebar.active .custom-menu {
     margin-right: -50px;
