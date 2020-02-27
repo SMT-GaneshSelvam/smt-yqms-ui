@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { ChecksheetsComponent } from './checksheets/checksheets.component';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CheetsheetsFilterComponent } from './cheetsheets-filter/cheetsheets-filter.component';
+import { CheetsheetsFilterComponent } from './checksheets/cheetsheets-filter/cheetsheets-filter.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { CheetsheetsGridComponent } from './cheetsheets-grid/cheetsheets-grid.component';
+import { CheetsheetsGridComponent } from './checksheets/cheetsheets-grid/cheetsheets-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { PunchlistsComponent } from './punchlists/punchlists.component';
+import { PunchlistsFilterComponent } from './punchlists/punchlists-filter/punchlists-filter.component';
+import { PunchlistsGridComponent } from './punchlists/punchlists-grid/punchlists-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChecksheetsComponent,
     CheetsheetsFilterComponent,
-    CheetsheetsGridComponent
+    CheetsheetsGridComponent,
+    PunchlistsComponent,
+    PunchlistsFilterComponent,
+    PunchlistsGridComponent
   ],
   imports: [
     BrowserModule,
