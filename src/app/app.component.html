@@ -75,12 +75,12 @@
           <div id="submenu3sub3" aria-expanded="false">
             <ul class="flex-column nav pl-4">
               <li class="nav-item">
-                <a class="nav-link p-1" href="#">
+                <a class="nav-link p-1" routerLink='/checksheets'>
                   <i class="fa fa-fw fa-clock-o"></i> Checksheets (0)
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-1" href="#">
+                <a class="nav-link p-1" routerLink='/punchlists'>
                   <i class="fa fa-fw fa-dashboard"></i> Punchlists (0)
                 </a>
               </li>
@@ -164,7 +164,7 @@
   <!-- Page Content  -->
   <div id="content" class="p-4 p-md-5 pt-5">    
        
-          <div class="row" style="margin-top: -47px;">
+        <div class="row" style="margin-top: -47px;">
     
             <button type="button" class="btn btn-secondary btn-space">My Orbit 
               <span style="font-size: 1rem">×</span>
@@ -174,18 +174,15 @@
               <span style="font-size: 1rem">×</span>
             </button>
     
-          </div>
-    
-          <div class="row" style="margin: 6px -15px">
-            <h6 style="color: #dc3545;">
-              Outstanding Checksheets
-            </h6>
-          </div>
-    
+        </div>  
 
-        <app-checksheets></app-checksheets>
-   
+        <router-outlet></router-outlet>
+
+        <!-- <app-checksheets></app-checksheets> -->
+
+        <!-- <app-punchlists></app-punchlists>    -->
 
   </div>
+  
 </div>
 
