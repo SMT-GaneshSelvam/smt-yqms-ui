@@ -1,16 +1,14 @@
-<div class="filterContainer">
+<div class="expendCollapse arrow_style">
+    <div  class="filterheading">
+        <p (click)="showHideFilter = !showHideFilter" class="hide_label">
+            <span class="glyphicon" [ngClass]="showHideFilter ? 'glyphicon glyphicon-minus' : 
+    'glyphicon glyphicon-plus'"></span>{{showHideFilter ? "Hide" : "Show"}}</p>
+    </div>
+</div>
 
-  <div class="expendCollapse arrow_style">
-      <div  class="filterheading">
-          <p (click)="showHideFilter = !showHideFilter" class="hide_label">
-              <span class="glyphicon" [ngClass]="showHideFilter ? 'glyphicon-chevron-up' : 
-      'glyphicon-chevron-down'"></span>{{showHideFilter ? "Hide" : "Show"}}</p>
-      </div>
-  </div>
+<div class="filterContainer" *ngIf="showHideFilter" style="font-size: 0.75rem;">
 
-  <div *ngIf="showHideFilter">
-
-      <div class="d-flex flex-nowrap" style="font-size: 0.75rem;">
+      <div class="d-flex flex-nowrap">
 
           <div class="d-flex flex-column mr-1 ml-1">
 
@@ -135,11 +133,26 @@
 
       </div>
 
+      <div class="d-flex flex-nowrap">
+
       <div class="ml-1 mb-1">
-          <button class="btn btn-success mr-1" style = "width: 80px;" type="button" (click)="postFilterData()" >Submit</button>
-          <button class="btn btn-success" style = "width: 80px;" type="button"  (click)="onResetFilter()" >Reset</button>
+          <button class="btn btn-success mr-1" style = "width: 75px;height: 35px;" type="button" (click)="postFilterData()" >Submit</button>
+          <button class="btn btn-success" style = "width: 75px;height: 35px;" type="button"  (click)="onResetFilter()" >Reset</button>
       </div>
 
-  </div>
+      <div class="checkbox ml-5">
+        <label><input type="checkbox" value=""> Include Discriptors</label>
+      </div>
+
+      <div class="checkbox ml-5">
+        <label><input type="checkbox" value=""> Show Custom Data</label>
+      </div>
+
+      <div class="checkbox ml-5">
+        <label><input type="checkbox" value=""> Show Outstanding Only</label>
+      </div>
+
+      </div>
 
 </div>
+
