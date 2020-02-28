@@ -13,6 +13,9 @@ import { AgGridModule } from 'ag-grid-angular';
 import { PunchlistsComponent } from './punchlists/punchlists.component';
 import { PunchlistsFilterComponent } from './punchlists/punchlists-filter/punchlists-filter.component';
 import { PunchlistsGridComponent } from './punchlists/punchlists-grid/punchlists-grid.component';
+import { RfiComponent } from './rfi/rfi.component';
+import { RfiFilterComponent } from './rfi/rfi-filter/rfi-filter.component';
+import { RfiGridComponent } from './rfi/rfi-grid/rfi-grid.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { PunchlistsGridComponent } from './punchlists/punchlists-grid/punchlists
     CheetsheetsGridComponent,
     PunchlistsComponent,
     PunchlistsFilterComponent,
-    PunchlistsGridComponent
+    PunchlistsGridComponent,
+    RfiComponent,
+    RfiFilterComponent,
+    RfiGridComponent
   ],
   imports: [
     BrowserModule,
