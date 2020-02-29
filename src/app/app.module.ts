@@ -16,6 +16,12 @@ import { PunchlistsGridComponent } from './punchlists/punchlists-grid/punchlists
 import { RfiComponent } from './rfi/rfi.component';
 import { RfiFilterComponent } from './rfi/rfi-filter/rfi-filter.component';
 import { RfiGridComponent } from './rfi/rfi-grid/rfi-grid.component';
+import { TagDatabaseComponent } from './tag-database/tag-database.component';
+import { TagDatabaseFilterComponent } from './tag-database/tag-database-filter/tag-database-filter.component';
+import { TagDatabaseGridComponent } from './tag-database/tag-database-grid/tag-database-grid.component';
+import { WorkpacksComponent } from './workpacks/workpacks.component';
+import { WorkpacksFilterComponent } from './workpacks/workpacks-filter/workpacks-filter.component';
+import { WorkpacksGridComponent } from './workpacks/workpacks-grid/workpacks-grid.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { RfiGridComponent } from './rfi/rfi-grid/rfi-grid.component';
     PunchlistsGridComponent,
     RfiComponent,
     RfiFilterComponent,
-    RfiGridComponent
+    RfiGridComponent,
+    TagDatabaseComponent,
+    TagDatabaseFilterComponent,
+    TagDatabaseGridComponent,
+    WorkpacksComponent,
+    WorkpacksFilterComponent,
+    WorkpacksGridComponent
   ],
   imports: [
     BrowserModule,
