@@ -1,0 +1,188 @@
+<div *ngIf="page === 'LoginPage'">
+  <div class="px-5">
+    <router-outlet></router-outlet>
+  </div>
+  
+</div>
+
+<div class="wrapper d-flex align-items-stretch" *ngIf="page === 'Other'">
+
+  <nav id="sidebar" style="font-family: sans-serif;font-size: 11px;">
+    <div class="custom-menu">
+      <button
+        type="button"
+        id="sidebarCollapse"
+        (click)="customToggle()"
+        class="btn btn-primary"
+      >
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    <div class="p-4">
+      <ul class="list-unstyled components mb-5">
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu1sub1"
+            data-toggle="collapse"
+            data-target="#submenu1sub1"
+            ><span>Overview</span></a
+          >
+          <div id="submenu1sub1" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-clock-o"></i> My YQMS
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-dashboard"></i> Dashboard
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu2sub2"
+            data-toggle="collapse"
+            data-target="#submenu2sub2"
+            ><span>Database</span></a
+          >
+          <div id="submenu2sub2" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/tagdatabase'>
+                  <i class="fa fa-fw fa-database"></i> Tag Database
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/workpacks'>
+                  <i class="fa fa-fw fa-gears"></i> Workpacks (0)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>        
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu3sub3"
+            data-toggle="collapse"
+            data-target="#submenu3sub3"
+            ><span>Outstanding</span></a
+          >
+          <div id="submenu3sub3" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/rfi'>
+                  <i class="fa fa-fw fa-clock-o"></i> RFI (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/checksheets'>
+                  <i class="fa fa-fw fa-clock-o"></i> Checksheets (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/punchlists'>
+                  <i class="fa fa-fw fa-dashboard"></i> Punchlists (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-bar-chart"></i> TQs (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-compass"></i> NCRs (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-compass"></i> FCRs (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-compass"></i> Preservation (0)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-compass"></i> Loop Tags (0)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu4sub4"
+            data-toggle="collapse"
+            data-target="#submenu4sub4"
+            ><span>Certificates</span></a
+          >
+          <div id="submenu4sub4" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-certificate"></i> Certificates (0)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu5sub5"
+            data-toggle="collapse"
+            data-target="#submenu5sub5"
+            ><span>S-Curves & Charts</span></a
+          >
+          <div id="submenu5sub5" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" href="#">
+                  <i class="fa fa-fw fa-bar-chart"></i> Skyline Chart (0)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div id="content" class="p-4 p-md-5 pt-5">    
+       
+        <div class="row" style="margin-top: -47px;">
+    
+            <button type="button" class="btn btn-secondary btn-space">My Orbit 
+              <span style="font-size: 1rem">×</span>
+            </button>
+    
+            <button type="button" class="btn btn-success btn-space">Outstanding Checksheets 
+              <span style="font-size: 1rem">×</span>
+            </button>
+    
+        </div>  
+
+        <router-outlet></router-outlet>
+        
+  </div>
+  
+</div> 
+

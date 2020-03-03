@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChecksheetsComponent } from './checksheets/checksheets.component';
@@ -22,10 +22,14 @@ import { TagDatabaseGridComponent } from './tag-database/tag-database-grid/tag-d
 import { WorkpacksComponent } from './workpacks/workpacks.component';
 import { WorkpacksFilterComponent } from './workpacks/workpacks-filter/workpacks-filter.component';
 import { WorkpacksGridComponent } from './workpacks/workpacks-grid/workpacks-grid.component';
+import { LandingPageComponent } from './module/login-module/landing-page/landing-page.component';
+import { LoginComponent } from './module/login-module/landing-page/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LandingPageComponent,
+    LoginComponent,
     ChecksheetsComponent,
     CheetsheetsFilterComponent,
     CheetsheetsGridComponent,
@@ -47,6 +51,7 @@ import { WorkpacksGridComponent } from './workpacks/workpacks-grid/workpacks-gri
     AppRoutingModule,
     TreeViewModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgMultiSelectDropDownModule.forRoot(),
     AgGridModule.withComponents([])

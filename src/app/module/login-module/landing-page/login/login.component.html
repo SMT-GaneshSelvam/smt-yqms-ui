@@ -1,0 +1,420 @@
+<div class=" loginmain" *ngIf="pageLoaded">
+    <h1 class="page-header">
+      <span class="fa fa-home ofis-core-pageheader-icon"></span>Welcome to YQMS</h1>
+      <div class="alert alert-warning alert-dismissible" role="alert" [ngClass]="{'noDisplay':!operationStatus,'display':operationStatus}">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <p>{{message}}</p>																            
+        </div>
+    <div class="row">
+          <div class="col-md-8">
+              <div class="ofis-guest-hero">
+                <img src="/assets/img/quality.jpg" class="img-responsive">
+              </div>
+            </div>
+      <div class="col-md-4">
+        <div class="ofis-guest-login-container">
+          <div class="ofis-guest-login-inner-container">
+            <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" method="POST"  accept-charset="UTF-8" class="form-signin ofis-guest-login-form">
+              <input name="_token" type="hidden" value="qpxIEMLZjkIt9uEEI5QWzMAPotHGHsrUluCKaVVI">
+              <h2 class="form-signin-heading">
+                <span class="fa fa-user user-icon"></span>Login</h2>
+  
+              <div class="form-group">
+                <label for="email" class="control-label">Email</label>
+                <input class="form-control" formControlName="email" placeholder="Email Address" name="email" type="email" autofocus="autofocus" id='email'>
+              </div>
+  
+              <div class="form-group">
+                <label for="password" class="control-label">Password</label>
+                <input class="form-control" formControlName="password" placeholder="Password" name="password" type="password" value="" id="password">
+              </div>
+
+              <div class="form-group">
+                <label for="database" class="control-label">Database</label>
+                <input class="form-control" formControlName="database" placeholder="Database" name="database" type="text" value="" id="database">
+              </div>
+
+
+              <div class="form-group">
+                <label>
+                  <input type="checkbox" formControlName="agreeTo" id="ofis-guest-policy-agreement"> I agree to the&nbsp;
+                </label>
+                <a class="ofis-privacy-policy-link" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
+              </div>
+  
+              <div class="form-group ofis-guest-submit">
+                <input type='submit' class="btn btn-lg btn-primary btn-block" id="ofis-guest-login-submit" value="LOGIN" [disabled]="!loginForm.valid">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>A deep insight into our processes</h2>
+        <p>
+          <strong>Inspects and approves deployed equipments by confirming specifications, conducting visual and measurement tests, and marking and tracking equipments not deployed propely.</strong>
+        </p>
+      </div>
+    </div>
+  
+    <div class="modal" id="privacyPolicy">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title">Privacy Policy for Website and on the YQMS Farmer Information System ("OFIS")</h4>
+          </div>
+          <div class="modal-body">
+            <ol>
+              <li>This privacy policy ("
+                <strong>Policy</strong>") sets out how YQMS International Limited ("
+                <strong>YQMS</strong>") collects, uses and discloses personal data which Farmers, Customers, Employees, Suppliers and
+                other third parties give to YQMS via their website or the OFIS.</li>
+              <li>
+                <strong>Introduction</strong>
+                <ol type="a">
+                  <li>YQMS requires all Farmers, Customers, Employees, Suppliers and other third parties to handle personal data
+                    of Farmers, Customers, Employees, Suppliers and other third parties in a way that is consistent with YQMS's
+                    obligations under applicable law which can be summarized as follows: YQMS must notify individuals of the
+                    purposes for which it intends to collect, use or disclose the individuals' personal data on or before such
+                    collection, use or disclosure of personal data.</li>
+                  <li>YQMS may only collect, use or disclose personal data about an individual for purposes that are reasonable
+                    in the circumstances and that have been notified to the individual.</li>
+                  <li>YQMS must obtain the consent of individuals before collecting, using or disclosing their personal data. Clear
+                    and express consent is required.</li>
+                  <li>YQMS must, upon request, provide individuals with their personal data in YQMS's possession or control as
+                    well as information about the ways in which the personal data may have been used or disclosed during the
+                    past year.</li>
+                  <li>YQMS must, upon request, correct an error or omission in an individual's personal data that is in YQMS's
+                    possession or control.</li>
+                  <li>YQMS must make a reasonable effort to ensure that personal data collected by or on behalf of it is accurate
+                    and complete.</li>
+                  <li>YQMS must protect the confidentiality, integrity and availability of personal data in its possession or control
+                    by making reasonable security arrangements to prevent unauthorized access, collection, use, disclosure,
+                    copying, modification, disposal or similar risks.</li>
+                  <li>YQMS should only retain personal data for as long as it is necessary to fulfil the purposes for which the
+                    personal data was collected or as necessary for other legal or business reasons.</li>
+                  <li>YQMS must cease to retain personal data or remove the means by which the personal data can be associated
+                    with particular individuals as soon as it is reasonable to assume that the purpose for which the personal
+                    data was collected is no longer being served by retention of the personal data and retention is no longer
+                    necessary for YQMS's legal or business purposes.</li>
+                  <li>YQMS may transfer personal data to a country or jurisdiction out of the applicable jurisdiction if it has
+                    taken appropriate steps to: (1) ensure that it will comply with applicable law, while such data remains
+                    in its possession or under its control and (2) to ascertain whether and to ensure that the recipient is
+                    bound by legally enforceable obligations to provide the transferred personal data a standard of protection
+                    that is at least comparable to the protection under applicable law.</li>
+                  <li>YQMS must implement necessary policies and procedures to meet its obligations under applicable law where
+                    necessary, such as the appointment of a data protection officer and make available his/her contact particulars
+                    to the individuals, effective staff communication and making publicly available information about such
+                    policies and procedures,</li>
+                  <li>If there is a failure in the protection of the personal data it manages, YQMS must shall notify in writing
+                    to the owner of such personal data, if the owner resides in Indonesia, or if the personal data was collected
+                    in Indonesia.</li>
+                </ol>
+                <p>This Policy will be reviewed and amended on an annual basis and as and when required to accommodate any changes
+                  to applicable law or better practices in relation to the protection of Farmers, Customers, Employees, Suppliers
+                  and other third parties' personal data.
+                </p>
+                <p>References in this Policy to
+                  <strong>"Farmers, Customers, Employees, Suppliers and other third parties"</strong> refer to any past, present or
+                  potential farmers, customers, employees, suppliers and other third parties of YQMS. References in this Policy
+                  to
+                  <strong>"YQMS"</strong> refers to YQMS Singapore Pte Ltd, YQMS South East Asia Pte Ltd and its subsidiaries and affiliates.</p>
+              </li>
+              <li>
+                <strong>What is "Personal Data"?</strong>
+                <p>This Policy applies to the personal data of Farmers, Customers, Employees, Suppliers and other third parties.
+                  <strong>"Personal Data"</strong> means data, whether true or not, about an individual who can be identified (a) from
+                  that data; or (b) from that data and other information to which the organisation has or is likely to have
+                  access.
+                </p>
+                <p>Examples of personal data include a Farmer's name, an Employee's staff code, identification number, personal
+                  contact details and any generic information which can be used to identify an individual when associated with
+                  personal data.</p>
+                <p>Business contact information is not considered to be personal data unless they are provided solely for personal
+                  purposes. For example, the name, position, work address, work telephone number, and work email address on
+                  an individual's business card are usually not personal data. However, there are some circumstances in which
+                  the individual provided work related personal data solely for personal purposes.</p>
+              </li>
+              <li>
+                <strong>Collection of Personal Data - Notification, Consent and Withdrawal of Consent</strong>
+                <p class="ofis-pp-section-header">Notification and Consent</p>
+                <ol type="a">
+                  <li>Before or at the time of collection, use or disclosure of personal data, the purposes of collection, use
+                    or disclosure of the personal data must be notified to the individual whose personal data YQMS intends
+                    to collect, use or disclose. Such purposes must be reasonable in the circumstances.</li>
+                  <li>When collecting personal data through a form, YQMS should indicate which fields that collect personal data
+                    are compulsory and which are optional. YQMS should avoid collecting more information than is necessary
+                    from Farmers, Customers, Employees, Suppliers and other third parties. The data collected should be reasonable,
+                    adequate and not excessive in relation to that purpose.</li>
+                  <li>When collecting, using or disclosing an individual's personal data is necessary for the providing of services,
+                    YQMS must require the individual to give consent to the collection, use or disclosure of his personal data
+                    and make such consent a condition of providing of services by YQMS to the individual. When collecting,
+                    using or disclosing an individual's personal data for the purposes beyond what is reasonable for providing
+                    services to the individual, YQMS should obtain the individual's consent for such purposes, and must not
+                    make the consent a condition of providing services.</li>
+                  <li>YQMS must seek to obtain the consent of individuals to the collection, use and disclosure of their personal
+                    data for the notified purposes. YQMS should therefore obtain consent in writing, via email, via online
+                    platform or at least record the consent in a manner that is accessible for future reference by noting the
+                    fact that oral consent was provided by an individual for certain purposes, together with the date and time
+                    of such consent. YQMS should then, to the extent possible, confirm in writing the verbal consent given
+                    with the individual.</li>
+                  <li>In the absence of clear and express consent, however, consent may be deemed by the voluntary submission of
+                    personal data following adequate notification of reasonable purposes. YQMS should therefore ensure that
+                    the notifications have been sufficiently brought to the attention of the individuals.</li>
+                  <li>If YQMS wishes to use or disclose personal data for purposes which it has not yet informed the relevant individual
+                    or for which it has not yet obtained consent, YQMS must inform the individual of the new purposes and obtain
+                    fresh consent.</li>
+                  <li>When YQMS collects personal data from a third party source, it must notify and provide sufficient information
+                    to the source of the purposes for which YQMS intends to collect, use and disclose the personal data. YQMS
+                    should also exercise appropriate due diligence to check and ensure, or request self-certification from
+                    the third party that the third party source has already obtained consent for disclosure of the personal
+                    data to YQMS. YQMS should:
+                    <ul>
+                      <li>seek a contractual undertaking or at least obtain written confirmation from the third party source that
+                        the disclosure of personal data to YQMS is within the scope of the consent given by the relevant individual
+                        to the third party source; or</li>
+                      <li>obtain a copy of the document(s) containing or evidencing the consent given by the relevant individual
+                        to the third party source to disclose personal data to YQMS.</li>
+                    </ul>
+                  </li>
+                  <li>During the first time of contacting individuals whose personal data has been provided by a third party source,
+                    YQMS should, if asked by the individual, inform the individual that their personal data was disclosed to
+                    YQMS by the third party source and verify that the individual has provided the third party source consent
+                    to do so.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Withdrawal of Consent</p>
+                <ol type="a">
+                  <li>YQMS must allow an individual who has previously given (or is deemed to have given) consent for the collection,
+                    use or disclosure of personal data for stated purposes to withdraw such consent by giving reasonable notice.
+                    An individual may communicate objection to YQMS's continual use and/or disclosure of personal data for
+                    stated purposes by contacting YQMS at OFIS@YQMSnet.com</li>
+                  <li>Upon receipt of a withdrawal of consent, YQMS must cease, and cause all data intermediaries and agents (if
+                    applicable) to cease collecting, using or disclosing the personal data for the purposes and in the manner
+                    objected to. YQMS must also inform the relevant individual of the consequences of withdrawing the consent
+                    upon receipt of a withdrawal request e.g. inability to process an account registration or inability to
+                    further progress a job application.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Personal Data Which may be collected and used on OFIS</p>
+                <ol type="a">
+                  <li>Personal data which may be collected from Farmers and their families may include their name, date of birth,
+                    education leave, bank account details, address, migration, nationality, marital status, number of children
+                    and children's date of birth.</li>
+                  <li>This personal data may be used on OFIS by Employees of YQMS, farmer group management staff and Customers
+                    ("
+                    <strong>Users</strong>") on mapping software designed to showcase farm and infrastructure locations. The Users
+                    of OFIS have the option on the mapping software to look at specific farmer details based on location. Users
+                    are able to export analysis (and data behind that analysis, including the Farmers personal data) into an
+                    excel spread-sheet or PDF to identify specific Farmers, and analyse the personal data alongside statistics
+                    such as productivity levels.</li>
+                  <li>Farm management plans are pulled together using personal data on OFIS. These are tailor made plans for each
+                    individual farmer highlighting the changes that need to be made over the next 3-5 years in order that the
+                    Farmer reaches his full productivity potential. These will be printed by either an employee of YQMS or
+                    a member of the Farmer Group, and distributed to the relevant Farmer.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Personal Data which may be collected on the YQMS Website</p>
+                <ol type="a">
+                  <li>Personal data which may be collected on the YQMS website includes name and contact information including
+                    email address and postcodes.</li>
+                  <li>This personal data will be used by YQMS employees to answer enquiries sent via the "Contact Us" section of
+                    the YQMS Website. The personal data may be retained by YQMS employees to assist in the administering of
+                    the relationship between YQMS and the enquiring third party.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Use and Disclosure of Personal Data - Use of Data Intermediaries and Transfer of personal data
+                </strong>
+                <p class="ofis-pp-section-header">Use of Data Intermediaries</p>
+                <ol type="a">
+                  <li>YQMS may from time to time engage third party organizations, including affiliated companies, to process personal
+                    data on behalf of YQMS. Data Intermediaries are under an obligation to:
+                    <ul>
+                      <li>protect personal data disclosed to it by YQMS from unauthorized access, collection, use, disclosure,
+                        copying, modification, disposal or similar risks; and</li>
+                      <li>only keep the personal data for as long as the data is required for the business and legal purposes of
+                        the data intermediaries.</li>
+                    </ul>
+                  </li>
+                  <li>Before appointing Data Intermediaries, YQMS should use reasonable efforts to undertake an appropriate level
+                    of due diligence to assure itself that a potential data intermediary is capable of complying with its obligations
+                    under this Policy and applicable law.</li>
+                  <li>When appointing data intermediaries, YQMS should include provisions in the written contracts to clearly set
+                    out the data intermediaries' responsibilities and liabilities in relation to protection and retention of
+                    personal data.</li>
+                  <li>Notwithstanding the appointment of data intermediaries, YQMS remains bound to comply with this Policy and
+                    applicable law in full with respect to personal data that is processed by data intermediaries on its behalf.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Transfer of personal data outside the relevant jurisdiction</p>
+                <ol type="a">
+                  <li>Before transferring personal data overseas, YQMS should contractually require the recipient to provide the
+                    personal data transferred a standard of protection that is at least comparable to the protection under
+                    applicable law and limit the countries and territories to which personal data may be further transferred
+                    under the contract. Such a contract should at least set out obligations in respect of the personal data
+                    transferred, with regard to:
+                    <ul>
+                      <li>where the recipient is a data intermediary of YQMS,
+                        <ul>
+                          <li>protection; and</li>
+                          <li>retention limitation;</li>
+                        </ul>
+                      </li>
+                      <li>where the recipient is an organization (other than a data intermediary of YQMS).
+                        <ul>
+                          <li>Purpose of collection, use and disclosure by the recipient;</li>
+                          <li>Accuracy;</li>
+                          <li>Protection;</li>
+                          <li>Retention limitation;</li>
+                          <li>Policies on personal data protection; and</li>
+                          <li>Access and correction of individuals.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>If it is impractical to achieve any of the above, YQMS should ensure that:
+                    <ul>
+                      <li>the transfer of personal data is necessary for the performance of a contract between YQMS and the individual
+                        concerned or necessary to do anything at the individual's request with a view to his entering a contract
+                        with YQMS;
+                      </li>
+                      <li>the transfer of personal data is necessary for the conclusion or performance of a contract between YQMS
+                        and a third party which is entered into at the individual's request, or which it is reasonable to assume
+                        to be in the individual's interest;</li>
+                      <li>the transfer of personal data is necessary to respond to an emergency that threatens the life, health
+                        or safety of an individual, in which case YQMS may only transfer personal data if it has taken reasonable
+                        steps to ensure that he personal data will not be used or disclosed by the recipient for any other
+                        purpose.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <strong>Access and Correction Requests</strong>
+                <ol type="a">
+                  <li>Upon request by an individual, YQMS will provide the individual with the following as soon as reasonably
+                    possible:
+                    <ul>
+                      <li>personal data about the individual that is in YQMS's possession or control;</li>
+                      <li>information about the ways in which that personal data has been or may have been used or disclosed by
+                        YQMS within the past year. (For this purpose, the DPO should retain a list of all possible third parties
+                        to whom personal data may have been disclosed by YQMS. YQMS should individually identify each possible
+                        third party to whom YQMS has disclosed personal data, rather than simply providing general categories
+                        of organizations. This would allow individuals to directly approach the third party organizations to
+                        which personal data has been disclosed.)</li>
+                    </ul>
+                  </li>
+                  <li>In responding to a data access request, YQMS is not required to provide access to materials that do not comprise
+                    or contain the personal data requested. YQMS is also not required to provide access to information which
+                    is no longer in its possession or control when the access request is received, in which case YQMS should
+                    so inform the requesting individual.</li>
+                  <li>Where personal data is obtained from a third party source, YQMS is not required to provide information on
+                    the source to the requesting individual.</li>
+                  <li>YQMS may charge the individual a reasonable fee for producing a copy of the materials containing the personal
+                    data requested.</li>
+                  <li>If the personal data resides in a form that cannot practicably be provided to the individual in documentary
+                    form, whether as physical or electronic copies, then YQMS may provide the individual a reasonable opportunity
+                    to examine the requested data.
+                  </li>
+                  <li>Before responding to an access request, YQMS should exercise due diligence and adopt appropriate measures
+                    to verify the individual's identity to ensure that the personal data being requested actually relates to
+                    the requesting individual.</li>
+                  <li>YQMS is not required to provide access to personal data if:
+                    <ul>
+                      <li>the request would unreasonably interfere with the operations of YQMS because of the repetitious or systematic
+                        nature of the request;</li>
+                      <li>the burden or expense of providing access would be unreasonable to YQMS or disproportionate to the individual's
+                        interest;
+                      </li>
+                      <li>the request is for information that is trivial; or</li>
+                      <li>the access request is frivolous or vexatious.</li>
+                    </ul>
+                  </li>
+                  <li>Upon request by an individual to correct personal data held by YQMS, YQMS should first consider whether,
+                    in the circumstances, the correction should be made. Unless YQMS is satisfied on reasonable grounds that
+                    the correction should not be made, it should as soon as practicable:
+                    <ul>
+                      <li>correct the personal data as soon as practicable; and</li>
+                      <li>send the corrected personal data to every other organization (or only to specific organizations if the
+                        individual concerned has consented) to which the personal data was disclosed by YQMS within the past
+                        year unless that other organization does not need the corrected personal data for any legal or business
+                        purposes.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>YQMS may not impose a charge for the correction of personal data upon request.</li>
+                  <li>If YQMS is satisfied on reasonable grounds that the correction should not be made, it should annotate the
+                    reasons why it has decided that the correction should not be made.</li>
+                  <li>In any event, YQMS should respond to an access or correction request as soon as possible. If YQMS is unable
+                    to respond to a request within 30 days of the request, it should inform the requesting individual in writing
+                    within 30 days of receipt of the request the expected time frame for YQMS to be able to respond to the
+                    request along with the reasons why YQMS is unable to respond within 30 days.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Care of Personal Data - Ensuring accuracy of data, Security Measures and Retention Policies</strong>
+                <p class="ofis-pp-section-header">Ensuring accuracy of personal data</p>
+                <ol type="a">
+                  <li>YQMS should ensure that the personal data held by it is accurate and complete. YQMS requests that individuals
+                    only provide to YQMS personal data which is accurate and complete and not misleading and that individuals
+                    should keep such data up to date and inform YQMS of any changes.</li>
+                  <li>Where the currency of personal data is important for a specific reason, YQMS should verify that the personal
+                    data provided by the individual concerned is up to date e.g. by requesting the individual to confirm their
+                    personal data before using or disclosing the data.</li>
+                  <li>Where personal data has been obtained from a third party source, YQMS should obtain confirmation by way of
+                    a self-certification from the source that the source has verified the accuracy and completeness of the
+                    personal data provided to YQMS.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Security Measures</p>
+                <ol type="a">
+                  <li>Reasonable security standards should be upheld by all Staff of YQMS and Users of OFIS, when dealing with
+                    personal data.</li>
+                </ol>
+                <p class="ofis-pp-section-header">Retention of personal data</p>
+                <ol type="a">
+                  <li>YQMS must cease to retain documents containing personal data as soon as it is reasonable to assume that the
+                    purpose for which the personal data was collected is no longer being served by retention of the personal
+                    data and retention is no longer necessary for YQMS's legal or business purposes.</li>
+                  <li>YQMS should not keep personal data "just in case" the data may be required for purposes that have not been
+                    notified to the individual concerned.</li>
+                  <li>Once it is determined that personal data is no longer required, YQMS should:
+                    <ul>
+                      <li>destroy the documents containing the personal data (physical files and documents containing personal
+                        data must not be thrown into general rubbish bins. They should be shredded or placed into confidential
+                        waste bins/always dispose of information media (including diskette, back-up tapes, CDs, DVDs, USB Memory,
+                        old IT equipment, etc.) containing personal data using confidential waste bins.); OR</li>
+                      <li>effectively anonymise the personal data.</li>
+                    </ul>
+                  </li>
+                  <li>Please note that the following measures are not sufficient to cease retention of personal data:
+                    <ul>
+                      <li>filing documents away in a locked cabinet;</li>
+                      <li>warehousing documents;</li>
+                      <li>archiving electronic copies of documents;</li>
+                      <li>merely limiting access to electronic copies of documents.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+            <p>
+              <strong>Contact Us:</strong>
+            </p>
+            <p>YQMS International Limited9 Temasek Boulevard
+              <br> #11-02 Suntec Tower 2
+              <br> Singapore 038989
+              <br> T: (+65) 6339 4100
+              <br> F: (+65) 6339 9755
+              <br> OFIS@YQMSnet.com </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

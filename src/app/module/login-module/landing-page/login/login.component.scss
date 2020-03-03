@@ -1,0 +1,589 @@
+body { 
+    margin: 0;
+    font-family: Arial;
+  }
+  .loginmain .page-header {
+    margin: 0 0 12px;
+    border-bottom: 0;
+}
+.loginmain{
+	padding-top: 20px;
+}
+  .header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
+
+
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+//new css
+/* CSS Document */
+
+.ofis-guest-hero {
+	max-height: 400px;
+	overflow: hidden;
+	border: 1px solid #bbb;
+}
+
+.ofis-guest-login-container {
+	border: 1px solid #bbb;	
+}
+
+.ofis-guest-login-inner-container {
+	border: 1px solid #fff;
+	background-color: #f5f5f5;
+	padding: 20px;
+}
+
+.ofis-guest-login-form h2 {
+	margin-top: 0;
+	font-size: 2em;
+}
+
+.ofis-guest-login-form h2 .glyphicon {
+	color: #dc582a;
+	font-size: 22px;
+	margin-right: 10px;
+}
+
+.ofis-guest-login-form label {
+	font-weight: normal;	
+}
+
+.ofis-guest-login-form  .ofis-guest-submit {
+	padding-top: 15px;
+	margin-bottom: 10px;	
+}
+
+.ofis-privacy-policy-link {
+	cursor: pointer;	
+}
+
+#privacyPolicy .modal-body li {
+	margin-bottom: 10px;	
+}
+
+#privacyPolicy .ofis-pp-section-header {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+/* OFIS Core
+/  Resets
+/  Bootstrap overrides
+/  Typography
+/  Global UI
+*/
+
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+html {
+	height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ofis-core-body-container,
+.ofis-core-body-container-row {
+	min-height: 100%;
+}
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.ofis-core-navbar-brand {
+	padding: 12px 15px;
+}
+
+.ot_image_bg {
+    background: url(http://49tmko49h46b4e0czy3rlqaye1b.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/10285-700x190.jpg);
+    height: 319px;
+    background-size: 100% 100%;
+}
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.ofis-core-sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .ofis-core-sidebar {
+    top: 50px;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background: #f5f5f5 url(/assets/img/olam-motif-background.svg) center 115% no-repeat;
+	background-size: 108% auto;
+    border-right: 1px solid #bbb;
+	padding-top: 20px;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin: 0 -15px 20px -15px;
+}
+.nav-sidebar > li > a {
+  font-size: 1.071em;
+  padding-right: 10px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+.nav-sidebar > li > a .glyphicon {
+	font-size: 0.867em;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding-top: 20px;
+  padding-bottom: 0;
+  min-height: 100%;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-left: 30px;	
+  }
+}
+.main .page-header {
+  margin: 0 0 12px;
+  border-bottom: 0;
+}
+.page-header {
+  margin: 70px 0 20px
+}
+
+.ofis-core-pageheader-icon {
+	font-size: 40px;
+	color: #007bff;
+	margin-right: 8px;
+}
+
+.user-icon {
+	font-size: 40px;
+	color: #007bff;
+	margin-right: 8px;
+}
+
+/* primary dropdowns */
+.ofis-core-chosen-select,
+.chosen-container {
+	width: 100%;
+}
+
+.ofis-core-button {
+	text-transform: uppercase;
+	font-size: 1.286em;
+	padding: 8px 10px 7px 15px;
+	min-width: 207px;
+	text-align: right;
+}
+
+.ofis-core-caret-wrap {
+	display: inline-block;
+	background-color: #00a0c3;
+	border-radius: 12px;
+	padding: 0 8px;
+}
+
+.ofis-core-buttontext {
+	float: left;
+}
+
+.ofis-core-buttonwrapper.ofis-open .ofis-core-caret-wrap .caret {
+	border-top: 0;
+	border-bottom: 4px solid;
+	margin-top: -3px;
+}
+
+.ofis-core-primarybuttons .ofis-core-buttonwrapper.ofis-open > .btn-primary {
+	z-index: 1001;
+}
+
+.ofis-core-buttonwrapper {
+	display: inline-block;
+	position: relative;
+	margin-left: 20px;
+	vertical-align: top;
+}
+
+.ofis-core-popdowncontent {
+	background-clip: padding-box;
+	background-color: #f8f8f8;
+  	border: 1px solid #bbb;
+  	border-radius: 0 0 4px 4px;
+	border-top: 0;
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+	width: 207px;
+	padding: 12px 10px;
+	top: 98%;
+	position: absolute;
+	z-index: 1000;
+	float: left;
+	display: none;
+}
+
+.ofis-core-buttonwrapper.ofis-open .ofis-core-popdowncontent {
+	display: block;
+}
+
+/* Navbar */
+.ofis-core-navbar-title {
+	text-align: center;
+	width: 60%;
+	position: absolute;
+	left: 0;
+	margin: 15px 20%;
+	font-size: 1.357em;
+}
+
+.ofis-core-navbar-title .glyphicon {
+	margin-right: 8px;
+}
+
+.navbar-nav > li > a.ofis-core-profile {
+	padding-bottom: 9px;
+	padding-top: 9px;
+	color: #fff;
+}
+
+.ofis-core-gravatar {
+	margin-right: 5px;	
+}
+
+.ofis-core-nav-container {
+	width: 157px;
+	height: 20px;
+	margin-top: 12px;	
+}
+
+/* Sidebar */
+.ofis-core-nav-sidebar li.active a,
+.ofis-core-nav-sidebar li.active a:hover {
+	background-color: #dc582a;
+}
+
+.ofis-core-nav-sidebar li a {
+	color: #252525;
+}
+
+.ofis-core-nav-sidebar li ul{
+	display:none;
+	padding-left:0;
+	background:#D6D6D6;
+	border-bottom:1px solid #bbb;
+}
+
+.ofis-core-nav-sidebar li.active ul{
+	display:block;
+}
+
+.ofis-core-nav-sidebar li ul li{
+	list-style-type:none;
+}
+.ofis-core-nav-sidebar li.active ul li a{
+	display:block;
+	padding: 10px 15px 10px 32px;
+	background:none;
+	text-decoration:none;
+}
+
+.ofis-core-nav-sidebar li.active ul li.active a,
+.ofis-core-nav-sidebar li.active ul li a:hover{
+	background:#893c47;
+	color:#fff;
+}
+
+/* icons */
+.ofis-core-icon {
+	display: inline-block;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	min-width: 22px;
+}
+
+.ofis-core-icon-school {
+	background-image: #007da0; /*url(../img/ofis-core-icon-school.png);*/
+	height: 15px;
+}
+
+.ofis-core-icon-basket {
+	background-image: #007da0; /* url(../img/ofis-core-icon-basket-large.png);*/
+	height: 19px;
+}
+
+.ofis-core-icon-water {
+	color: #007da0;
+	min-width: 22px;
+	margin-right: 5px;
+}
+
+.ofis-core-icon-health {
+	color: #ab0017;
+	min-width: 22px;
+	margin-right: 5px;
+}
+
+.ofis-core-icon-health:before {
+	content: "+";
+}
+
+/* utility functions */
+.ofis-core-nopadding {
+	padding: 0;
+}
+
+.ofis-core-nomargin {
+	margin: 0;
+}
+
+.ofis-core-flat-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.ofis-core-flat-list > li {
+	display: inline-block;
+}
+
+.ofis-core-hidden {
+	display: none;
+}
+
+/* loading panel */
+.ofis-core-loading-wrapper {
+	position: relative;
+}
+
+.ofis-core-loading {
+	background-color: rgba(245,245,245,.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+}
+
+.ofis-core-loading .panel {
+	position: absolute;
+	top: 30%;
+	width: 60%;
+	left: 20%
+}
+
+.ofis-core-loading .progress-bar {
+	width: 100%;	
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.navbar_bg{
+  background: #009424;
+}
+.navbar-brand {
+   padding: 7px 0px 0px 10px;
+}
+
+.navbar-inverse {
+background-color: #009424;
+border-color: #006118;
+}
+.navbar-inverse .navbar-text {
+color: #fff;
+}
+.ofis-core-navbar-title {
+text-align: center;
+width: 60%;
+position: absolute;
+left: 0;
+margin: 15px 20%;
+font-size: 1.357em;
+}
+.ofis-core-navbar-title .glyphicon {
+margin-right: 8px;
+}
+.main .page-header {
+margin: 0 0 12px;
+border-bottom: 0;
+}
+.ofis-core-sidebar {
+top: 50px;
+bottom: 0;
+z-index: 1000;
+display: block;
+overflow-x: hidden;
+overflow-y: auto;
+//background: #f5f5f5 url(../img/olam-motif-background.svg) center 115% no-repeat;
+background-size: 108% auto;
+border-right: 1px solid #bbb;
+padding-top: 20px;
+}
+.ofis-guest-login-container {
+border: 1px solid #bbb;
+}
+/*  .col-container {
+display: table;
+width: 100%;
+}
+.col {
+display: table-cell;
+padding: 16px;
+}*/
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 650px;}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+.noDisplay{
+	display: none;
+}
+.display{
+	display:block;
+}
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
