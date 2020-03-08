@@ -54,9 +54,8 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(loginUser) {
-    let display_name = loginUser.email;
- 
-
+    let display_name = loginUser.email; 
+    this.router.navigate(['/checksheet'])
   }
 
 }
