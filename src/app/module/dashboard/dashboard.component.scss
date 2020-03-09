@@ -1,0 +1,15 @@
+.custom_desc{
+    height: 55vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.custom_desc::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: lightgray; /* or add it to the track */
+  }
+ .custom_orbit{
+    height:50vh;
+ }
+
+ 

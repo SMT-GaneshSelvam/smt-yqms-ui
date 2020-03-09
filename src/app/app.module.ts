@@ -9,6 +9,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AgGridModule } from 'ag-grid-angular';
 import { LandingPageComponent } from './module/login-module/landing-page/landing-page.component';
 import { LoginComponent } from './module/login-module/landing-page/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './module/login-module/landing-page/login/login.c
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     TreeViewModule,
     FormsModule,
