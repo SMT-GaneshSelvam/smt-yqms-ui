@@ -10,5 +10,8 @@ import { CommonModule } from '@angular/common';
 export class AppSettingsModule { 
 
   public static getAllChecksheets =  "http://localhost:8080/checksheet";
+  public static getAllUnits =  "http://localhost:8080/unit";
+  public static getAllSystems = "http://localhost:8080/system";
+  public static getSubSystemsBySystem = "http://localhost:8080/subsystem";
 
 }

@@ -4,9 +4,9 @@
 
 <div class="row" *ngIf="rowData && rowData.length>0">
     <div class="col-md-6">
-<!--         <span class="ng-binding">
-            Viewing {{startElement}} to {{endElement}} of {{rowDataLength}} questions
-        </span> -->
+        <span class="ng-binding">
+            Viewing {{startElement}} to {{endElement}} of {{rowDataLength}} checksheets
+        </span>
     </div>
     <div class="col-md-6 text-right">
         Show:
@@ -26,15 +26,12 @@
 <div *ngIf="rowData && rowData.length>0 && paginationPageSize != rowDataLength">
     <div class="table">
         <div>
-            <ag-grid-angular style="width: 100%;" class="ag-theme-balham" suppressNoRowsOverlay="true" id="myGrid"
-                [rowData]="rowData" class="ag-theme-balham" [gridAutoHeight]="true"
-                [columnDefs]="gridOptions.columnDefs" [gridOptions]="gridOptions" [rowData]="rowData"
-                [pagination]="true" [paginationPageSize]="paginationPageSize" [enableSorting]="true"
-                suppressResize="false" [suppressPaginationPanel]="true" copyHeadersToClipboard=true
-                [defaultColDef]="defaultColDef" rowSelection='multiple' [enableRangeSelection]="true"
-                (cellKeyDown)="onCellKeyDown($event)" [enableCellChangeFlash]="true" [postSort]="postSort"
-                (gridReady)="onGridReady($event)" suppressHorizontalScroll="true">
-            </ag-grid-angular>
+            <ag-grid-angular style="width: 100%;height: 400px;" 
+            class="ag-theme-balham" [rowData]="rowData"
+            [columnDefs]="gridOptions.columnDefs"
+            [defaultColDef]="defaultColDef"
+            [gridOptions]="gridOptions" 
+            (gridReady)="onGridReady($event)"> </ag-grid-angular>
             <ul class="pagination" *ngIf="noOfPages>1">
                 <li (click)="onBtFirst()" [ngClass]="{'disabled': currentPage == 0}">
                     <a>First</a>

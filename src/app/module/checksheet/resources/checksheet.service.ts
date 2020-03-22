@@ -38,4 +38,20 @@ export class ChecksheetService {
     return this._http.get(url);
   }
 
+  public getAllUnits() {
+    let url = AppSettingsModule.getAllUnits;
+    return this._http.get(url)
+  }
+
+  public getAllSystems() {
+    let url = AppSettingsModule.getAllSystems;
+    return this._http.get(url)
+  }
+
+  public getSubSystemsBySystem(system) {
+    let url = AppSettingsModule.getSubSystemsBySystem + "/" + system;
+    return this._http.get(url)
+  }
+  
+
 }
