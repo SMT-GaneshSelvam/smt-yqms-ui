@@ -84,6 +84,12 @@
   .box-center {
     padding-left: 11%;
   }
+
+
+  ::ng-deep .multiselect-dropdown > .dropdown-list {
+    width: 400px !important;
+    position: fixed !important;
+  }
   
   ::ng-deep .multiselect-dropdown .dropdown-btn .selected-item {
     background: #007bff !important;

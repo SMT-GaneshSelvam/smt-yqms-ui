@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChecksheetService } from '../resources/checksheet.service';
 
 @Component({
   selector: 'app-cheetsheets-filter',
@@ -7,67 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheetsheetsFilterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private checksheetService: ChecksheetService) { }
 
   public showHideFilter: boolean = true;
 
-  dropdownList1 = [];
-  selectedItems1 = [];
+  unitsList = [];
+  systemList = [];
+  subSystemList = [];
+  locationList = [];
+  areaList = [];
+  subAreaList = [];
+  contractorList = [];
+  typeList = [];
+  subTypeList = [];
+  tagGroupList = [];
+  checkSheetType = [];
+  disciplineList = [];
+  checkSheetRefList = [];
 
-  dropdownList2 = [];
-  selectedItems2 = [];
+  systemSelectedList = [];
+  subSystemSelectedList = [];
 
-  dropdownList3 = [];
-  selectedItems3 = [];
-
-  dropdownList4 = [];
-  selectedItems4 = [];
-
-  dropdownList5 = [];
-  selectedItems5 = [];
-
-  dropdownList6 = [];
-  selectedItems6 = [];
-
-  dropdownList7 = [];
-  selectedItems7 = [];
-
-  dropdownList8 = [];
-  selectedItems8 = [];
-
-  dropdownList9 = [];
-  selectedItems9 = [];
-
-  dropdownList10 = [];
-  selectedItems10 = [];
-
-  dropdownList11 = [];
-  selectedItems11 = [];
 
   dropdownSettings = {};
+
   ngOnInit() {
 
-    this.dropdownList1 = [
-      { item_id: 1, item_text: 'Allan - Allan FPSO' },
-      { item_id: 2, item_text: 'MV16 - MV16 FPSO' },
-    ];
-    this.selectedItems1 = [
-      { item_id: 3, item_text: 'Allan - Allan FPSO' }
-    ];
 
-    this.dropdownList5 = [
-      { item_id: 1, item_text: '01 - General Equipment' },
-      { item_id: 2, item_text: '13 - Riser & Well Topside' },
-      { item_id: 3, item_text: '16 - Well & Riser' },
-    ];
-    this.selectedItems5 = [
-      { item_id: 3, item_text: '16 - Well & Riser' }
-    ];
+    this.checksheetService.getAllUnits().subscribe((data: any) => { this.unitsList = data });
+    this.checksheetService.getAllSystems().subscribe((data: any) => { this.systemList = data });
 
     this.dropdownSettings = {
       singleSelection: false,
-      idField: 'item_id',
-      textField: 'item_text',
+      idField: 'id',
+      textField: 'description',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       itemsShowLimit: 2,
@@ -75,12 +49,18 @@ export class CheetsheetsFilterComponent implements OnInit {
       placeholder: 'All'
     };
   }
-  onItemSelect(item: any) {
-    console.log(item);
+
+  onSystemChange(item: any) {
+    let system = "";
+    this.systemSelectedList.forEach(function myFunction(item, index) {
+      system = system + item.id + ",";
+    });
+    system = system.substring(0, system.length - 1);
+    this.checksheetService.getSubSystemsBySystem(system).subscribe((data: any) => { this.subSystemList = data });
   }
   onSelectAll(items: any) {
     console.log(items);
   }
-  
+
 
 }
