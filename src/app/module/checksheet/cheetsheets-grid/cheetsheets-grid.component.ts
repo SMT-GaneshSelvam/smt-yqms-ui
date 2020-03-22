@@ -53,21 +53,6 @@ export class CheetsheetsGridComponent implements OnInit {
 
   ngOnInit() {
     this.getAllChecksheetsAgGrid(10);
-    this.alertMessage = this.checksheetService.alertMessage;
-    this.checksheetService.status.subscribe(data => {
-      this.operationStatus = true;
-      if (data == "added") {
-        this.operationStatusText = "New Question Created";
-        this.operationStatus = true;
-      }
-      else if (data == "updated") {
-        this.operationStatusText = "Question Updated";
-        this.operationStatus = true;
-      }
-      else {
-        this.operationStatus = false;
-      }
-    });
     setTimeout(() => {
       this.serviceHandler.message = null;
       this.serviceHandler.service = false;
@@ -79,8 +64,6 @@ export class CheetsheetsGridComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.checksheetService.changeOperation(null);
-    this.checksheetService.alertMessage = '';
   }
   onCellKeyDown(event) {
     if (event.event.shiftKey && event.event.key == "ArrowDown") {

@@ -7,10 +7,7 @@ import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module
   providedIn: 'root'
 })
 export class ChecksheetService {
-
-  public status: BehaviorSubject<any> = new BehaviorSubject(null);
-  public alertMessage: string = '';
-  
+ 
   constructor(private _http: HttpClient) { }
 
   public commonPOSTCall(url, data) {
@@ -29,10 +26,6 @@ export class ChecksheetService {
     return this._http.delete(url);
   }
 
-  public changeOperation = (operation: any) => {
-    this.status.next(operation)
-  }
-
   public getAllChecksheets() {
     let url = AppSettingsModule.getAllChecksheets;
     return this._http.get(url);
@@ -49,9 +42,58 @@ export class ChecksheetService {
   }
 
   public getSubSystemsBySystem(system) {
-    let url = AppSettingsModule.getSubSystemsBySystem + "/" + system;
+    let url = AppSettingsModule.getSubSystemsBySystem + "?systemList=" + system;
     return this._http.get(url)
   }
   
+  public getAllLocations() {
+    let url = AppSettingsModule.getAllLocations;
+    return this._http.get(url)
+  }  
+  
+  public getAreasByLocation(location) {
+    let url = AppSettingsModule.getAreasByLocation + "?locationList=" + location;
+    return this._http.get(url)
+  } 
+
+  public getSubAreasByLocationAndArea(location, area) {
+    let url = AppSettingsModule.getSubAreasByLocationAndArea + "?locationList=" + location + "&areaList="+area;
+    return this._http.get(url)
+  }
+  
+  public getAllContractors() {
+    let url = AppSettingsModule.getAllContractors;
+    return this._http.get(url)
+  } 
+
+  public getAllTypes() {
+    let url = AppSettingsModule.getAllTypes;
+    return this._http.get(url)
+  } 
+
+  public getAllTagGroups() {
+    let url = AppSettingsModule.getAllTagGroups;
+    return this._http.get(url)
+  } 
+
+  public getAllCheckSheetTypes() {
+    let url = AppSettingsModule.getAllCheckSheetTypes;
+    return this._http.get(url)
+  } 
+
+  public getAllDisciplines() {
+    let url = AppSettingsModule.getAllDisciplines;
+    return this._http.get(url)
+  } 
+
+  public getAllCheckSheetRefs() {
+    let url = AppSettingsModule.getAllCheckSheetRefs;
+    return this._http.get(url)
+  } 
+
+  public getSubTypesByType(type) {
+    let url = AppSettingsModule.getSubTypesByType + "?typeList=" + type;
+    return this._http.get(url)
+  } 
 
 }

@@ -12,7 +12,7 @@ export class CheetsheetsFilterComponent implements OnInit {
 
   public showHideFilter: boolean = true;
 
-  unitsList = [];
+  unitList = [];
   systemList = [];
   subSystemList = [];
   locationList = [];
@@ -22,21 +22,38 @@ export class CheetsheetsFilterComponent implements OnInit {
   typeList = [];
   subTypeList = [];
   tagGroupList = [];
-  checkSheetType = [];
+  checkSheetTypeList = [];
   disciplineList = [];
   checkSheetRefList = [];
 
+  unitSelectedList = [];
   systemSelectedList = [];
   subSystemSelectedList = [];
-
+  locationSelectedList = [];
+  areaSelectedList = [];
+  subAreaSelectedList = [];
+  contractorSelectedList = [];
+  typeSelectedList = [];
+  subTypeSelectedList = [];
+  tagGroupSelectedList = [];
+  checkSheetSelectedTypeList = [];
+  disciplineSelectedList = [];
+  checkSheetRefSelectedList = [];
 
   dropdownSettings = {};
 
   ngOnInit() {
 
 
-    this.checksheetService.getAllUnits().subscribe((data: any) => { this.unitsList = data });
+    this.checksheetService.getAllUnits().subscribe((data: any) => { this.unitList = data });
     this.checksheetService.getAllSystems().subscribe((data: any) => { this.systemList = data });
+    this.checksheetService.getAllLocations().subscribe((data: any) => { this.locationList = data });
+    this.checksheetService.getAllContractors().subscribe((data: any) => { this.contractorList = data });
+    this.checksheetService.getAllTypes().subscribe((data: any) => { this.typeList = data });
+    this.checksheetService.getAllTagGroups().subscribe((data: any) => { this.tagGroupList = data });
+    this.checksheetService.getAllCheckSheetTypes().subscribe((data: any) => { this.checkSheetTypeList = data });
+    this.checksheetService.getAllDisciplines().subscribe((data: any) => { this.disciplineList = data });
+    this.checksheetService.getAllCheckSheetRefs().subscribe((data: any) => { this.checkSheetRefList = data });
 
     this.dropdownSettings = {
       singleSelection: false,
@@ -58,9 +75,39 @@ export class CheetsheetsFilterComponent implements OnInit {
     system = system.substring(0, system.length - 1);
     this.checksheetService.getSubSystemsBySystem(system).subscribe((data: any) => { this.subSystemList = data });
   }
-  onSelectAll(items: any) {
-    console.log(items);
+
+  onLocationChange(item: any) {
+    let location = "";
+    this.locationSelectedList.forEach(function myFunction(item, index) {
+      location = location + item.id + ",";
+    });
+    location = location.substring(0, location.length - 1);
+    this.checksheetService.getAreasByLocation(location).subscribe((data: any) => { this.areaList = data });
   }
 
+  onAreaChange(item: any) {
+    let location = "";
+    this.locationSelectedList.forEach(function myFunction(item, index) {
+      location = location + item.id + ",";
+    });
+    location = location.substring(0, location.length - 1);
+
+    let area = "";
+    this.areaSelectedList.forEach(function myFunction(item, index) {
+      area = area + item.id + ",";
+    });
+    area = area.substring(0, area.length - 1);
+
+    this.checksheetService.getSubAreasByLocationAndArea(location, area).subscribe((data: any) => { this.subAreaList = data });
+  }
+
+  onTypeChange(item: any) {
+    let type = "";
+    this.typeSelectedList.forEach(function myFunction(item, index) {
+      type = type + item.id + ",";
+    });
+    type = type.substring(0, type.length - 1);
+    this.checksheetService.getSubTypesByType(type).subscribe((data: any) => { this.subTypeList = data });
+  }
 
 }
