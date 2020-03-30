@@ -1,67 +1,63 @@
 <h6 style="color: #dc3545;margin: 12px -15px">
-  Outstanding Checksheets
+    Outstanding Checksheets
 </h6>
 
 
 <div class="row" style="margin: 6px -27px;font-size: 0.75rem">
 
-  <div class="col-3">
+    <div class="col-3">
 
-      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
 
-          <button type="button" class="btn btn-primary rounded-0">Expand
-          </button>
+            <button type="button" class="btn btn-primary rounded-0">Expand
+            </button>
 
-          <button type="button" class="btn btn-primary rounded-0">Refresh
-          </button>
+            <button type="button" class="btn btn-primary rounded-0">Refresh
+            </button>
 
-          <button type="button" class="btn btn-primary rounded-0">Show Loc
-          </button>
+            <button type="button" class="btn btn-primary rounded-0">Show Loc
+            </button>
 
-      </div>
+        </div>
 
-      <div
-          style="padding: 5px 24px;color: #fff;background-color: #007bff;display: block;margin-top: 5px;font-size: 0.75rem">
-          <span class="vertical-line"></span>
-          <span>Description</span>
-      </div>
+        <div
+            style="padding: 5px 24px;color: #fff;background-color: #007bff;display: block;margin-top: 5px;font-size: 0.75rem">
+            <span class="vertical-line"></span>
+            <span>Description</span>
+        </div>
 
-      <div style="overflow-y: scroll;">
+        <div style="overflow-y: scroll;">
 
-          <div>
-              <kendo-treeview [nodes]="data" textField="text" kendoTreeViewExpandable kendoTreeViewSelectable
-                  kendoTreeViewHierarchyBinding childrenField="items" [(expandedKeys)]="expandedKeys">
-              </kendo-treeview>
-          </div>
+            <div>
+                <kendo-treeview [nodes]="data" textField="text" kendoTreeViewExpandable kendoTreeViewSelectable
+                    kendoTreeViewHierarchyBinding childrenField="items" [(expandedKeys)]="expandedKeys">
+                </kendo-treeview>
+            </div>
 
-      </div>
+        </div>
 
-  </div>
+    </div>
 
-  <div class="col-9">
+    <div class="col-9">
 
+        <div class="d-flex justify-content-start">
+            <button type="button" class="btn btn-primary rounded-0 border-right">Refresh
+            </button>
+            <button type="button" class="btn btn-primary rounded-0 border-right">Tag Details
+            </button>
+            <button type="button" class="btn btn-primary rounded-0 border-right">Add Selected To New FCR
+            </button>
+            <button type="button" class="btn btn-primary rounded-0 border-right">Mark Selected Complete
+            </button>
+            <button type="button" class="btn btn-primary rounded-0 border-right">Export
+            </button>
+            <button type="button" class="btn btn-primary rounded-0 border-right">Reset Grid
+            </button>
+        </div>
 
+        <app-cheetsheets-filter (submit)="onSubmit($event)"></app-cheetsheets-filter>
+        <app-cheetsheets-grid></app-cheetsheets-grid>
 
-      <div class="d-flex justify-content-start">
-          <button type="button" class="btn btn-primary rounded-0 border-right">Refresh
-          </button>
-          <button type="button" class="btn btn-primary rounded-0 border-right">Tag Details
-          </button>
-          <button type="button" class="btn btn-primary rounded-0 border-right">Add Selected To New FCR
-          </button>
-          <button type="button" class="btn btn-primary rounded-0 border-right">Mark Selected Complete
-          </button>
-          <button type="button" class="btn btn-primary rounded-0 border-right">Export
-          </button>
-          <button type="button" class="btn btn-primary rounded-0 border-right">Reset Grid
-          </button>
-      </div>
-
-      <app-cheetsheets-filter></app-cheetsheets-filter>
-      <app-cheetsheets-grid></app-cheetsheets-grid>
-
-  </div>
-
-
+    </div>
 
 </div>

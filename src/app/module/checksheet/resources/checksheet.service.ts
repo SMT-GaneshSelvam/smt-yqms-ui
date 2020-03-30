@@ -10,8 +10,10 @@ export class ChecksheetService {
  
   constructor(private _http: HttpClient) { }
 
+  public checkSheetFilter: any = {system:[63,80]};
+
   public commonPOSTCall(url, data) {
-    return this._http.post(url, data);
+    return this._http.post(url, this.checkSheetFilter);
   }
 
   public commonGETCall(url) {

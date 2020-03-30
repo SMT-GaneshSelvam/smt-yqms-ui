@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChecksheetService } from '../resources/checksheet.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-cheetsheets-filter',
@@ -9,6 +10,8 @@ import { ChecksheetService } from '../resources/checksheet.service';
 export class CheetsheetsFilterComponent implements OnInit {
 
   constructor(private checksheetService: ChecksheetService) { }
+
+  @Output() submit: EventEmitter<any> = new EventEmitter();
 
   public showHideFilter: boolean = true;
 
@@ -25,6 +28,20 @@ export class CheetsheetsFilterComponent implements OnInit {
   checkSheetTypeList = [];
   disciplineList = [];
   checkSheetRefList = [];
+
+  unit : string;
+  system = [];
+  subSystem : string;
+  location : string;
+  area : string;
+  subArea : string;
+  contractor : string;
+  type : string;
+  subType : string;
+  tagGroup : string;
+  checkSheetType : string;
+  discipline : string;
+  checkSheetRef : string;
 
   unitSelectedList = [];
   systemSelectedList = [];
@@ -73,6 +90,7 @@ export class CheetsheetsFilterComponent implements OnInit {
       system = system + item.id + ",";
     });
     system = system.substring(0, system.length - 1);
+    //this.system=system;
     this.checksheetService.getSubSystemsBySystem(system).subscribe((data: any) => { this.subSystemList = data });
   }
 
@@ -108,6 +126,23 @@ export class CheetsheetsFilterComponent implements OnInit {
     });
     type = type.substring(0, type.length - 1);
     this.checksheetService.getSubTypesByType(type).subscribe((data: any) => { this.subTypeList = data });
+  }
+
+  onSubmitFilter(){
+
+    //let system = this.system;
+    console.log("SMT");
+    console.log(this.system);
+
+    let system = this.systemList.length == this.systemSelectedList.length ?
+    ['ALL'] : _.map(this.systemSelectedList, 'id');
+
+    console.log("SMT");
+    console.log(system);
+
+    this.checksheetService.checkSheetFilter = {system:system};
+
+    this.submit.emit(null);
   }
 
 }

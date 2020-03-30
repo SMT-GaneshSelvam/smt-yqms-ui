@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CheetsheetsGridComponent } from './cheetsheets-grid/cheetsheets-grid.component';
 
 @Component({
   selector: 'app-checksheets',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChecksheetsComponent implements OnInit {
 
+  @ViewChild(CheetsheetsGridComponent, {static: false}) cheetsheetsGridComponent: CheetsheetsGridComponent;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    // child is set
+    this.cheetsheetsGridComponent.getAllChecksheetsAgGrid(10);
   }
 
   public expandedKeys: any[] = ['0'];

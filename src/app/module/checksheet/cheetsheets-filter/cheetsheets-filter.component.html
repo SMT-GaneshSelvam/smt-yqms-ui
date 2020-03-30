@@ -21,7 +21,7 @@
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">System:</label>
                 <ng-multiselect-dropdown [data]="systemList" [(ngModel)]="systemSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onSystemChange($event)"
+                    [settings]="dropdownSettings" (onSelect)="onSystemChange($event)" (onDeSelect)="onSystemChange($event)"
                     (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
@@ -133,7 +133,7 @@
 
         <div class="ml-1 mb-1">
             <button class="btn btn-success mr-1" style="width: 75px;height: 35px;" type="button"
-                (click)="postFilterData()">Submit</button>
+                (click)="onSubmitFilter()">Submit</button>
             <button class="btn btn-success" style="width: 75px;height: 35px;" type="button"
                 (click)="onResetFilter()">Reset</button>
         </div>
