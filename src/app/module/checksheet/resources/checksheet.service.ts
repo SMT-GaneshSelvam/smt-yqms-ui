@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
+import { FilterData } from '../cheetsheets-filter/cheetsheets-filter.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,10 @@ export class ChecksheetService {
  
   constructor(private _http: HttpClient) { }
 
-  public checkSheetFilter: any = {system:[63,80]};
+  public filterData: FilterData = new FilterData([],[]);
 
   public commonPOSTCall(url, data) {
-    return this._http.post(url, this.checkSheetFilter);
+    return this._http.post(url, this.filterData);
   }
 
   public commonGETCall(url) {

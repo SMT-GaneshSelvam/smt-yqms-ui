@@ -1,8 +1,10 @@
 <div style="border: white;background-color: white;">
-    Drag a column here to group by that column
+    Total Records Fetched {{rowDataLength}}
 </div>
 
+<div *ngIf="rowData && rowData.length>0">
 <ag-grid-angular style="width: 100%;height: 565px;" class="ag-theme-balham" [rowData]="rowData"
     [columnDefs]="gridOptions.columnDefs" [defaultColDef]="defaultColDef" [gridOptions]="gridOptions"
     (gridReady)="onGridReady($event)"> 
 </ag-grid-angular>
+</div>

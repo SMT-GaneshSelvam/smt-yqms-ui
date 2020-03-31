@@ -14,6 +14,7 @@ export class CheetsheetsFilterComponent implements OnInit {
   @Output() submit: EventEmitter<any> = new EventEmitter();
 
   public showHideFilter: boolean = true;
+  public filterData: FilterData = new FilterData([],[]);
 
   unitList = [];
   systemList = [];
@@ -28,20 +29,6 @@ export class CheetsheetsFilterComponent implements OnInit {
   checkSheetTypeList = [];
   disciplineList = [];
   checkSheetRefList = [];
-
-  unit : string;
-  system = [];
-  subSystem : string;
-  location : string;
-  area : string;
-  subArea : string;
-  contractor : string;
-  type : string;
-  subType : string;
-  tagGroup : string;
-  checkSheetType : string;
-  discipline : string;
-  checkSheetRef : string;
 
   unitSelectedList = [];
   systemSelectedList = [];
@@ -85,22 +72,11 @@ export class CheetsheetsFilterComponent implements OnInit {
   }
 
   onSystemChange(item: any) {
-    let system = "";
-    this.systemSelectedList.forEach(function myFunction(item, index) {
-      system = system + item.id + ",";
-    });
-    system = system.substring(0, system.length - 1);
-    //this.system=system;
-    this.checksheetService.getSubSystemsBySystem(system).subscribe((data: any) => { this.subSystemList = data });
+    this.checksheetService.getSubSystemsBySystem(_.map(this.systemSelectedList, 'id')).subscribe((data: any) => { this.subSystemList = data });
   }
 
   onLocationChange(item: any) {
-    let location = "";
-    this.locationSelectedList.forEach(function myFunction(item, index) {
-      location = location + item.id + ",";
-    });
-    location = location.substring(0, location.length - 1);
-    this.checksheetService.getAreasByLocation(location).subscribe((data: any) => { this.areaList = data });
+    this.checksheetService.getAreasByLocation(_.map(this.locationSelectedList, 'id')).subscribe((data: any) => { this.areaList = data });
   }
 
   onAreaChange(item: any) {
@@ -130,19 +106,22 @@ export class CheetsheetsFilterComponent implements OnInit {
 
   onSubmitFilter(){
 
-    //let system = this.system;
-    console.log("SMT");
-    console.log(this.system);
-
     let system = this.systemList.length == this.systemSelectedList.length ?
     ['ALL'] : _.map(this.systemSelectedList, 'id');
 
-    console.log("SMT");
-    console.log(system);
+    let subSystem = this.subSystemList.length == this.subSystemSelectedList.length ?
+    ['ALL'] : _.map(this.subSystemSelectedList, 'id');
 
-    this.checksheetService.checkSheetFilter = {system:system};
+    this.checksheetService.filterData = {system:system,subSystem:subSystem};
 
     this.submit.emit(null);
   }
 
+}
+
+export class FilterData {
+  constructor(
+    public system: Array<any>,
+    public subSystem: Array<any>
+  ) { }
 }
