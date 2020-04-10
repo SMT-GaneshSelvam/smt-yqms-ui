@@ -38,3 +38,21 @@ export class ChecksheetsComponent implements OnInit {
 ];
 
 }
+
+export class FilterData {
+  constructor(
+    public unit: Array<any>,
+    public system: Array<any>,
+    public subSystem: Array<any>,
+    public location: Array<any>,
+    public area: Array<any>,
+    public subArea: Array<any>,
+    public contractor: Array<any>,
+    public type: Array<any>,
+    public subType: Array<any>,
+    public tagGroup: Array<any>,
+    public checkSheetType: Array<any>,
+    public discipline: Array<any>,
+    public checkSheetRef: Array<any>,
+  ) { }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ChecksheetService } from '../resources/checksheet.service';
+import { ChecksheetService} from '../resources/checksheet.service';
 import * as _ from 'lodash';
+import { FilterData } from '../checksheets.component';
 
 @Component({
   selector: 'app-cheetsheets-filter',
@@ -14,7 +15,7 @@ export class CheetsheetsFilterComponent implements OnInit {
   @Output() submit: EventEmitter<any> = new EventEmitter();
 
   public showHideFilter: boolean = true;
-  public filterData: FilterData = new FilterData([],[]);
+  public filterData: FilterData = new FilterData([],[],[],[],[],[],[],[],[],[],[],[],[]);
 
   unitList = [];
   systemList = [];
@@ -40,7 +41,7 @@ export class CheetsheetsFilterComponent implements OnInit {
   typeSelectedList = [];
   subTypeSelectedList = [];
   tagGroupSelectedList = [];
-  checkSheetSelectedTypeList = [];
+  checkSheetTypeSelectedList = [];
   disciplineSelectedList = [];
   checkSheetRefSelectedList = [];
 
@@ -80,31 +81,17 @@ export class CheetsheetsFilterComponent implements OnInit {
   }
 
   onAreaChange(item: any) {
-    let location = "";
-    this.locationSelectedList.forEach(function myFunction(item, index) {
-      location = location + item.id + ",";
-    });
-    location = location.substring(0, location.length - 1);
-
-    let area = "";
-    this.areaSelectedList.forEach(function myFunction(item, index) {
-      area = area + item.id + ",";
-    });
-    area = area.substring(0, area.length - 1);
-
-    this.checksheetService.getSubAreasByLocationAndArea(location, area).subscribe((data: any) => { this.subAreaList = data });
+    this.checksheetService.getSubAreasByLocationAndArea(_.map(this.locationSelectedList, 'id'), _.map(this.areaSelectedList, 'id')).subscribe((data: any) => { this.subAreaList = data });
   }
 
   onTypeChange(item: any) {
-    let type = "";
-    this.typeSelectedList.forEach(function myFunction(item, index) {
-      type = type + item.id + ",";
-    });
-    type = type.substring(0, type.length - 1);
-    this.checksheetService.getSubTypesByType(type).subscribe((data: any) => { this.subTypeList = data });
+    this.checksheetService.getSubTypesByType(_.map(this.typeSelectedList, 'id')).subscribe((data: any) => { this.subTypeList = data });
   }
 
   onSubmitFilter(){
+
+    let unit = this.unitList.length == this.unitSelectedList.length ?
+    ['ALL'] : _.map(this.unitSelectedList, 'id');
 
     let system = this.systemList.length == this.systemSelectedList.length ?
     ['ALL'] : _.map(this.systemSelectedList, 'id');
@@ -112,16 +99,54 @@ export class CheetsheetsFilterComponent implements OnInit {
     let subSystem = this.subSystemList.length == this.subSystemSelectedList.length ?
     ['ALL'] : _.map(this.subSystemSelectedList, 'id');
 
-    this.checksheetService.filterData = {system:system,subSystem:subSystem};
+    let location = this.locationList.length == this.locationSelectedList.length ?
+    ['ALL'] : _.map(this.locationSelectedList, 'id');
+
+    let area = this.areaList.length == this.areaSelectedList.length ?
+    ['ALL'] : _.map(this.areaSelectedList, 'id');
+
+    let subArea = this.subAreaList.length == this.subAreaSelectedList.length ?
+    ['ALL'] : _.map(this.subAreaSelectedList, 'id');
+
+    let contractor = this.contractorList.length == this.contractorSelectedList.length ?
+    ['ALL'] : _.map(this.contractorSelectedList, 'id');
+
+    let type = this.typeList.length == this.typeSelectedList.length ?
+    ['ALL'] : _.map(this.typeSelectedList, 'id');
+
+    let subType = this.subTypeList.length == this.subTypeSelectedList.length ?
+    ['ALL'] : _.map(this.subTypeSelectedList, 'id');
+
+    let tagGroup = this.tagGroupList.length == this.tagGroupSelectedList.length ?
+    ['ALL'] : _.map(this.tagGroupSelectedList, 'id');
+
+    let checkSheetType = this.checkSheetTypeList.length == this.checkSheetTypeSelectedList.length ?
+    ['ALL'] : _.map(this.checkSheetTypeSelectedList, 'id');
+
+    let discipline = this.disciplineList.length == this.disciplineSelectedList.length ?
+    ['ALL'] : _.map(this.disciplineSelectedList, 'id');
+
+    let checkSheetRef = this.checkSheetRefList.length == this.checkSheetRefSelectedList.length ?
+    ['ALL'] : _.map(this.checkSheetRefSelectedList, 'id');
+
+    this.checksheetService.filterData = {
+      unit: unit,
+      system: system,
+      subSystem: subSystem,
+      location: location,
+      area: area,
+      subArea: subArea,
+      contractor: contractor,
+      type: type,
+      subType: subType,
+      tagGroup: tagGroup,
+      checkSheetType: checkSheetType,
+      discipline: discipline,
+      checkSheetRef: checkSheetRef
+    };
 
     this.submit.emit(null);
   }
 
 }
 
-export class FilterData {
-  constructor(
-    public system: Array<any>,
-    public subSystem: Array<any>
-  ) { }
-}

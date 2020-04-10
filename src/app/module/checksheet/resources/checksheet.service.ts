@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
-import { FilterData } from '../cheetsheets-filter/cheetsheets-filter.component';
-
+import { FilterData } from '../checksheets.component';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ChecksheetService {
  
   constructor(private _http: HttpClient) { }
 
-  public filterData: FilterData = new FilterData([],[]);
+  public filterData: FilterData = new FilterData([],[],[],[],[],[],[],[],[],[],[],[],[]);
 
   public commonPOSTCall(url, data) {
     return this._http.post(url, this.filterData);
