@@ -3,7 +3,7 @@ import { GridOptions } from 'ag-grid-community';
 import { Router } from '@angular/router';
 import { ChecksheetService } from '../resources/checksheet.service';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
-import { FilterData } from '../cheetsheets-filter/cheetsheets-filter.component';
+import { FilterData } from '../checksheets.component';
 
 @Component({
   selector: 'app-cheetsheets-grid',
@@ -17,7 +17,7 @@ export class CheetsheetsGridComponent implements OnInit {
   public gridOptions: GridOptions;
   public rowData = [];
   public rowDataLength = 0;
-  public filterData: FilterData = new FilterData([],[]);
+  public filterData: FilterData = new FilterData([],[],[],[],[],[],[],[],[],[],[],[],[]);
 
   orderbyfield = "id";
   reversesort = "asc";
@@ -76,7 +76,7 @@ export class CheetsheetsGridComponent implements OnInit {
           },
 
           {
-            headerName: "Check Ttype",
+            headerName: "Check Type",
             field: "check_type"
           },
           {
