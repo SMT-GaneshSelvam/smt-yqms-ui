@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PunchlistsGridComponent } from './punchlists-grid/punchlists-grid.component';
 
 @Component({
   selector: 'app-punchlists',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PunchlistsComponent implements OnInit {
 
+  @ViewChild(PunchlistsGridComponent, {static: false}) punchlistsGridComponent: PunchlistsGridComponent;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    // child is set
+    this.punchlistsGridComponent.getAllPunchListsAgGrid(10);
   }
 
   public expandedKeys: any[] = ['0'];
@@ -29,4 +37,22 @@ export class PunchlistsComponent implements OnInit {
     }
 ];
 
+}
+
+export class PunchListFilterData {
+  constructor(
+    public punchListNumber: number,
+    public unit: Array<any>,
+    public system: Array<any>,
+    public subSystem: Array<any>,
+    public location: Array<any>,
+    public area: Array<any>,
+    public subArea: Array<any>,
+    public category: Array<any>,
+    public defectType: Array<any>,
+    public priority: Array<any>,
+    public discipline: Array<any>,
+    public responsibleGroup: Array<any>,
+    public workpack: Array<any>,
+  ) { }
 }

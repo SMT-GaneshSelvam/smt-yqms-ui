@@ -162,13 +162,44 @@
           </div>
         </li>
 
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu5sub5"
+            data-toggle="collapse"
+            data-target="#submenu5sub5"
+            ><span>Project Info</span></a
+          >
+          <div id="submenu5sub5" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/unit'>
+                  <i class="fa fa-fw fa-bar-chart"></i> Units (0)
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/location'>
+                  <i class="fa fa-fw fa-bar-chart"></i> Location (0)
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/type'>
+                  <i class="fa fa-fw fa-bar-chart"></i> Type (0)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
       </ul>
     </div>
   </nav>
 
   <div id="content" class="p-4 p-md-5 pt-5">    
        
-        <div class="row" style="margin-top: -47px;">
+<!--         <div class="row" style="margin-top: -47px;">
     
             <button type="button" class="btn btn-secondary btn-space">My YQMS 
               <span style="font-size: 1rem">×</span>
@@ -178,7 +209,7 @@
               <span style="font-size: 1rem">×</span>
             </button>
     
-        </div>  
+        </div>   -->
 
         <router-outlet></router-outlet>
         

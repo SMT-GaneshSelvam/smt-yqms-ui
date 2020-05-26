@@ -35,7 +35,7 @@ export class ChecksheetService {
   }
 
   public getAllUnits() {
-    let url = AppSettingsModule.getAllUnits;
+    let url = AppSettingsModule.unit;
     return this._http.get(url)
   }
 

@@ -12,10 +12,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   private userData;
   usernew = {
-    name: 'adf',
+    name: 'smt',
     new: [
       {
-        oneD: 'sdf'
+        oneD: 'smt'
       }
     ]
   }

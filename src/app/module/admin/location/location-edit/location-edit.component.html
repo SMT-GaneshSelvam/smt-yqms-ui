@@ -1,0 +1,129 @@
+<div class="main">
+    <h1 class="page-header" *ngIf="pageLoaded && editDetails"><span class="glyphicon glyphicon-edit ofis-core-pageheader-icon" style="color: #007bff"></span> Edit Location:
+      {{editDetails.id}}</h1>
+  
+    <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="serviceError">
+      <button type="button" class="close" (click)="closeMsg('serviceError')"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    {{serviceError}}</div>
+  
+    <div class="alert alert-danger alert-dismissible" role="alert"
+      *ngIf="addQuestionForm && addQuestionForm.invalid && questionValidationFlag">
+      <button type="button" class="close" (click)="closeMsg(null)"><span aria-hidden="true">×</span><span
+          class="sr-only">Close</span></button>
+      <p>The following errors occurred:</p>
+      <ul>
+        <li *ngIf="addQuestionForm.get('question').hasError('required')">The question field is required.</li>
+        <li *ngIf="addQuestionForm.get('question').hasError('whiteSpace')">Whitespace not allowed in question field.</li>
+        <li *ngIf="addQuestionForm.get('position').hasError('required')">The position field is required.</li>
+        <li *ngIf="addQuestionForm.get('display_conf').hasError('required')">The display configuration field is required.
+        </li>
+  
+        <li *ngIf="addQuestionForm.get('question').value && addQuestionForm.get('question').hasError('minlength')">The
+          question field must be at least 2 characters.</li>
+        <li *ngIf="addQuestionForm.get('position').hasError('numberError')">The position must be an integer.</li>  
+      
+      </ul>
+  
+    </div>
+  
+    <div *ngIf="editLocationForm">
+      <div class="row">
+        <div class="col-md-7">
+          <form [formGroup]="editLocationForm" class="form-signup form-horizontal ofis-form">
+  
+            <div class="form-group required">
+              <label for="id" class="col-md-4 control-label">Location Reference</label>
+              <div class="col-md-8">
+                <input class="form-control" name="id" type="text" id="id"
+                  formControlName="id">
+              </div>
+            </div>
+  
+            <div class="form-group required">
+              <label for="description" class="col-md-4 control-label">Location Description</label>
+              <div class="col-md-8">
+                <input class="form-control" name="description" type="text" id="description"
+                  formControlName="description">
+              </div>
+            </div>
+  
+            <div class="form-group required">
+                <label for="addedAt" class="col-md-4 control-label">Added at</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="addedAt" type="text" id="addedAt"
+                        formControlName="addedAt">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="addedBy" class="col-md-4 control-label">Added By</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="addedBy" type="text" id="addedBy"
+                        formControlName="addedBy">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="imported" class="col-md-4 control-label">Imported</label>
+                <div class="col-md-8">
+                    <input checked="checked" formControlName="imported" name="imported" type="checkbox"
+                        id="imported">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="completed" class="col-md-4 control-label">Completed</label>
+                <div class="col-md-8">
+                    <input checked="checked" formControlName="completed" name="completed" type="checkbox"
+                        id="completed">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="verified" class="col-md-4 control-label">Verified</label>
+                <div class="col-md-8">
+                    <input checked="checked" formControlName="verified" name="verified" type="checkbox"
+                        id="verified">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="verifiedBy" class="col-md-4 control-label">Verified By</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="verifiedBy" type="text" id="verifiedBy"
+                        formControlName="verifiedBy">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="verifiedResponsibleGroup" class="col-md-4 control-label">Verified Responsible
+                    Group</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="verifiedResponsibleGroup" type="text"
+                        id="verifiedResponsibleGroup" formControlName="verifiedResponsibleGroup">
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label for="verifiedAt" class="col-md-4 control-label">Verified At</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="verifiedAt" type="text" id="verifiedAt"
+                        formControlName="verifiedAt">
+                </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="pull-right" style="margin-right: 14px;">
+                <a (click)="navigateBack()" class="btn btn-default border">Cancel</a>
+              </div>
+              <div class="pull-right" style="padding-right: 10px;">
+                <input class="btn btn-primary" type="submit" value="Edit Unit" (click)="editLocation()"
+                  [disabled]="editLocationForm.pristine">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

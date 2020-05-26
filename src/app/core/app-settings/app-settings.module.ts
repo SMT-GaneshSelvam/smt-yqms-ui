@@ -10,13 +10,18 @@ import { CommonModule } from '@angular/common';
 export class AppSettingsModule { 
 
   public static getAllChecksheets =  "http://localhost:8080/checksheet";
-  public static getAllUnits =  "http://localhost:8080/unit";
+  public static getAllPunchLists =  "http://localhost:8080/punchlist";
   public static getAllSystems = "http://localhost:8080/system";
   public static getSubSystemsBySystem = "http://localhost:8080/subsystem";
   public static getAllLocations = "http://localhost:8080/location";
   public static getAreasByLocation = "http://localhost:8080/area";  
   public static getSubAreasByLocationAndArea = "http://localhost:8080/subarea";  
-  public static getAllContractors = "http://localhost:8080/contractor";
+  public static getAllContractors = "http://localhost:8080/contractor";  
+  public static getAllCategories = "http://localhost:8080/category";
+  public static getAllDefectTypes = "http://localhost:8080/defecttype";
+  public static getAllPriorities = "http://localhost:8080/priority";  
+  public static getAllResponsibleGroups = "http://localhost:8080/responsiblegroup";
+  public static getAllWorkpackTypes = "http://localhost:8080/workpacktype";
 
   public static getAllTypes = "http://localhost:8080/type";
   public static getAllTagGroups = "http://localhost:8080/taggroup";
@@ -24,5 +29,9 @@ export class AppSettingsModule {
   public static getAllDisciplines = "http://localhost:8080/discipline";
   public static getAllCheckSheetRefs = "http://localhost:8080/checksheetref";
   public static getSubTypesByType = "http://localhost:8080/subtype";
+  
+  public static unit = "http://localhost:8080/unit";
+  public static location = "http://localhost:8080/location";
+  public static type = "http://localhost:8080/type";
 
 }

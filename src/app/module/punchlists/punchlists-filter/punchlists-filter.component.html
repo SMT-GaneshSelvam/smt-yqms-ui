@@ -1,8 +1,7 @@
 <div class="expendCollapse arrow_style">
     <div  class="filterheading">
-        <p (click)="showHideFilter = !showHideFilter" class="hide_label">
-            <span class="glyphicon" [ngClass]="showHideFilter ? 'glyphicon glyphicon-minus' : 
-    'glyphicon glyphicon-plus'"></span>{{showHideFilter ? "Hide" : "Show"}}</p>
+        <button type="button" (click)="showHideFilter = !showHideFilter" class="btn-sm btn btn-secondary btn-block" style="margin-top: 5px;">
+            {{showHideFilter ? "Hide Filter Section" : "Show Filter Section"}}</button>
     </div>
 </div>
 
@@ -14,7 +13,7 @@
 
             <div style="width: 190px !important;">
                 <label style="margin-bottom: 0px;margin-top: 5px;" for="formGroupExampleInput">PunchList Number:</label>
-                <input type="text" id="formGroupExampleInput" placeholder="">
+                <input type="text" id="formGroupExampleInput" placeholder="" [(ngModel)]="punchListNumber">
             </div>
 
             <div class="checkbox pt-3">
@@ -35,23 +34,25 @@
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Unit:</label>
-                <ng-multiselect-dropdown [data]="dropdownList1" [(ngModel)]="selectedItems1"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="unitList" [(ngModel)]="unitSelectedList" [settings]="dropdownSettings"
+                    (onSelect)="onUnitChange($event)" (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">System:</label>
-                <ng-multiselect-dropdown [data]="dropdownList2" [(ngModel)]="selectedItems2"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="systemList" [(ngModel)]="systemSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onSystemChange($event)" (onDeSelect)="onSystemChange($event)"
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">SubSystem:</label>
-                <ng-multiselect-dropdown [data]="dropdownList3" [(ngModel)]="selectedItems3"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="subSystemList" [(ngModel)]="subSystemSelectedList"
+                    [settings]="dropdownSettings" (onChange)="onSubSystemChange($event)"
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
@@ -61,22 +62,24 @@
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Location:</label>
-                <ng-multiselect-dropdown [data]="dropdownList4" [(ngModel)]="selectedItems4"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="locationList" [(ngModel)]="locationSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onLocationChange($event)"
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Area:</label>
-                <ng-multiselect-dropdown [data]="dropdownList5" [(ngModel)]="selectedItems5"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="areaList" [(ngModel)]="areaSelectedList" [settings]="dropdownSettings"
+                    (onSelect)="onAreaChange($event)" (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Sub Area:</label>
-                <ng-multiselect-dropdown [data]="dropdownList6" [(ngModel)]="selectedItems6"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="subAreaList" [(ngModel)]="subAreaSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onSubAreaChange($event)"
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
@@ -86,22 +89,25 @@
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Category:</label>
-                <ng-multiselect-dropdown [data]="dropdownList7" [(ngModel)]="selectedItems7"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="categoryList" [(ngModel)]="categorySelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onCategoryChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Defect Type:</label>
-                <ng-multiselect-dropdown [data]="dropdownList8" [(ngModel)]="selectedItems8"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="defectTypeList" [(ngModel)]="defectTypeSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onDefectTypeChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Priority:</label>
-                <ng-multiselect-dropdown [data]="dropdownList9" [(ngModel)]="selectedItems9"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="priorityList" [(ngModel)]="prioritySelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onPriorityChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
@@ -111,22 +117,25 @@
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Discipline:</label>
-                <ng-multiselect-dropdown [data]="dropdownList10" [(ngModel)]="selectedItems10"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="disciplineList" [(ngModel)]="disciplineSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onDisciplineChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Responsible Group:</label>
-                <ng-multiselect-dropdown [data]="dropdownList11" [(ngModel)]="selectedItems11"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="responsibleGroupList" [(ngModel)]="responsibleGroupSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onResponsibleGroupChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
             <div style="width: 190px !important">
                 <label style="margin-bottom: 0px;margin-top: 5px;">Workpack Type:</label>
-                <ng-multiselect-dropdown [data]="dropdownList12" [(ngModel)]="selectedItems12"
-                    [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                <ng-multiselect-dropdown [data]="workpackTypeList" [(ngModel)]="workpackTypeSelectedList"
+                    [settings]="dropdownSettings" (onSelect)="onWorkpackTypeChange($event)" 
+                    (onSelectAll)="onSelectAll($event)">
                 </ng-multiselect-dropdown>
             </div>
 
@@ -138,7 +147,7 @@
 
         <div class="ml-1 mb-1">
             <button class="btn btn-success mr-1" style="width: 75px;height: 35px;" type="button"
-                (click)="postFilterData()">Submit</button>
+                (click)="onSubmitFilter()">Submit</button>
             <button class="btn btn-success" style="width: 75px;height: 35px;" type="button"
                 (click)="onResetFilter()">Reset</button>
         </div>
