@@ -11,6 +11,7 @@ import { LandingPageComponent } from './module/login-module/landing-page/landing
 import { LoginComponent } from './module/login-module/landing-page/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,5 +1,5 @@
 <div class="main">
-    <h1 class="page-header" *ngIf="pageLoaded && editDetails"><span class="glyphicon glyphicon-edit ofis-core-pageheader-icon" style="color: #007bff"></span> Edit Discipline:
+    <h1 class="page-header" *ngIf="pageLoaded && editDetails"><span class="glyphicon glyphicon-edit ofis-core-pageheader-icon" style="color: #007bff"></span> Edit Tag Group:
       {{editDetails.id}}</h1>
   
     <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="serviceError">
@@ -26,13 +26,13 @@
   
     </div>
   
-    <div *ngIf="editDisciplineForm">
+    <div *ngIf="editTagGroupForm">
       <div class="row">
         <div class="col-md-7">
-          <form [formGroup]="editDisciplineForm" class="form-signup form-horizontal ofis-form">
+          <form [formGroup]="editTagGroupForm" class="form-signup form-horizontal ofis-form">
   
             <div class="form-group required">
-              <label for="id" class="col-md-4 control-label">Discipline Reference</label>
+              <label for="id" class="col-md-4 control-label">Tag Group Reference</label>
               <div class="col-md-8">
                 <input class="form-control" name="id" type="text" id="id"
                   formControlName="id">
@@ -40,20 +40,43 @@
             </div>
   
             <div class="form-group required">
-              <label for="description" class="col-md-4 control-label">Discipline Description</label>
+              <label for="description" class="col-md-4 control-label">Tag Group Description</label>
               <div class="col-md-8">
                 <input class="form-control" name="description" type="text" id="description"
                   formControlName="description">
               </div>
             </div>
   
+            <div class="form-group required">
+                <label for="imported" class="col-md-4 control-label">Imported</label>
+                <div class="col-md-8">
+                  <input checked="checked" formControlName="imported" name="imported" type="checkbox" id="imported">
+                </div>
+              </div>
+    
+              <div class="form-group required">
+                <label for="addedBy" class="col-md-4 control-label">Added By</label>
+                <div class="col-md-8">
+                  <input class="form-control" name="addedBy" type="text" id="addedBy"
+                    formControlName="addedBy">
+                </div>
+              </div>
+  
+              <div class="form-group required">
+                  <label for="addedDate" class="col-md-4 control-label">Added Date</label>
+                  <div class="col-md-8">
+                    <input class="form-control" name="addedDate" type="text" id="addedDate"
+                      formControlName="addedDate">
+                  </div>
+              </div>
+  
             <div class="form-group">
               <div class="pull-right" style="margin-right: 14px;">
                 <a (click)="navigateBack()" class="btn btn-default border">Cancel</a>
               </div>
               <div class="pull-right" style="padding-right: 10px;">
-                <input class="btn btn-primary" type="submit" value="Edit Type" (click)="editDiscipline()"
-                  [disabled]="editDisciplineForm.pristine">
+                <input class="btn btn-primary" type="submit" value="Edit Tag Group" (click)="editTagGroup()"
+                  [disabled]="editTagGroupForm.pristine">
               </div>
             </div>
           </form>

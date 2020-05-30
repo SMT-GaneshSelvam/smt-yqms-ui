@@ -1,11 +1,11 @@
 <div class="main">
     <div class="row">
       <div class="col-md-6">
-        <h1 class="page-header"><span class="glyphicon glyphicon-tree-conifer" style="color: #007bff;"></span> Types</h1>
+        <h1 class="page-header"><span class="glyphicon glyphicon-object-align-right" style="color: #007bff;"></span> Tag Group</h1>
       </div>
       <div class="col-md-6 text-right">
         <a class="btn btn-primary" [routerLink]="['add']" role="button"><span class="glyphicon glyphicon-plus"></span>
-          Add Type</a>
+          Add Tag Group</a>
       </div>
     </div>
   
@@ -21,7 +21,7 @@
     <div class="row" *ngIf="rowData && rowData.length>0">
       <div class="col-md-6">
         <span class="ng-binding">
-          Viewing {{startElement}} to {{endElement}} of {{rowDataLength}} Types
+          Viewing {{startElement}} to {{endElement}} of {{rowDataLength}} Tag Groups
         </span>
       </div>
       <div class="col-md-6 text-right">
@@ -85,8 +85,9 @@
       </div>
     </div>
   
-    <div *ngIf="isUnitLoaded && rowData.length==0">
-      <p>No Types Created Yet.</p>
-    </div>  
+    <div *ngIf="isTagGroupLoaded && rowData.length==0">
+      <p>No Tag Group Created Yet.</p>
+    </div>
+  
   
   </div>

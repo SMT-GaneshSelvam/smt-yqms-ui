@@ -1,1 +1,92 @@
-<p>discipline-list works!</p>
+<div class="main">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="page-header"><span class="glyphicon glyphicon-grain" style="color: #007bff;"></span> Discipline </h1>
+      </div>
+      <div class="col-md-6 text-right">
+        <a class="btn btn-primary" [routerLink]="['add']" role="button"><span class="glyphicon glyphicon-plus"></span>
+          Add Discipline</a>
+      </div>
+    </div>
+  
+    <div class="alert alert-dismissible" [ngClass]="serviceHandler.service ? 'alert-danger' : 'alert-success'"
+      *ngIf="serviceHandler.service">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>{{serviceHandler.message}}</strong>
+    </div>
+    <div class="alert alert-success alert-dismissible" *ngIf="alertMessage">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong></strong> {{alertMessage}}.
+    </div>
+    <div class="row" *ngIf="rowData && rowData.length>0">
+      <div class="col-md-6">
+        <span class="ng-binding">
+          Viewing {{startElement}} to {{endElement}} of {{rowDataLength}} Disciplines
+        </span>
+      </div>
+      <div class="col-md-6 text-right">
+        Show:
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-default"
+            [ngClass]="{'active':paginationPageSize == 10 && loadAll == false}" (click)="changePagination(10)">10</button>
+          <button type="button" class="btn btn-default"
+            [ngClass]="{'active':paginationPageSize == 25 && loadAll == false}" (click)="changePagination(25)">25</button>
+          <button type="button" class="btn btn-default" [ngClass]="{'active':loadAll == true}"
+            (click)="showAll()">All</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="alert alert-warning alert-dismissible" role="alert"
+      [ngClass]="{'noDisplay':!operationStatus,'display':operationStatus}">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span
+          class="sr-only">Close</span></button>
+      <p [innerText]="operationStatusText"></p>
+    </div>
+  
+  
+    <div *ngIf="rowData && rowData.length>0">
+      <div class="table">
+        <div>
+          <ag-grid-angular style="width: 100%;" class="ag-theme-balham" suppressNoRowsOverlay="true" id="myGrid"
+            [rowData]="rowData" class="ag-theme-balham" [gridAutoHeight]="true" [columnDefs]="gridOptions.columnDefs"
+            [gridOptions]="gridOptions" [rowData]="rowData" [pagination]="true" [paginationPageSize]="paginationPageSize"
+            [enableSorting]="true" suppressResize="false" [suppressPaginationPanel]="true" copyHeadersToClipboard=true
+            [defaultColDef]="defaultColDef" rowSelection='multiple' [enableRangeSelection]="true"
+            (cellKeyDown)="onCellKeyDown($event)" [enableCellChangeFlash]="true" [postSort]="postSort"
+            (gridReady)="onGridReady($event)" suppressHorizontalScroll="true">
+          </ag-grid-angular>
+          <ul class="pagination" *ngIf="noOfPages>1">
+            <li (click)="onBtFirst()" [ngClass]="{'disabled': currentPage == 0}">
+              <a>First</a>
+            </li>
+            <li (click)="onBtPrevious()" [ngClass]="{'disabled': currentPage == 0}">
+              <a>Previous</a>
+            </li>
+            <li *ngIf="showLeftEllipse" (click)="constructOldArray()">
+              <a>...</a>
+            </li>
+            <ng-container *ngFor="let page of pageArray; let i = index">
+              <li [ngClass]="{'active': currentPage == page-1}">
+                <a (click)="onGoToPage(page-1)">{{page}}</a>
+              </li>
+            </ng-container>
+            <li *ngIf="noOfPages>10 && showRightEllipse" (click)="constructNewArray()">
+              <a>...</a>
+            </li>
+            <li (click)="onBtNext()" [ngClass]="{'disabled': currentPage == (noOfPages-1)}">
+              <a>Next</a>
+            </li>
+            <li (click)="onBtLast()" [ngClass]="{'disabled': currentPage == (noOfPages-1)}">
+              <a>Last</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="isUnitLoaded && rowData.length==0">
+      <p>No Discipline Created Yet.</p>
+    </div>  
+  
+  </div>

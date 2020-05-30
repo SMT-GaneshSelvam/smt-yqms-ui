@@ -1,12 +1,12 @@
 <div class="expendCollapse arrow_style">
     <div  class="filterheading">
         <p (click)="showHideFilter = !showHideFilter" class="hide_label">
-            <span class="glyphicon" [ngClass]="showHideFilter ? 'glyphicon glyphicon-minus' : 
-    'glyphicon glyphicon-plus'"></span>{{showHideFilter ? "Hide" : "Show"}}</p>
+            <span class="glyphicon" [ngClass]="showHideFilter ? 'glyphicon glyphicon-minus-sign' : 
+    'glyphicon glyphicon-plus-sign'"></span>{{showHideFilter ? " Hide" : " Show"}}</p>
     </div>
 </div>
 
-<div class="filterContainer" *ngIf="showHideFilter" style="font-size: 0.75rem;">
+<div class="filterContainer" *ngIf="showHideFilter" style="font-size: 1.25rem;">
 
     <div class="d-flex flex-nowrap">
 
