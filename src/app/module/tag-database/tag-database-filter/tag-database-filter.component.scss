@@ -8,7 +8,9 @@
     margin-top: 0px;
     label {
       color: #252525;
-      font-weight: normal;
+
+      font-size: 1.1em;
+      font-family: GT-Walsheim-Pro-Regular !important;
       margin-top: 6px;
     }
     .arrow_style {
@@ -39,8 +41,9 @@
       cursor: pointer;
       line-height: 20px;
       color: #419137;
-      font-size: 14px;
-      font-weight: bold;
+
+      font-size: 1.1em;
+      font-family: GT-Walsheim-Pro-Regular !important;
     }
   }
   
@@ -48,14 +51,17 @@
   span.glyphicon.glyphicon-refresh {
     margin-right: 10px;
     color: #419137;
-    font-size: 14px;
-    font-weight: bold;
+
+    font-size: 1.1em;
+    font-family: GT-Walsheim-Pro-Regular !important;
     display: inline;
     cursor: pointer;
   }
   
   .hide_label {
-    font-size: 14px;
+
+    font-size: 1.1em;
+    font-family: GT-Walsheim-Pro-Regular !important;
     margin: 0 10px 0 0;
   }
   
@@ -66,9 +72,8 @@
   
   .expendCollapse .filterheading {
     color: #419137;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.1em;
+    font-family: GT-Walsheim-Pro-Regular !important;
     display: block;
     cursor: pointer;
   }

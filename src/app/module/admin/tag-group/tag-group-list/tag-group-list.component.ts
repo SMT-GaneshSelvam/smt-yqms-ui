@@ -337,7 +337,7 @@ export class TagGroupListComponent implements OnInit {
     private goToEdit = (params) => {
       this.cellClicked = this.gridOptions.api.getSelectedRows();
       let Id = params.data.id;
-      this.router.navigate(['tagGroup/edit/' + Id]);
+      this.router.navigate(['admin/tagGroup/edit/' + Id]);
     }
   
     private goToView = (params) => {

@@ -12,7 +12,7 @@
               </div>
             </div>
       <div class="col-md-4">
-        <div class="ofis-guest-login-container" style="font-size: 3rem;">
+        <div class="ofis-guest-login-container" style="font-size: 2rem !important">
           <div class="ofis-guest-login-inner-container">
             <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" method="POST"  accept-charset="UTF-8" class="form-signin ofis-guest-login-form">
               <input name="_token" type="hidden" value="qpxIEMLZjkIt9uEEI5QWzMAPotHGHsrUluCKaVVI">
@@ -21,29 +21,29 @@
   
               <div class="form-group">
                 <label for="email" class="control-label">Email</label>
-                <input class="form-control" formControlName="email" placeholder="Email Address" name="email" type="email" autofocus="autofocus" id='email'>
+                <input style="font-size: 2rem !important" class="form-control" formControlName="email" placeholder="Email Address" name="email" type="email" autofocus="autofocus" id='email'>
               </div>
   
               <div class="form-group">
                 <label for="password" class="control-label">Password</label>
-                <input class="form-control" formControlName="password" placeholder="Password" name="password" type="password" value="" id="password">
+                <input style="font-size: 2rem !important" class="form-control" formControlName="password" placeholder="Password" name="password" type="password" value="" id="password">
               </div>
 
               <div class="form-group">
                 <label for="database" class="control-label">Database</label>
-                <input class="form-control" formControlName="database" placeholder="Database" name="database" type="text" value="" id="database">
+                <input style="font-size: 2rem !important" class="form-control" formControlName="database" placeholder="Database" name="database" type="text" value="" id="database">
               </div>
 
 
-              <div class="form-group">
+              <div class="form-group" style="margin-top: 30px;">
                 <label>
-                  <input type="checkbox" formControlName="agreeTo" id="ofis-guest-policy-agreement"> I agree to the&nbsp;
+                  <input style="font-size: 2rem !important" type="checkbox" formControlName="agreeTo" id="ofis-guest-policy-agreement"> I agree to the&nbsp;
                 </label>
                 <a class="ofis-privacy-policy-link" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
               </div>
   
               <div class="form-group ofis-guest-submit">
-                <input type='submit' (onClick)="onSubmit" class="btn btn-lg btn-primary btn-block" id="ofis-guest-login-submit" value="LOGIN">
+                <input style="font-size: 2rem !important" type='submit' (onClick)="onSubmit" class="btn btn-lg btn-primary btn-block" id="ofis-guest-login-submit" value="LOGIN">
               </div>
             </form>
           </div>
@@ -53,7 +53,7 @@
     <div class="row" style="font-size: 3rem;">
       <div class="col-md-12">
         <h2>A deep insight into our processes</h2>
-        <p>
+        <p style="margin-top: 20px;">
           <strong>Inspects and approves deployed equipments by confirming specifications, conducting visual and measurement tests, and marking and tracking equipments not deployed propely.</strong>
         </p>
       </div>

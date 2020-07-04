@@ -8,23 +8,23 @@ const routes: Routes = [
   },
   {
     path: 'unit',
-    loadChildren: './module/admin/unit/unit.module#UnitModule',
+    loadChildren: './unit/unit.module#UnitModule',
   },
   {
     path: 'location',
-    loadChildren: './module/admin/location/location.module#LocationModule',
+    loadChildren: './location/location.module#LocationModule',
   },
   {
     path: 'type',
-    loadChildren: './module/admin/type/type.module#TypeModule',
+    loadChildren: './type/type.module#TypeModule',
   },
   {
     path: 'discipline',
-    loadChildren: './module/admin/discipline/discipline.module#DisciplineModule',
+    loadChildren: './discipline/discipline.module#DisciplineModule',
   },
   {
     path: 'tagGroup',
-    loadChildren: './module/admin/tag-group/tag-group.module#TagGroupModule',
+    loadChildren: './tag-group/tag-group.module#TagGroupModule',
   }
   
 ];

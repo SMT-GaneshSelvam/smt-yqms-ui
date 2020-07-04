@@ -270,7 +270,7 @@ export class TypeListComponent implements OnInit {
     private goToEdit = (params) => {
       this.cellClicked = this.gridOptions.api.getSelectedRows();
       let Id = params.data.id;
-      this.router.navigate(['type/edit/' + Id]);
+      this.router.navigate(['admin/type/edit/' + Id]);
     }
   
     private goToView = (params) => {

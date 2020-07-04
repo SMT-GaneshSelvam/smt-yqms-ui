@@ -7,23 +7,23 @@
 
     <div class="col-3">
 
-        <div class="d-flex justify-content-between">
-
-            <button type="button" class="btn btn-primary rounded-0">Expand
-            </button>
-
-            <button type="button" class="btn btn-primary rounded-0">Refresh
-            </button>
-
-            <button type="button" class="btn btn-primary rounded-0">Show Loc
-            </button>
-
+        <div
+            style="padding: 5px 24px;color: #fff;background-color: #007bff;display: block;margin-top: 5px;text-align: center;">
+            <span>Show Location</span>
         </div>
 
         <div
             style="padding: 5px 24px;color: #fff;background-color: #007bff;display: block;margin-top: 5px;">
-            <span class="vertical-line"></span>
-            <span>Description</span>
+
+
+            <div class="d-flex">
+
+                <span class="flex-grow-1">Description</span>
+                <a><span class="glyphicon glyphicon-refresh">&nbsp;</span></a>
+                <a><span class="glyphicon glyphicon glyphicon-folder-open">&nbsp;</span></a>
+
+            </div>
+
         </div>
 
         <div style="overflow-y: scroll;">
@@ -40,19 +40,22 @@
 
     <div class="col-9">
 
-        <div class="d-flex justify-content-start">
-            <button type="button" class="btn btn-primary rounded-0 border-right">Refresh
+        <div class="d-flex justify-content-between flex-basis">
+
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Refresh 
             </button>
-            <button type="button" class="btn btn-primary rounded-0 border-right">Tag Details
+      
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Tag Details 
             </button>
-            <button type="button" class="btn btn-primary rounded-0 border-right">Add Selected To New FCR
+
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Add Sel To New FCR
             </button>
-            <button type="button" class="btn btn-primary rounded-0 border-right">Mark Selected Complete
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Mark Sel Complete
             </button>
-            <button type="button" class="btn btn-primary rounded-0 border-right">Export
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Export
             </button>
-            <button type="button" class="btn btn-primary rounded-0 border-right">Reset Grid
-            </button>
+            <button style="width: 130px;" type="button" class="btn btn-secondary">Reset Grid
+            </button> 
         </div>
 
         <app-cheetsheets-filter (submit)="onSubmit($event)"></app-cheetsheets-filter>

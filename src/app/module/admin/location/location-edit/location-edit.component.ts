@@ -88,7 +88,7 @@ export class LocationEditComponent implements OnInit {
   
         this.locationService.commonPOSTCall(AppSettingsModule.location, this.postData).subscribe((data: any) => {
           this.locationService.alertMessage = 'Location updated successfully';
-          this._router.navigate(['location']);
+          this._router.navigate(['admin/location']);
         },
           (err) => {
             if (err.status == 500 || err.status == 400) {
@@ -108,7 +108,7 @@ export class LocationEditComponent implements OnInit {
   
   
     private navigateBack = () => {
-      this._router.navigate(['location']);
+      this._router.navigate(['admin/location']);
     }
     public closeMsg = (msg) => {
       if (msg)

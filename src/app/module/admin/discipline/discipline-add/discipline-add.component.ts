@@ -71,7 +71,7 @@ export class DisciplineAddComponent implements OnInit {
     
           this.disciplineService.commonPOSTCall(AppSettingsModule.discipline, this.postData).subscribe((data: any) => {
             this.disciplineService.alertMessage = 'Discipline added successfully';
-            this._router.navigate(['/discipline']);
+            this._router.navigate(['admin/discipline']);
           },
             (err) => {
               if (err.status == 500 || err.status == 400) {
@@ -91,7 +91,7 @@ export class DisciplineAddComponent implements OnInit {
     
     
       private navigateBack = () => {
-        this._router.navigate(['/discipline']);
+        this._router.navigate(['admin/discipline']);
       }
       public closeMsg = (msg) => {
         if(msg)

@@ -77,7 +77,7 @@ export class TagGroupAddComponent implements OnInit {
   
         this.tagGroupService.commonPOSTCall(AppSettingsModule.tagGroup, this.postData).subscribe((data: any) => {
           this.tagGroupService.alertMessage = 'Tag Group added successfully';
-          this._router.navigate(['/tagGroup']);
+          this._router.navigate(['admin/tagGroup']);
         },
           (err) => {
             if (err.status == 500 || err.status == 400) {
@@ -97,7 +97,7 @@ export class TagGroupAddComponent implements OnInit {
   
   
     private navigateBack = () => {
-      this._router.navigate(['/tagGroup']);
+      this._router.navigate(['admin/tagGroup']);
     }
     public closeMsg = (msg) => {
       if(msg)

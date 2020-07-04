@@ -71,7 +71,7 @@ export class TypeAddComponent implements OnInit {
   
         this.typeService.commonPOSTCall(AppSettingsModule.type, this.postData).subscribe((data: any) => {
           this.typeService.alertMessage = 'Type added successfully';
-          this._router.navigate(['/type']);
+          this._router.navigate(['admin/type']);
         },
           (err) => {
             if (err.status == 500 || err.status == 400) {
@@ -91,7 +91,7 @@ export class TypeAddComponent implements OnInit {
   
   
     private navigateBack = () => {
-      this._router.navigate(['/type']);
+      this._router.navigate(['admin/type']);
     }
     public closeMsg = (msg) => {
       if(msg)

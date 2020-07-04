@@ -87,7 +87,7 @@ export class UnitAddComponent implements OnInit {
 
       this.unitService.commonPOSTCall(AppSettingsModule.unit, this.postData).subscribe((data: any) => {
         this.unitService.alertMessage = 'Unit added successfully';
-        this._router.navigate(['/unit']);
+        this._router.navigate(['admin/unit']);
       },
         (err) => {
           if (err.status == 500 || err.status == 400) {
@@ -107,7 +107,7 @@ export class UnitAddComponent implements OnInit {
 
 
   private navigateBack = () => {
-    this._router.navigate(['/unit']);
+    this._router.navigate(['admin/unit']);
   }
   public closeMsg = (msg) => {
     if(msg)

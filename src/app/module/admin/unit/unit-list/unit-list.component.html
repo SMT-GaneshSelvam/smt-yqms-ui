@@ -48,7 +48,7 @@
   <div *ngIf="rowData && rowData.length>0">
     <div class="table">
       <div>
-        <ag-grid-angular style="width: 100%;" class="ag-theme-balham" suppressNoRowsOverlay="true" id="myGrid"
+        <ag-grid-angular style="width: 100%;font-family: GT-Walsheim-Pro-Regular !important;" class="ag-theme-balham" suppressNoRowsOverlay="true" id="myGrid"
           [rowData]="rowData" class="ag-theme-balham" [gridAutoHeight]="true" [columnDefs]="gridOptions.columnDefs"
           [gridOptions]="gridOptions" [rowData]="rowData" [pagination]="true" [paginationPageSize]="paginationPageSize"
           [enableSorting]="true" suppressResize="false" [suppressPaginationPanel]="true" copyHeadersToClipboard=true

@@ -270,7 +270,7 @@ export class DisciplineListComponent implements OnInit {
       private goToEdit = (params) => {
         this.cellClicked = this.gridOptions.api.getSelectedRows();
         let Id = params.data.id;
-        this.router.navigate(['discipline/edit/' + Id]);
+        this.router.navigate(['admin/discipline/edit/' + Id]);
       }
     
       private goToView = (params) => {

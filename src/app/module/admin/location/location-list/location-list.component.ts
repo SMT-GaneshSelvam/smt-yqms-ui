@@ -408,7 +408,7 @@ export class LocationListComponent implements OnInit {
   private goToEdit = (params) => {
     this.cellClicked = this.gridOptions.api.getSelectedRows();
     let Id = params.data.id;
-    this.router.navigate(['location/edit/' + Id]);
+    this.router.navigate(['admin/location/edit/' + Id]);
   }
 
   private goToView = (params) => {
