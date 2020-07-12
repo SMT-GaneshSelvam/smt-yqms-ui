@@ -7,7 +7,7 @@
 
 <div class="wrapper d-flex align-items-stretch" *ngIf="page === 'Other'">
 
-  <nav id="sidebar" style="font-family: sans-serif;font-size: 11px;">
+  <nav id="sidebar" style="font-family: sans-serif;font-size: 1.1em;">
     <div class="custom-menu">
       <button
         type="button"
@@ -15,7 +15,7 @@
         (click)="customToggle()"
         class="btn btn-primary"
       >
-        <i class="fa fa-bars"></i>
+        <i style="font-size: 2.5em;" class="glyphicon glyphicon-pushpin"></i>
         <span class="sr-only">Toggle Menu</span>
       </button>
     </div>
@@ -175,7 +175,28 @@
 
               <li class="nav-item">
                 <a class="nav-link p-1" routerLink='/admin'>
-                  <span class="glyphicon glyphicon-cog">&nbsp;</span> Admin 
+                  <span class="glyphicon glyphicon-cog">&nbsp;</span> Project Info 
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item custom_li">
+          <a
+            class="nav-link collapsed py-1"
+            href="#submenu5sub5"
+            data-toggle="collapse"
+            data-target="#submenu5sub5"
+            ><span>Data Import</span></a
+          >
+          <div id="submenu5sub5" aria-expanded="false">
+            <ul class="flex-column nav pl-4">
+
+              <li class="nav-item">
+                <a class="nav-link p-1" routerLink='/import'>
+                  <span class="glyphicon glyphicon-download-alt">&nbsp;</span> Import 
                 </a>
               </li>
 
@@ -187,20 +208,8 @@
     </div>
   </nav>
 
-  <div id="content" class="p-4 p-md-5 pt-5">    
+  <div id="content" class="p-md-5">    
        
-<!--         <div class="row" style="margin-top: -47px;">
-    
-            <button type="button" class="btn btn-secondary btn-space">My YQMS 
-              <span style="font-size: 1rem">×</span>
-            </button>
-    
-            <button type="button" class="btn btn-success btn-space">Outstanding Checksheets 
-              <span style="font-size: 1rem">×</span>
-            </button>
-    
-        </div>   -->
-
         <router-outlet></router-outlet>
         
   </div>

@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'rfi', loadChildren: './module/rfi/rfi.module#RfiModule', data: [{ PageName: "Other" }] },
   { path: 'tagdatabase', loadChildren: './module/tag-database/tag-database.module#TagDatabaseModule', data: [{ PageName: "Other" }] },
   { path: 'workpacks', loadChildren: './module/workpacks/workpacks.module#WorkpacksModule', data: [{ PageName: "Other" }] },
-  { path: 'admin', loadChildren: './module/admin/admin.module#AdminModule', data: [{ PageName: "Other" }] }
+  { path: 'admin', loadChildren: './module/admin/admin.module#AdminModule', data: [{ PageName: "Other" }] },
+  { path: 'import', loadChildren: './module/import/import.module#ImportModule', data: [{ PageName: "Other" }]}
   ];
 
 @NgModule({

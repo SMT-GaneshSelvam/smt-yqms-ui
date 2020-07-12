@@ -1,0 +1,120 @@
+<div class="row">
+
+    <input type="file" (change)="onFileChange($event)" />
+    <div id="output"></div>
+
+    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12" style="margin-left: -5px" >
+
+    <div class="row" style="margin-top: 10px;">
+
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="tool-1" id="Unit" checked (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Unit">
+                <i class='uil uil-line-alt'></i>
+                Unit
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Locations" id="Locations" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Locations">
+                <i class='uil uil-vector-square'></i>
+                Locations
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Types" id="Types" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Types">
+                <i class='uil uil-vector-square'></i>
+                Types
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Tags" id="Tags" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Tags">
+                <i class='uil uil-vector-square'></i>
+                Tags
+            </label>
+        </div>
+    
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Systems" id="System Table" (change)="selectTable($event)"> 
+            <label class="for-checkbox-tools" for="Systems">
+                <i class='uil uil-vector-square'></i>
+                Systems
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Areas" id="Areas" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Areas">
+                <i class='uil uil-vector-square'></i>
+                Areas
+            </label>
+        </div>
+    
+        
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Sub Types" id="Sub Types" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Sub Types">
+                <i class='uil uil-vector-square'></i>
+                Sub Types
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Tags Custom Data" id="Tags Custom Data" (change)="selectTable($event)"> 
+            <label class="for-checkbox-tools" for="Tags Custom Data">
+                <i class='uil uil-vector-square'></i>
+                Tags Custom Data
+            </label>
+        </div>
+    
+    </div>               
+    
+    <div class="row" style="margin-bottom: -3px;">
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="SubSystems" id="SubSystems" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="SubSystems">
+                <i class='uil uil-line-alt'></i>
+                SubSystems
+            </label>
+        </div>
+    
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="SubAreas" id="SubAreas" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="SubAreas">
+                <i class='uil uil-vector-square'></i>
+                SubAreas
+            </label>
+        </div>    
+   
+        <div class="col-sm-3 offset-md-3 col-md-3 col-xs-3 col-lg-3" >
+            <input class="checkbox-tools" type="radio" name="Tag Components" id="Tag Components" (change)="selectTable($event)">
+            <label class="for-checkbox-tools" for="Tag Components">
+                <i class='uil uil-vector-square'></i>
+                Tag Components
+            </label>
+        </div>
+    
+    </div>
+
+   </div>  
+
+</div>
+
+
+
+
+
+                
+                
+
+                
+                

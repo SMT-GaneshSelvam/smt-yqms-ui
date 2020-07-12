@@ -35,5 +35,6 @@ export class AppSettingsModule {
   public static type = "http://localhost:8080/type";
   public static discipline = "http://localhost:8080/discipline";
   public static tagGroup = "http://localhost:8080/taggroup";
+  public static imporData = "http://localhost:8080/importdata";
 
 }
