@@ -4,51 +4,64 @@
 
 <div class="d-flex justify-content-between flex-basis">
 
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;" type="button" class="btn btn-secondary">Clear Down
+    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+        background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Clear Down
         Database
     </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;" type="button" class="btn btn-secondary">Prevent Clear
+    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+        background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Prevent Clear
         Down Database
     </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;" type="button" class="btn btn-secondary">Get All Import
+    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+        background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Get All Import
         Sheets
     </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;" type="button" class="btn btn-secondary">Export All
+    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+        background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Export All
     </button>
 
 </div>
+
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="font-size: 1.5rem;">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Database Hierarchy</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Documents</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Punchlists, TQs and NCRs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Workpacks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Users</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+        <div class="col-sm-12">
+
+        <div class="tab-content clearfix">
+            <app-database-hierarchy (dataImportedEvent)="renderGrid($event)"></app-database-hierarchy>
+        </div>
+
+       </div>
+    
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">786+~ Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">SAT SLT SPT SST Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+  </div>
 
 <div id="fgTab" class="tabContainer col-md-12 col-sm-12">
 
     <div class="row">
 
-        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+        <div class="col-sm-12">
 
-            <button style="width: 200px;font-size: 1.5rem;margin-top: 15px;height: 40px;" type="button"
-                class="btn btn-secondary">Get Import Sheet
-            </button>
-
-            <button style="width: 200px;font-size: 1.5rem;margin-top: 15px;height: 40px;" type="button"
-                class="btn btn-secondary">Import
-            </button>
-
-            <button style="width: 200px;font-size: 1.5rem;margin-top: 15px;height: 40px;" type="button"
-                class="btn btn-secondary">Verify
-            </button>
-
-            <button style="width: 200px;font-size: 1.5rem;margin-top: 15px;height: 40px;" type="button"
-                class="btn btn-secondary">Export
-            </button>
-
-            <button style="width: 200px;font-size: 1.5rem;margin-top: 15px;height: 40px;" type="button"
-                class="btn btn-secondary">Clear Down All Items
-            </button>
-
-        </div>
-
-        <div class="col-sm-10">
-
-            <ul class="nav nav-pills">
+<!--             <ul class="nav nav-pills justify-content-center" style="font-size: 1.5rem;">
                 <li routerLinkActive="active"><a class="nav-link" routerLink="database-hierarchy"
                         data-toggle="tab">Database
                         Hierarchy</a></li>
@@ -61,11 +74,10 @@
                 <li routerLinkActive="active"><a class="nav-link" routerLink="/farmer-group/management"
                         data-toggle="tab">Users
                         and Community</a></li>
-
-            </ul>
-            <div class="tab-content clearfix">
+            </ul> -->
+<!--             <div class="tab-content clearfix">
                 <app-database-hierarchy (dataImportedEvent)="renderGrid($event)"></app-database-hierarchy>
-            </div>
+            </div> -->
 
         </div>
 
@@ -75,8 +87,12 @@
 
 <div class="row">
 
-    <ag-grid-angular style="width: 100%; height: 400px;" class="ag-theme-alpine" [rowData]="rowData"
+    <div class="col-sm-12">
+
+    <ag-grid-angular style="width: 100%; height: 330px;" class="ag-theme-balham" [rowData]="rowData"
         [columnDefs]="columnDefs">
     </ag-grid-angular>
+
+    </div>
 
 </div>

@@ -1,9 +1,211 @@
 <div class="row">
 
-    <input type="file" (change)="onFileChange($event)" />
+        <input type="file" (change)="onFileChange($event)" />
     <div id="output"></div>
 
-    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12" style="margin-left: -5px" >
+    <div class="row tasks-grid">
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="unit">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-th-list">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Units</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-glass">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Systems</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-leaf">&nbsp;</span>
+                    <div class="caption">
+                        <h4>SubSystems</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-book">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Locations</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-briefcase">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Areas</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="unit">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-tower">&nbsp;</span>
+                    <div class="caption">
+                        <h4>SubAreas</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-tree-conifer">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Types</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-hourglass">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Sub Types</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-grain">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Tags</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-glass">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Tags Custom Data</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2">
+            <a routerLink="questions">
+                <div class="thumbnail">
+                    <span class="category glyphicon glyphicon-object-align-right">&nbsp;</span>
+                    <div class="caption">
+                        <h4>Tag Components</h4>
+                    </div>
+                    <div style="margin-left: 18px;">
+                        <span class="action glyphicon glyphicon-th">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-import">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-check">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-export">&nbsp;</span>
+                        <span class="action glyphicon glyphicon-trash">&nbsp;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div>
+
+            <!--     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12" style="margin-left: -5px" >
 
     <div class="row" style="margin-top: 10px;">
 
@@ -105,16 +307,6 @@
     
     </div>
 
-   </div>  
+   </div>   -->
 
-</div>
-
-
-
-
-
-                
-                
-
-                
-                
+        </div>
