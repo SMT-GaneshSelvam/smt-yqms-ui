@@ -12,6 +12,7 @@ export class AppSettingsModule {
   public static getAllChecksheets =  "http://localhost:8080/checksheet";
   public static getAllPunchLists =  "http://localhost:8080/punchlist";
   public static getAllSystems = "http://localhost:8080/system";
+  public static getSystemsByUnit = "http://localhost:8080/unit/system";
   public static getSubSystemsBySystem = "http://localhost:8080/subsystem";
   public static getAllLocations = "http://localhost:8080/location";
   public static getAreasByLocation = "http://localhost:8080/area";  
@@ -36,5 +37,6 @@ export class AppSettingsModule {
   public static discipline = "http://localhost:8080/discipline";
   public static tagGroup = "http://localhost:8080/taggroup";
   public static imporData = "http://localhost:8080/importdata";
+  public static recordCount = "http://localhost:8080/importdata/";
 
 }

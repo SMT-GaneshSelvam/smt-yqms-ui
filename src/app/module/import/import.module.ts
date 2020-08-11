@@ -4,10 +4,10 @@ import { ImportComponent } from './import/import.component';
 import { ImportRoutingModule } from './import-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
-import { DatabaseHierarchyComponent } from './database-hierarchy/database-hierarchy/database-hierarchy.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-  declarations: [ImportComponent, DatabaseHierarchyComponent],
+  declarations: [ImportComponent, TableComponent],
   imports: [
     ImportRoutingModule,
     CommonModule,    

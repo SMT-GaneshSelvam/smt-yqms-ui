@@ -51,7 +51,6 @@ export class CheetsheetsFilterComponent implements OnInit {
 
 
     this.checksheetService.getAllUnits().subscribe((data: any) => { this.unitList = data });
-    this.checksheetService.getAllSystems().subscribe((data: any) => { this.systemList = data });
     this.checksheetService.getAllLocations().subscribe((data: any) => { this.locationList = data });
     this.checksheetService.getAllContractors().subscribe((data: any) => { this.contractorList = data });
     this.checksheetService.getAllTypes().subscribe((data: any) => { this.typeList = data });
@@ -72,8 +71,12 @@ export class CheetsheetsFilterComponent implements OnInit {
     };
   }
 
+  onUnitChange(item: any) {
+    this.checksheetService.getSystemsByUnit(_.map(this.unitSelectedList, 'id')).subscribe((data: any) => { this.systemList = data });
+  }
+
   onSystemChange(item: any) {
-    this.checksheetService.getSubSystemsBySystem(_.map(this.systemSelectedList, 'id')).subscribe((data: any) => { this.subSystemList = data });
+    this.checksheetService.getSubSystemsByUnitAndSystem(_.map(this.unitSelectedList, 'id'),_.map(this.systemSelectedList, 'id')).subscribe((data: any) => { this.subSystemList = data });
   }
 
   onLocationChange(item: any) {

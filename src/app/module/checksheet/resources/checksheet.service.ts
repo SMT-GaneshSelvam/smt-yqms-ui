@@ -42,10 +42,15 @@ export class ChecksheetService {
   public getAllSystems() {
     let url = AppSettingsModule.getAllSystems;
     return this._http.get(url)
+  }  
+
+  public getSystemsByUnit(unit) {
+    let url = AppSettingsModule.getSystemsByUnit + "?unitRef=" + unit;
+    return this._http.get(url)
   }
 
-  public getSubSystemsBySystem(system) {
-    let url = AppSettingsModule.getSubSystemsBySystem + "?systemList=" + system;
+  public getSubSystemsByUnitAndSystem(unit,system) {
+    let url = AppSettingsModule.getSubSystemsBySystem + "?unitRef=" + unit + "&systemRef=" + system;
     return this._http.get(url)
   }
   

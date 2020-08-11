@@ -1,98 +1,219 @@
-<h6 style="color: #dc3545;margin: 0px -15px;font-size: 1.25rem">
-    SMT Import
-</h6>
+<h1 style="font-size: 40px;">
+  <span class="glyphicon glyphicon-cloud-upload" style="color: #419137;font-size: 60px;"></span> Import Data</h1>
+
 
 <div class="d-flex justify-content-between flex-basis">
 
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+  <button style="width: 310px;font-size: 1.5rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Clear Down
-        Database
-    </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+    Database
+  </button>
+  <button style="width: 310px;font-size: 1.5rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Prevent Clear
-        Down Database
-    </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+    Down Database
+  </button>
+  <button style="width: 310px;font-size: 1.5rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Get All Import
-        Sheets
-    </button>
-    <button style="width: 310px;font-size: 1.5rem;height: 40px;
+    Sheets
+  </button>
+  <button style="width: 310px;font-size: 1.5rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Export All
-    </button>
+  </button>
 
 </div>
 
 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="font-size: 1.5rem;">
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Database Hierarchy</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Documents</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Punchlists, TQs and NCRs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Workpacks</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Users</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <li class="nav-item">
+    <a class="nav-link active" id="database-tab" data-toggle="tab" href="#database" role="tab" aria-controls="database"
+      aria-selected="true">Database Hierarchy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="document-tab" data-toggle="tab" href="#document" role="tab" aria-controls="document"
+      aria-selected="false">Documents</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="ptn-tab" data-toggle="tab" href="#ptn" role="tab" aria-controls="ptn"
+      aria-selected="false">Punchlists, TQs and NCRs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="workpack-tab" data-toggle="tab" href="#workpack" role="tab" aria-controls="workpack"
+      aria-selected="false">Workpacks</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="uc-tab" data-toggle="tab" href="#uc" role="tab" aria-controls="uc"
+      aria-selected="false">Users and Community</a>
+  </li>
+</ul>
 
-        <div class="col-sm-12">
+<div class="tab-content" id="myTabContent">
 
-        <div class="tab-content clearfix">
-            <app-database-hierarchy (dataImportedEvent)="renderGrid($event)"></app-database-hierarchy>
+  <div class="tab-pane fade in active" id="database" role="tabpanel" aria-labelledby="database-tab">
+
+    <div class="col-sm-12">
+
+      <div class="tab-content clearfix">
+        <div class="row" style="display: block;">
+
+          <div class="row">
+
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Units'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Systems'"
+              [glyphicon]="'glyphicon-leaf'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'SubSystems'"
+              [glyphicon]="'glyphicon-book'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Locations'"
+              [glyphicon]="'glyphicon-briefcase'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Areas'"
+              [glyphicon]="'glyphicon-tower'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'SubAreas'"
+              [glyphicon]="'glyphicon-tree-conifer'"></app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Types'" [glyphicon]="'glyphicon-hourglass'">
+            </app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Sub Types'" [glyphicon]="'glyphicon-th-list'">
+            </app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags'" [glyphicon]="'glyphicon-grain'">
+            </app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags Custom Data'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tag Components'"
+              [glyphicon]="'glyphicon-object-align-right'"></app-table>
+
+          </div>
+
         </div>
+      </div>
 
-       </div>
-    
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">786+~ Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">SAT SLT SPT SST Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+
   </div>
+  <div class="tab-pane fade in" id="document" role="tabpanel" aria-labelledby="document-tab">
 
-<div id="fgTab" class="tabContainer col-md-12 col-sm-12">
+    <div class="col-sm-12">
 
-    <div class="row">
+      <div class="tab-content clearfix">
 
-        <div class="col-sm-12">
+        <div class="row" style="display: block;">
 
-<!--             <ul class="nav nav-pills justify-content-center" style="font-size: 1.5rem;">
-                <li routerLinkActive="active"><a class="nav-link" routerLink="database-hierarchy"
-                        data-toggle="tab">Database
-                        Hierarchy</a></li>
-                <li routerLinkActive="active"><a class="nav-link" routerLink="/farmer-group/training"
-                        data-toggle="tab">Documents</a></li>
-                <li routerLinkActive="active"><a class="nav-link" routerLink="/farmer-group/management"
-                        data-toggle="tab">Punchlists, TQs and NCRs</a></li>
-                <li routerLinkActive="active"><a class="nav-link" routerLink="/farmer-group/management"
-                        data-toggle="tab">Workpacks</a></li>
-                <li routerLinkActive="active"><a class="nav-link" routerLink="/farmer-group/management"
-                        data-toggle="tab">Users
-                        and Community</a></li>
-            </ul> -->
-<!--             <div class="tab-content clearfix">
-                <app-database-hierarchy (dataImportedEvent)="renderGrid($event)"></app-database-hierarchy>
-            </div> -->
+          <div class="row">
+
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Checksheet Masters'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Preservation Masters'"
+              [glyphicon]="'glyphicon-leaf'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Drawings'"
+              [glyphicon]="'glyphicon-book'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Check Matrix'"
+              [glyphicon]="'glyphicon-briefcase'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Pres Matrix'"
+              [glyphicon]="'glyphicon-tower'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Drawing Matrix'"
+              [glyphicon]="'glyphicon-tree-conifer'"></app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Elec. Checksheet Items'"
+              [glyphicon]="'glyphicon-th-list'"></app-table>
+
+          </div>
 
         </div>
 
+
+      </div>
+
     </div>
+
+  </div>
+  <div class="tab-pane fade in" id="ptn" role="tabpanel" aria-labelledby="profile-tab">
+
+    <div class="col-sm-12">
+
+      <div class="tab-content clearfix">
+
+
+        <div class="row" style="display: block;">
+
+          <div class="row">
+
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Punchlists'"
+              [glyphicon]="'glyphicon-hourglass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Punch Common Items'"
+              [glyphicon]="'glyphicon-grain'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Technical Queries'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'NCRs'"
+              [glyphicon]="'glyphicon-object-align-right'"></app-table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="tab-pane fade in" id="workpack" role="tabpanel" aria-labelledby="workpack-tab">
+
+    <div class="col-sm-12">
+
+      <div class="tab-content clearfix">
+
+        <div class="row" style="display: block;">
+
+          <div class="row">
+
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Workpacks'"
+              [glyphicon]="'glyphicon-hourglass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Workpack Tags'"
+              [glyphicon]="'glyphicon-grain'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Workpack ITRs/FTRs'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="tab-pane fade in" id="uc" role="tabpanel" aria-labelledby="uc-tab">
+
+    <div class="col-sm-12">
+
+      <div class="tab-content clearfix">
+
+        <div class="row" style="display: block;">
+
+          <div class="row">
+
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Responsible Groups'"
+              [glyphicon]="'glyphicon-hourglass'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Responsible People'"
+              [glyphicon]="'glyphicon-grain'"></app-table>
+            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Qualifications'"
+              [glyphicon]="'glyphicon-glass'"></app-table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
 <div class="row">
 
-    <div class="col-sm-12">
+  <div class="col-sm-12">
 
-    <ag-grid-angular style="width: 100%; height: 330px;" class="ag-theme-balham" [rowData]="rowData"
-        [columnDefs]="columnDefs">
+    <ag-grid-angular style="width: 100%; height: 250px;" class="ag-theme-balham" [rowData]="rowData"
+      [columnDefs]="columnDefs">
     </ag-grid-angular>
 
-    </div>
+  </div>
 
 </div>

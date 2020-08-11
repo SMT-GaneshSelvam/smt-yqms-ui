@@ -1,17 +1,22 @@
-import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
-import * as XLSX from 'xlsx';
-import { ImportService } from '../../resources/import.service';
+import { Component, OnInit, EventEmitter, Output, ChangeDetectorRef, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImportService } from '../resources/import.service';
+import * as XLSX from 'xlsx';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
 
 @Component({
-  selector: 'app-database-hierarchy',
-  templateUrl: './database-hierarchy.component.html',
-  styleUrls: ['./database-hierarchy.component.scss']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.scss']
 })
-export class DatabaseHierarchyComponent implements OnInit {
+export class TableComponent implements OnInit {
 
+
+  @Input() table: String;
+  @Input() glyphicon: String;
   @Output() dataImportedEvent = new EventEmitter<string>();
+
+  count :any;
 
   requestBody = {};
 
@@ -20,6 +25,19 @@ export class DatabaseHierarchyComponent implements OnInit {
   constructor(private router: Router, private importService: ImportService, private _cd: ChangeDetectorRef) { }
 
   ngOnInit() {
+
+    this.importService.commonGETCall(AppSettingsModule.recordCount+this.table).subscribe((data: any) => {
+      this.count = data;
+    },
+      (err) => {
+
+       this.count = 'No Data';
+
+      }
+    );
+
+    this._cd.detectChanges();
+
   }
 
   onFileChange(ev) {
@@ -50,17 +68,16 @@ export class DatabaseHierarchyComponent implements OnInit {
 
       this.requestBody["tableName"] = tableName;
       this.requestBody["data"] = jsonData[tableName];
+      for (const prop in this.requestBody["data"] ) {
+        for (const prop2 in this.requestBody['data'][prop]) {
+          this.requestBody['data'][prop][prop2] = this.requestBody['data'][prop][prop2].replace(/'/g, "\\\'");
+        }
+      }
 
       this.importData();
 
     }
     reader.readAsBinaryString(file);
-  }
-
-  selectTable($event){
-
-    console.log("SMT "+$event.target.id);
-
   }
 
   importData() {
