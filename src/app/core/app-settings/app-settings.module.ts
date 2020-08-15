@@ -38,5 +38,6 @@ export class AppSettingsModule {
   public static tagGroup = "http://localhost:8080/taggroup";
   public static imporData = "http://localhost:8080/importdata";
   public static recordCount = "http://localhost:8080/importdata/";
+  public static deleteTable = "http://localhost:8080/importdata/";
 
 }

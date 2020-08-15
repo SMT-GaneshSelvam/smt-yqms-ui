@@ -1,5 +1,5 @@
-<h1 style="font-size: 40px;">
-  <span class="glyphicon glyphicon-cloud-upload" style="color: #419137;font-size: 60px;"></span> Import Data</h1>
+<h1 style="font-size: 40px; margin-top: 20px;">
+  <span class="glyphicon glyphicon-download-alt" style="color: #419137;font-size: 60px;"></span> Import Data</h1>
 
 
 <div class="d-flex justify-content-between flex-basis">
@@ -47,7 +47,7 @@
 
 <div class="tab-content" id="myTabContent">
 
-  <div class="tab-pane fade in active" id="database" role="tabpanel" aria-labelledby="database-tab">
+  <div class="tab-pane active" id="database" role="tabpanel" aria-labelledby="database-tab">
 
     <div class="col-sm-12">
 
@@ -72,7 +72,7 @@
             </app-table>
             <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Sub Types'" [glyphicon]="'glyphicon-th-list'">
             </app-table>
-            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags'" [glyphicon]="'glyphicon-grain'">
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags'" [glyphicon]="'glyphicon-tags'">
             </app-table>
             <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags Custom Data'"
               [glyphicon]="'glyphicon-glass'"></app-table>
@@ -87,7 +87,7 @@
     </div>
 
   </div>
-  <div class="tab-pane fade in" id="document" role="tabpanel" aria-labelledby="document-tab">
+  <div class="tab-pane" id="document" role="tabpanel" aria-labelledby="document-tab">
 
     <div class="col-sm-12">
 
@@ -122,7 +122,7 @@
     </div>
 
   </div>
-  <div class="tab-pane fade in" id="ptn" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="tab-pane" id="ptn" role="tabpanel" aria-labelledby="profile-tab">
 
     <div class="col-sm-12">
 
@@ -151,7 +151,7 @@
     </div>
 
   </div>
-  <div class="tab-pane fade in" id="workpack" role="tabpanel" aria-labelledby="workpack-tab">
+  <div class="tab-pane" id="workpack" role="tabpanel" aria-labelledby="workpack-tab">
 
     <div class="col-sm-12">
 
@@ -177,7 +177,7 @@
     </div>
 
   </div>
-  <div class="tab-pane fade in" id="uc" role="tabpanel" aria-labelledby="uc-tab">
+  <div class="tab-pane" id="uc" role="tabpanel" aria-labelledby="uc-tab">
 
     <div class="col-sm-12">
 

@@ -26,6 +26,13 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
 
+    this.getRecordCount();
+
+    this._cd.detectChanges();
+
+  }
+
+  getRecordCount(){
     this.importService.commonGETCall(AppSettingsModule.recordCount+this.table).subscribe((data: any) => {
       this.count = data;
     },
@@ -35,8 +42,23 @@ export class TableComponent implements OnInit {
 
       }
     );
+  }
 
-    this._cd.detectChanges();
+  deleteTable(){
+
+    this.importService.commonDELETECall(AppSettingsModule.deleteTable+this.table).subscribe((data: any) => {
+      this.count = 'No Data';
+    },
+    (err) => {
+      if (err.status == 401) {
+        this.router.navigate(['/login']);
+      }
+      //this.errorText = err.error.message || err.error.errorMsg;
+      //this.error = true;
+    }
+  );
+
+
 
   }
 
@@ -108,6 +130,8 @@ export class TableComponent implements OnInit {
       this.importService.gridData['rowData'] = this.rowData;
 
       this.dataImportedEvent.emit('Imported');
+
+      this.getRecordCount();
 
       this._cd.detectChanges;
 

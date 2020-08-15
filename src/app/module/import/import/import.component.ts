@@ -11,6 +11,7 @@ export class ImportComponent implements OnInit {
   constructor(private importService: ImportService, private _cd: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this._cd.detectChanges();
   }
 
   columnDefs : Array<any>;
