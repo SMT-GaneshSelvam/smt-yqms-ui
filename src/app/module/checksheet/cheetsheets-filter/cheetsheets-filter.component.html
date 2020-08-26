@@ -1,155 +1,172 @@
-<div class="expendCollapse arrow_style">
+<!-- <div class="expendCollapse arrow_style">
     <div  class="filterheading">
         <button type="button" (click)="showHideFilter = !showHideFilter" class="btn-sm btn btn-secondary btn-block" style="margin-top: 5px;font-size: 12.5px;">
             {{showHideFilter ? "Hide Filter Section" : "Show Filter Section"}}</button>
     </div>
-</div>
+</div> -->
 
-<div class="filterContainer" *ngIf="showHideFilter" style="font-size: 1.25rem;overflow-y: hidden;">
+<div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne" style="padding-top: 2px;padding-bottom: 2px;">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" 
+          aria-controls="collapseOne" (click)="showHideFilter = !showHideFilter" style="font-size: 12.5px;">
+            {{showHideFilter ? "Hide Filter" : "Show Filter"}}
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <div class="filterContainer" *ngIf="showHideFilter" style="font-size: 1.25rem;overflow-y: hidden;">
 
-    <div class="d-flex flex-nowrap">
-
-        <div class="d-flex flex-column mr-1 ml-1">
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Unit:</label>
-                <ng-multiselect-dropdown [data]="unitList" [(ngModel)]="unitSelectedList" [settings]="dropdownSettings"
-                    (onSelect)="onUnitChange($event)" (onDeSelect)="onUnitChange($event)" (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
+                <div class="d-flex flex-nowrap justify-content-between">
+            
+                    <div class="d-flex flex-column mr-1 ml-1">
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Unit:</label>
+                            <ng-multiselect-dropdown [data]="unitList" [(ngModel)]="unitSelectedList" [settings]="dropdownSettings"
+                                (onSelect)="onUnitChange($event)" (onDeSelect)="onUnitChange($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">System:</label>
+                            <ng-multiselect-dropdown [data]="systemList" [(ngModel)]="systemSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onSystemChange($event)" (onDeSelect)="onSystemChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">SubSystem:</label>
+                            <ng-multiselect-dropdown [data]="subSystemList" [(ngModel)]="subSystemSelectedList"
+                                [settings]="dropdownSettings" (onChange)="onSubSystemChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                    </div>
+            
+                    <div class="d-flex flex-column mr-1">
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Location:</label>
+                            <ng-multiselect-dropdown [data]="locationList" [(ngModel)]="locationSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onLocationChange($event)" (onDeSelect)="onLocationChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Area:</label>
+                            <ng-multiselect-dropdown [data]="areaList" [(ngModel)]="areaSelectedList" [settings]="dropdownSettings"
+                                (onSelect)="onAreaChange($event)" (onDeSelect)="onAreaChange($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Sub Area:</label>
+                            <ng-multiselect-dropdown [data]="subAreaList" [(ngModel)]="subAreaSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onSubAreaChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Contractor:</label>
+                            <ng-multiselect-dropdown [data]="contractorList" [(ngModel)]="contractorSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onContractorChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                    </div>
+            
+                    <div class="d-flex flex-column mr-1">
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Type:</label>
+                            <ng-multiselect-dropdown [data]="typeList" [(ngModel)]="typeSelectedList" [settings]="dropdownSettings"
+                                (onSelect)="onTypeChange($event)" (onDeSelect)="onTypeChange($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">SubType:</label>
+                            <ng-multiselect-dropdown [data]="subTypeList" [(ngModel)]="subTypeSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onSubTypeChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">TagGroup:</label>
+                            <ng-multiselect-dropdown [data]="tagGroupList" [(ngModel)]="tagGroupSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onTagGroupChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                    </div>
+            
+                    <div class="d-flex flex-column mr-3">
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">ChecksheetType:</label>
+                            <ng-multiselect-dropdown [data]="checkSheetTypeList" [(ngModel)]="checkSheetTypeSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onChecksheetTypeChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Discipline:</label>
+                            <ng-multiselect-dropdown [data]="disciplineList" [(ngModel)]="disciplineSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onDisciplineChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                        <div style="width: 220px !important">
+                            <label style="margin-bottom: 0px;margin-top: 5px;">Check Ref:</label>
+                            <ng-multiselect-dropdown [data]="checkSheetRefList" [(ngModel)]="checkSheetRefSelectedList"
+                                [settings]="dropdownSettings" (onSelect)="onCheckSheetRefChange($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+                <div class="d-flex flex-nowrap">
+            
+                    <div class="ml-1 mb-1">
+                        <button class="btn btn-success mr-1" style="width: 75px;height: 35px;font-size: 12.5px;" type="button"
+                            (click)="onSubmitFilter()">Submit</button>
+                        <button class="btn btn-success" style="width: 75px;height: 35px;font-size: 12.5px;" type="button"
+                            (click)="onResetFilter()">Reset</button>
+                    </div>
+            
+                    <div class="checkbox" style="margin-top: 10px;margin-left: 80px;">
+                        <label><input type="checkbox" value=""> Include Discriptors</label>
+                    </div>
+            
+                    <div class="checkbox ml-5" style="margin-top: 10px;">
+                        <label><input type="checkbox" value=""> Show Custom Data</label>
+                    </div>
+            
+                    <div class="checkbox ml-5" style="margin-top: 10px;">
+                        <label><input type="checkbox" value=""> Show Outstanding Only</label>
+                    </div>
+            
+                </div>
+            
             </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">System:</label>
-                <ng-multiselect-dropdown [data]="systemList" [(ngModel)]="systemSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onSystemChange($event)" (onDeSelect)="onSystemChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">SubSystem:</label>
-                <ng-multiselect-dropdown [data]="subSystemList" [(ngModel)]="subSystemSelectedList"
-                    [settings]="dropdownSettings" (onChange)="onSubSystemChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
         </div>
-
-        <div class="d-flex flex-column mr-1">
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Location:</label>
-                <ng-multiselect-dropdown [data]="locationList" [(ngModel)]="locationSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onLocationChange($event)" (onDeSelect)="onLocationChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Area:</label>
-                <ng-multiselect-dropdown [data]="areaList" [(ngModel)]="areaSelectedList" [settings]="dropdownSettings"
-                    (onSelect)="onAreaChange($event)" (onDeSelect)="onAreaChange($event)" (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Sub Area:</label>
-                <ng-multiselect-dropdown [data]="subAreaList" [(ngModel)]="subAreaSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onSubAreaChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Contractor:</label>
-                <ng-multiselect-dropdown [data]="contractorList" [(ngModel)]="contractorSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onContractorChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-        </div>
-
-        <div class="d-flex flex-column mr-1">
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Type:</label>
-                <ng-multiselect-dropdown [data]="typeList" [(ngModel)]="typeSelectedList" [settings]="dropdownSettings"
-                    (onSelect)="onTypeChange($event)" (onDeSelect)="onTypeChange($event)" (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">SubType:</label>
-                <ng-multiselect-dropdown [data]="subTypeList" [(ngModel)]="subTypeSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onSubTypeChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">TagGroup:</label>
-                <ng-multiselect-dropdown [data]="tagGroupList" [(ngModel)]="tagGroupSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onTagGroupChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-        </div>
-
-        <div class="d-flex flex-column mr-3">
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">ChecksheetType:</label>
-                <ng-multiselect-dropdown [data]="checkSheetTypeList" [(ngModel)]="checkSheetTypeSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onChecksheetTypeChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Discipline:</label>
-                <ng-multiselect-dropdown [data]="disciplineList" [(ngModel)]="disciplineSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onDisciplineChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-            <div style="width: 190px !important">
-                <label style="margin-bottom: 0px;margin-top: 5px;">Check Ref:</label>
-                <ng-multiselect-dropdown [data]="checkSheetRefList" [(ngModel)]="checkSheetRefSelectedList"
-                    [settings]="dropdownSettings" (onSelect)="onCheckSheetRefChange($event)"
-                    (onSelectAll)="onSelectAll($event)">
-                </ng-multiselect-dropdown>
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
-    <div class="d-flex flex-nowrap">
-
-        <div class="ml-1 mb-1">
-            <button class="btn btn-success mr-1" style="width: 75px;height: 35px;font-size: 12.5px;" type="button"
-                (click)="onSubmitFilter()">Submit</button>
-            <button class="btn btn-success" style="width: 75px;height: 35px;font-size: 12.5px;" type="button"
-                (click)="onResetFilter()">Reset</button>
-        </div>
-
-        <div class="checkbox ml-5">
-            <label><input type="checkbox" value=""> Include Discriptors</label>
-        </div>
-
-        <div class="checkbox ml-5">
-            <label><input type="checkbox" value=""> Show Custom Data</label>
-        </div>
-
-        <div class="checkbox ml-5">
-            <label><input type="checkbox" value=""> Show Outstanding Only</label>
-        </div>
-
-    </div>
-
-</div>

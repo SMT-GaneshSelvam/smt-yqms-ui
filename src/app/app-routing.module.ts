@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './module/login-module/landing-page/login/login.component';
+import { ChecksheetComponent } from './module/mobile/checksheet/checksheet.component';
+import { MobileModule } from './module/mobile/mobile.module';
 
 const routes: Routes = [
+  { path: 'mobile', component: ChecksheetComponent, data: [{ PageName: "MobilePage" }] },
   { path: '', component: LoginComponent, data: [{ PageName: "LoginPage" }] },
   { path: 'myyqms', loadChildren: './module/my-yqms/my-yqms.module#MyYqmsModule', data: [{ PageName: "Other" }] },
   { path: 'dashboard', loadChildren: './module/dashboard/dashboard.module#DashboardModule', data: [{ PageName: "Other" }] },
@@ -16,7 +19,7 @@ const routes: Routes = [
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),MobileModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

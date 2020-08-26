@@ -5,6 +5,10 @@
   
 </div>
 
+<div *ngIf="page === 'MobilePage'">
+    <router-outlet></router-outlet>
+</div>
+
 <div class="wrapper d-flex align-items-stretch" *ngIf="page === 'Other'">
 
   <nav id="sidebar" style="font-family: sans-serif;font-size: 1.1em;">
@@ -115,11 +119,6 @@
                   <span class="glyphicon glyphicon-book">&nbsp;</span> Preservation (0)
                 </a>
               </li>
-<!--               <li class="nav-item">
-                <a class="nav-link p-1" href="#">
-                  <span class="glyphicon glyphicon-retweet">&nbsp;</span> Loop Tags (0)
-                </a>
-              </li> -->
             </ul>
           </div>
         </li>
@@ -135,8 +134,8 @@
           <div id="submenu4sub4" aria-expanded="false">
             <ul class="flex-column nav pl-4">
               <li class="nav-item">
-                <a class="nav-link p-1" href="#">
-                  <span class="glyphicon glyphicon-hourglass">&nbsp;</span> Certificates (0)
+                <a class="nav-link p-1" routerLink='/mobile'>
+                  <span class="glyphicon glyphicon-hourglass">&nbsp;</span> Mobile (0)
                 </a>
               </li>
             </ul>
