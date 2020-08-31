@@ -92,7 +92,7 @@ export class TableComponent implements OnInit {
       this.requestBody["data"] = jsonData[tableName];
       for (const prop in this.requestBody["data"] ) {
         for (const prop2 in this.requestBody['data'][prop]) {
-          this.requestBody['data'][prop][prop2] = this.requestBody['data'][prop][prop2].replace(/'/g, "\\\'");
+          this.requestBody['data'][prop][prop2] = this.requestBody['data'][prop][prop2].toString().replace(/'/g, "\\\'");
         }
       }
 
