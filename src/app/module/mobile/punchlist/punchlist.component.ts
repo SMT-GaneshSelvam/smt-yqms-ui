@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-punchlist',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PunchlistComponent implements OnInit {
 
-  constructor() { }
+  constructor( private bsModalRef: BsModalRef) { }
 
   ngOnInit() {
   }

@@ -95,15 +95,10 @@ export class ChecksheetComponent implements OnInit {
   }
 
   viewPunchList(id) {
-    this.initialConfig = {
-      initialState: {
-        title: 'Punch List'
-      },
-      ignoreBackdropClick: true,
-      backdrop: true,
-      class: 'gray modal-lg modal-dialog'
-    };
-    this.bsModalRef = this.modalService.show(PunchlistComponent, Object.assign({}, this.initialConfig)).
+    const initialState = {
+      parameter: 2019,
+  };
+    this.bsModalRef = this.modalService.show(PunchlistComponent, Object.assign({}, {initialState})).
       content.action.subscribe((value) => {
       }, err => {
       });
