@@ -379,7 +379,7 @@
                         <td>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name={{check.lineNo}} id="inlineRadio2"
-                                    value="option2" (click)="showPunchList(check.id)">
+                                    value="option2" (click)="viewPunchList(check.lineNo)">
                             </div>
                         </td>
                         <td>
@@ -406,7 +406,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let punch of punchList">
-                            <th scope="row">{{punch.id}}</th>
+                            <th scope="row">{{punch.lineNo}}</th>
                             <td colspan="8">{{punch.description}}</td>
                             <td>{{punch.typeCode}}</td>
                             <td>{{punch.category}}</td>

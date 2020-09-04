@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckSheetService } from '../resources/checksheet.service';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { PunchlistComponent } from '../punchlist/punchlist.component';
 
 @Component({
   selector: 'app-checksheet',
@@ -8,6 +11,9 @@ import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module
   styleUrls: ['./checksheet.component.scss']
 })
 export class ChecksheetComponent implements OnInit {
+
+  public initialConfig = {};
+  bsModalRef: BsModalRef;
 
   punchListVisible = false
 
@@ -49,7 +55,7 @@ export class ChecksheetComponent implements OnInit {
 
 
 
-  constructor(private checksheetService: CheckSheetService) { }
+  constructor(private checksheetService: CheckSheetService, private modalService: BsModalService) { }
 
   ngOnInit() {
 
@@ -86,6 +92,21 @@ export class ChecksheetComponent implements OnInit {
   showPunchList(checkIndex){
     this.punchListVisible = true;
     this.punchList = this.punchLists[checkIndex];
+  }
+
+  viewPunchList(id) {
+    this.initialConfig = {
+      initialState: {
+        title: 'Punch List'
+      },
+      ignoreBackdropClick: true,
+      backdrop: true,
+      class: 'gray modal-lg modal-dialog'
+    };
+    this.bsModalRef = this.modalService.show(PunchlistComponent, Object.assign({}, this.initialConfig)).
+      content.action.subscribe((value) => {
+      }, err => {
+      });
   }
 
 }
