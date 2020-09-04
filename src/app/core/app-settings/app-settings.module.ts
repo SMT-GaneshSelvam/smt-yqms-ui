@@ -39,5 +39,7 @@ export class AppSettingsModule {
   public static imporData = "http://localhost:8080/importdata";
   public static recordCount = "http://localhost:8080/importdata/";
   public static deleteTable = "http://localhost:8080/importdata/";
+  public static checkSheetItem = "http://localhost:8080/checkSheetItem/";
+
 
 }

@@ -359,32 +359,32 @@
 
                     <ng-container *ngFor="let check of checks">
 
-                        <tr *ngIf="check.id==0"> 
+                        <tr *ngIf="check.lineNo==0"> 
 
-                            <td colspan="20" style="font-weight: bolder;">{{check.category}}</td>
+                            <td colspan="20" style="font-weight: bolder;">{{check.group}}</td>
 
                         </tr>
 
                       
-                        <tr *ngIf="check.id!=0">
+                        <tr *ngIf="check.lineNo!=0">
 
-                        <th scope="row">{{check.id}}</th>
-                        <td colspan="8">{{check.name}}</td>
+                        <th scope="row">{{check.lineNo}}</th>
+                        <td colspan="8">{{check.description}}</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name={{check.id}} id="inlineRadio1"
+                                <input class="form-check-input" type="radio" name={{check.lineNo}} id="inlineRadio1"
                                     value="option1" (click)="pushNext()">
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name={{check.id}} id="inlineRadio2"
+                                <input class="form-check-input" type="radio" name={{check.lineNo}} id="inlineRadio2"
                                     value="option2" (click)="showPunchList(check.id)">
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name={{check.id}} id="inlineRadio3"
+                                <input class="form-check-input" type="radio" name={{check.lineNo}} id="inlineRadio3"
                                     value="option3" (click)="pushNext()">
                             </div>
                         </td>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CheckSheetService } from '../resources/checksheet.service';
+import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
 
 @Component({
   selector: 'app-checksheet',
@@ -16,6 +18,8 @@ export class ChecksheetComponent implements OnInit {
   totalCategories = ["IDENTIFICATION","INSTALLATION","ENVIRONMENT"];
 
   punchList = [];
+
+  totalChecks = [];
 
   punchLists = [[
     new punch(1, 'desc1','typecode1','cate1'),
@@ -42,37 +46,38 @@ export class ChecksheetComponent implements OnInit {
   categoryCursor = 0;
   cursor = 0;
 
-  totalChecks = [
-      new check("IDENTIFICATION", 0, ''),
-      new check("IDENTIFICATION", 1, 'Equipment is clearly marked with acceptable Ex compliance plate.'),
-      new check("IDENTIFICATION", 2, 'Equipment Gas Group and Temperature Class is correct for the Area'),
-      new check("IDENTIFICATION", 3, 'Equipment Ex Technique appropriate for Area Classification'),
-      new check("INSTALLATION", 0, ''),
-      new check("INSTALLATION", 4, 'Installation in accordance with "conditions of use" on certificate (X on cert)'),
-      new check("INSTALLATION", 5, 'Verify cable inner insulation has no " Cold Flow".'),
-      new check("INSTALLATION", 6, 'Sealing gaskets or compounds on glasses/windows are satisfactory'),
-      new check("INSTALLATION", 7, 'Equipotential Bonding appear to be satisfactory'),
-      new check("ENVIRONMENT", 0, ''),
-      new check("ENVIRONMENT", 8, 'Equipment protected against corrosion/weather/vibration/etc.'),
-      new check("ENVIRONMENT", 9, 'No undue accumulation of dust and moisture.  '),
-      new check("ENVIRONMENT", 10, 'Exd conduits seals are fitted to all conduits and satisfactorily sealed')
-  ]
 
 
-  constructor() { }
+
+  constructor(private checksheetService: CheckSheetService) { }
 
   ngOnInit() {
-    this.checks = [];
-   
-    this.checks.push(this.totalChecks[this.cursor]);
-    this.checks.push(this.totalChecks[++this.cursor]);
+
+    this.checksheetService.commonGETCall(AppSettingsModule.checkSheetItem + 'E22A').subscribe((data: any) => {
+
+      var group = "";
+      data.forEach((item, index) => {
+        if (group!==item.group){
+          this.totalChecks.push(new check(item.group, 0, ''));
+        }
+        group=item.group;
+        this.totalChecks.push(new check(item.group, item.lineNo, item.description));        
+      });
+      this.checks = [];
+      this.checks.push(this.totalChecks[this.cursor]);
+      this.checks.push(this.totalChecks[++this.cursor]);
+    },
+      (err) => {
+      });
+
+
   }
 
   pushNext(){
     
     this.checks.push(this.totalChecks[++this.cursor]); 
 
-    if((this.totalChecks[this.cursor].id==0)){
+    if((this.totalChecks[this.cursor].lineNo==0)){
       this.checks.push(this.totalChecks[++this.cursor]); 
     }
 
@@ -87,9 +92,9 @@ export class ChecksheetComponent implements OnInit {
 
 export class check {
   constructor(
-    public category: string,
-    public id: number,
-    public name: string) { }
+    public group: string,
+    public lineNo: number,
+    public description: string) { }
 }
 
 export class punch {
