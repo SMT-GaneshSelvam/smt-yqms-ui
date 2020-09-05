@@ -7,15 +7,15 @@ import { MobileModule } from './module/mobile/mobile.module';
 const routes: Routes = [
   { path: 'mobile', component: ChecksheetComponent, data: [{ PageName: "MobilePage" }] },
   { path: '', component: LoginComponent, data: [{ PageName: "LoginPage" }] },
-  { path: 'myyqms', loadChildren: () => import('./module/my-yqms/my-yqms.module').then(m => m.MyYqmsModule), data: [{ PageName: "Other" }] },
-  { path: 'dashboard', loadChildren: () => import('./module/dashboard/dashboard.module').then(m => m.DashboardModule), data: [{ PageName: "Other" }] },
-  { path: 'checksheet', loadChildren: () => import('./module/checksheet/checksheet.module').then(m => m.ChecksheetModule), data: [{ PageName: "Other" }] },
-  { path: 'punchlists', loadChildren: () => import('./module/punchlists/punchlist.module').then(m => m.PunchlistModule), data: [{ PageName: "Other" }] },
-  { path: 'rfi', loadChildren: () => import('./module/rfi/rfi.module').then(m => m.RfiModule), data: [{ PageName: "Other" }] },
-  { path: 'tagdatabase', loadChildren: () => import('./module/tag-database/tag-database.module').then(m => m.TagDatabaseModule), data: [{ PageName: "Other" }] },
-  { path: 'workpacks', loadChildren: () => import('./module/workpacks/workpacks.module').then(m => m.WorkpacksModule), data: [{ PageName: "Other" }] },
-  { path: 'admin', loadChildren: () => import('./module/admin/admin.module').then(m => m.AdminModule), data: [{ PageName: "Other" }] },
-  { path: 'import', loadChildren: () => import('./module/import/import.module').then(m => m.ImportModule), data: [{ PageName: "Other" }]}
+  { path: 'myyqms', loadChildren: './module/my-yqms/my-yqms.module#MyYqmsModule', data: [{ PageName: "Other" }] },
+  { path: 'dashboard', loadChildren: './module/dashboard/dashboard.module#DashboardModule', data: [{ PageName: "Other" }] },
+  { path: 'checksheet', loadChildren: './module/checksheet/checksheet.module#ChecksheetModule', data: [{ PageName: "Other" }] },
+  { path: 'punchlists', loadChildren: './module/punchlists/punchlist.module#PunchlistModule', data: [{ PageName: "Other" }] },
+  { path: 'rfi', loadChildren: './module/rfi/rfi.module#RfiModule', data: [{ PageName: "Other" }] },
+  { path: 'tagdatabase', loadChildren: './module/tag-database/tag-database.module#TagDatabaseModule', data: [{ PageName: "Other" }] },
+  { path: 'workpacks', loadChildren: './module/workpacks/workpacks.module#WorkpacksModule', data: [{ PageName: "Other" }] },
+  { path: 'admin', loadChildren: './module/admin/admin.module#AdminModule', data: [{ PageName: "Other" }] },
+  { path: 'import', loadChildren: './module/import/import.module#ImportModule', data: [{ PageName: "Other" }]}
   ];
 
 @NgModule({

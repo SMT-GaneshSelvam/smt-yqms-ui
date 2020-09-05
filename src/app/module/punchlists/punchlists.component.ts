@@ -8,7 +8,7 @@ import { PunchlistsGridComponent } from './punchlists-grid/punchlists-grid.compo
 })
 export class PunchlistsComponent implements OnInit {
 
-  @ViewChild(PunchlistsGridComponent) punchlistsGridComponent: PunchlistsGridComponent;
+  @ViewChild(PunchlistsGridComponent, {static: false}) punchlistsGridComponent: PunchlistsGridComponent;
 
   constructor() { }
 
