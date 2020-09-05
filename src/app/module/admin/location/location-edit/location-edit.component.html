@@ -6,25 +6,6 @@
       <button type="button" class="close" (click)="closeMsg('serviceError')"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
     {{serviceError}}</div>
   
-    <div class="alert alert-danger alert-dismissible" role="alert"
-      *ngIf="addQuestionForm && addQuestionForm.invalid && questionValidationFlag">
-      <button type="button" class="close" (click)="closeMsg(null)"><span aria-hidden="true">×</span><span
-          class="sr-only">Close</span></button>
-      <p>The following errors occurred:</p>
-      <ul>
-        <li *ngIf="addQuestionForm.get('question').hasError('required')">The question field is required.</li>
-        <li *ngIf="addQuestionForm.get('question').hasError('whiteSpace')">Whitespace not allowed in question field.</li>
-        <li *ngIf="addQuestionForm.get('position').hasError('required')">The position field is required.</li>
-        <li *ngIf="addQuestionForm.get('display_conf').hasError('required')">The display configuration field is required.
-        </li>
-  
-        <li *ngIf="addQuestionForm.get('question').value && addQuestionForm.get('question').hasError('minlength')">The
-          question field must be at least 2 characters.</li>
-        <li *ngIf="addQuestionForm.get('position').hasError('numberError')">The position must be an integer.</li>  
-      
-      </ul>
-  
-    </div>
   
     <div *ngIf="editLocationForm">
       <div class="row">

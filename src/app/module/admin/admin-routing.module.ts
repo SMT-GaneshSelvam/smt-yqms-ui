@@ -8,23 +8,23 @@ const routes: Routes = [
   },
   {
     path: 'unit',
-    loadChildren: './unit/unit.module#UnitModule',
+    loadChildren: () => import('./unit/unit.module').then(m => m.UnitModule),
   },
   {
     path: 'location',
-    loadChildren: './location/location.module#LocationModule',
+    loadChildren: () => import('./location/location.module').then(m => m.LocationModule),
   },
   {
     path: 'type',
-    loadChildren: './type/type.module#TypeModule',
+    loadChildren: () => import('./type/type.module').then(m => m.TypeModule),
   },
   {
     path: 'discipline',
-    loadChildren: './discipline/discipline.module#DisciplineModule',
+    loadChildren: () => import('./discipline/discipline.module').then(m => m.DisciplineModule),
   },
   {
     path: 'tagGroup',
-    loadChildren: './tag-group/tag-group.module#TagGroupModule',
+    loadChildren: () => import('./tag-group/tag-group.module').then(m => m.TagGroupModule),
   }
   
 ];

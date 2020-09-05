@@ -1,4 +1,3 @@
-<p>SMT</p>
 <form>
 
     <div
@@ -393,39 +392,11 @@
                 </tbody>
             </table>
 
-            <div *ngIf="punchListVisible">
-                <h2>Punchlist </h2>
-                <table class="table table-bordered">                
-                    <thead>
-                        <tr style="background-color: #007bff;color:#fff;font-size: 1.5rem;">
-                            <th scope="col">Item No</th>
-                            <th colspan="8" scope="col">Description of Punch Item</th>
-                            <th scope="col">Punchlist Type Code</th>
-                            <th scope="col">Category (A/B/C) </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let punch of punchList">
-                            <th scope="row">{{punch.lineNo}}</th>
-                            <td colspan="8">{{punch.description}}</td>
-                            <td>{{punch.typeCode}}</td>
-                            <td>{{punch.category}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="d-flex flex-row-reverse">
-                    <button type="button" class="btn btn-secondary"  style="width:75px;font-size: 16px;margin-left: 10px;">Discard</button>
-                    <button type="button" class="btn btn-primary" style="width:75px;font-size: 16px;">Save</button>
-                </div>
-            </div>
-
 
 
         </div>
 
-
-
     </div>
 
-
 </form>
+

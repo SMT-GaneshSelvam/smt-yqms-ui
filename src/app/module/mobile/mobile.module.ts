@@ -4,12 +4,14 @@ import { ChecksheetComponent } from './checksheet/checksheet.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PunchlistComponent } from './punchlist/punchlist.component';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   declarations: [ChecksheetComponent, PunchlistComponent],
   imports: [
     ModalModule.forRoot(),
+    TranslateModule.forRoot(),
     CommonModule
 
   ],
@@ -18,6 +20,10 @@ import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
   ],
   providers: [
     BsModalRef
-] 
+],
+exports: [
+  //...
+  TranslateModule
+], 
 })
 export class MobileModule { }
