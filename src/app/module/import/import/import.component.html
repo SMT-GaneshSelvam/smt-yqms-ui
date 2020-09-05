@@ -4,25 +4,25 @@
 
 <div class="d-flex justify-content-between flex-basis">
 
-  <button style="width: 310px;font-size: 1.5rem;height: 40px;
+  <button style="width: 300px;font-size: 0.75rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Clear Down
     Database
   </button>
-  <button style="width: 310px;font-size: 1.5rem;height: 40px;
+  <button style="width: 300px;font-size: 0.75rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Prevent Clear
     Down Database
   </button>
-  <button style="width: 310px;font-size: 1.5rem;height: 40px;
+  <button style="width: 300px;font-size: 0.75rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Get All Import
     Sheets
   </button>
-  <button style="width: 310px;font-size: 1.5rem;height: 40px;
+  <button style="width: 300px;font-size: 0.75rem;height: 40px;
         background-color: #007bff;border-color: #007bff;color: #fff;" type="button" class="btn">Export All
   </button>
 
 </div>
 
-<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="font-size: 1.5rem;">
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="font-size: 0.75rem;">
   <li class="nav-item">
     <a class="nav-link active" id="database-tab" data-toggle="tab" href="#database" role="tab" aria-controls="database"
       aria-selected="true">Database Hierarchy</a>
@@ -49,24 +49,24 @@
 
   <div class="tab-pane active" id="database" role="tabpanel" aria-labelledby="database-tab">
 
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="padding-left: 0px;padding-right: 0px;">
 
       <div class="tab-content clearfix">
-        <div class="row" style="display: block;">
+        <div class="row" style="display: block;padding-left: 0px;padding-right: 0px;margin-right: 0px;margin-left: 0px;">
 
-          <div class="row">
+          <div class="row" style="padding-left: 0px;padding-right: 0px;margin-right: 0px;margin-left: 0px;">
 
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Units'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Units'"
               [glyphicon]="'glyphicon-glass'"></app-table>
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Systems'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Systems'"
               [glyphicon]="'glyphicon-leaf'"></app-table>
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'SubSystems'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'SubSystems'"
               [glyphicon]="'glyphicon-book'"></app-table>
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Locations'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Locations'"
               [glyphicon]="'glyphicon-briefcase'"></app-table>
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'Areas'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Areas'"
               [glyphicon]="'glyphicon-tower'"></app-table>
-            <app-table class="pt-5" (dataImportedEvent)="renderGrid($event)" [table]="'SubAreas'"
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'SubAreas'"
               [glyphicon]="'glyphicon-tree-conifer'"></app-table>
             <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Types'" [glyphicon]="'glyphicon-hourglass'">
             </app-table>
@@ -74,10 +74,10 @@
             </app-table>
             <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags'" [glyphicon]="'glyphicon-tags'">
             </app-table>
-            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags Custom Data'"
-              [glyphicon]="'glyphicon-glass'"></app-table>
-            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tag Components'"
-              [glyphicon]="'glyphicon-object-align-right'"></app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tags Custom Data'" [glyphicon]="'glyphicon-glass'">           
+            </app-table>
+            <app-table (dataImportedEvent)="renderGrid($event)" [table]="'Tag Components'" [glyphicon]="'glyphicon-object-align-right'">
+            </app-table>
 
           </div>
 

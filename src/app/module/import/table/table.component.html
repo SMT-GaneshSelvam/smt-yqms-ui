@@ -1,21 +1,25 @@
-<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2" class="pl-4 pr-4">
-    <a style="color: #007bff;">
-        <div class="thumbnail">
+<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2" class="pl-0 pr-4">
+    <div class="img-thumbnail">
+        <a style="color: #007bff;">
             <span class="category glyphicon" [ngClass]="[glyphicon]">&nbsp;</span>
             <div class="caption" style="padding-top: 5px;">
-                <h4>{{table}}</h4>
-                <span class="badge badge-pill badge-secondary" style="font-size: 12px;font-weight: bold;">{{" " + count + " "}} </span>
+                <h5>{{table}}</h5>
+                <span class="badge badge-pill badge-secondary"
+                    style="font-size: 12px;font-weight: bold;">{{" " + count + " "}} </span>
             </div>
             <div style="margin-left: 18px;margin-top: 0px;">
                 <span class="action glyphicon glyphicon-th">&nbsp;</span>
-                <span class="action glyphicon glyphicon-import" onclick="document.getElementById('fileInput').click();">&nbsp;
-                    <input id="fileInput" type="file" style="display:none;"  class="inputfile" (change)="onFileChange($event)" />
+                <span class="action glyphicon glyphicon-import"
+                    onclick="document.getElementById('fileInput').click();">&nbsp;
+                    <input id="fileInput" type="file" style="display:none;" class="inputfile"
+                        (change)="onFileChange($event)" />
                 </span>
                 <span class="action glyphicon glyphicon-check">&nbsp;</span>
                 <span class="action glyphicon glyphicon-export">&nbsp;</span>
                 <span class="action glyphicon glyphicon-trash" (click)="deleteTable()">&nbsp;
                 </span>
             </div>
-        </div>
-    </a>
-<div>
+        </a>
+    </div>
+
+    <div>
