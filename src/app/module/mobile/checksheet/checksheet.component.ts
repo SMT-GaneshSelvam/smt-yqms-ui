@@ -70,10 +70,10 @@ export class ChecksheetComponent implements OnInit {
 
 
 
-  viewPunchList(id) {
+  viewPunchList(lineNo) {
 
     const initialState = {
-      parameter: 2019,
+      lineNo: lineNo,
   };
   this.bsModalRef = this.modalService.show(PunchlistComponent, {initialState});
   this.bsModalRef.content.closeBtnName = 'Close';

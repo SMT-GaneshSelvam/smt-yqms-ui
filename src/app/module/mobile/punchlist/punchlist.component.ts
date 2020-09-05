@@ -9,8 +9,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class PunchlistComponent implements OnInit {
   parameter: number;
+  public lineNo;
 
-  punchListVisible = false
 
   constructor(
       private bsModalRef: BsModalRef,
@@ -44,7 +44,7 @@ export class PunchlistComponent implements OnInit {
 
 
   ngOnInit() {
-    this.punchList = this.punchLists[1];
+    this.punchList = this.punchLists[this.lineNo];
   }
 
   confirm() {
@@ -54,11 +54,6 @@ export class PunchlistComponent implements OnInit {
 
   close() {
       this.bsModalRef.hide();
-  }
-
-  showPunchList(checkIndex){
-    this.punchListVisible = true;
-    
   }
 
 }
