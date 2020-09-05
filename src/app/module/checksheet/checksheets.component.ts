@@ -8,7 +8,7 @@ import { CheetsheetsGridComponent } from './cheetsheets-grid/cheetsheets-grid.co
 })
 export class ChecksheetsComponent implements OnInit {
 
-  @ViewChild(CheetsheetsGridComponent, {static: false}) cheetsheetsGridComponent: CheetsheetsGridComponent;
+  @ViewChild(CheetsheetsGridComponent) cheetsheetsGridComponent: CheetsheetsGridComponent;
 
   constructor() { }
 
