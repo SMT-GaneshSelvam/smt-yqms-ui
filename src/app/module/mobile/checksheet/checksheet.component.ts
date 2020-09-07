@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CheckSheetService } from '../resources/checksheet.service';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { PunchlistComponent } from '../punchlist/punchlist.component';
 
 @Component({
@@ -73,10 +73,11 @@ export class ChecksheetComponent implements OnInit {
   viewPunchList(lineNo) {
 
     const initialState = {
-      lineNo: lineNo,
+      lineNo: lineNo
   };
   this.bsModalRef = this.modalService.show(PunchlistComponent, {initialState});
   this.bsModalRef.content.closeBtnName = 'Close';
+  this.bsModalRef.setClass('modal-lg');
 
 }
 
