@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { CheckSheetService } from '../resources/checksheet.service';
+import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
 
 @Component({
   selector: 'app-punchlist',
@@ -10,59 +12,48 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class PunchlistComponent implements OnInit {
   parameter: number;
   public lineNo;
+  public checkSheet;
+  public description;
 
 
   constructor(
-      private bsModalRef: BsModalRef,
-      private translateService: TranslateService
+    private bsModalRef: BsModalRef,
+    private translateService: TranslateService,
+    private checksheetService: CheckSheetService
   ) {
   }
 
   punchList = [];
 
-  punchLists = [[
-    new punch(1, 'desc1','typecode1','cate1'),
-    new punch(2, 'desc2','typecode2','cate2'),
-    new punch(3, 'desc3','typecode3','cate3'),
-    new punch(4, 'desc4','typecode4','cate4')  
-  ],[
-    new punch(1, 'desc5','typecode1','cate1'),
-    new punch(2, 'desc6','typecode2','cate2'),
-    new punch(3, 'desc7','typecode3','cate3'),
-    new punch(4, 'desc8','typecode4','cate4') 
-  ],[
-    new punch(1, 'desc9','typecode1','cate1'),
-    new punch(2, 'desc10','typecode2','cate2'),
-    new punch(3, 'desc11','typecode3','cate3'),
-    new punch(4, 'desc12','typecode4','cate4') 
-  ],[
-    new punch(1, 'desc13','typecode1','cate1'),
-    new punch(2, 'desc14','typecode2','cate2'),
-    new punch(3, 'desc15','typecode3','cate3'),
-    new punch(4, 'desc16','typecode4','cate4') 
-  ]];
 
 
   ngOnInit() {
-    this.punchList = this.punchLists[this.lineNo];
+
+    this.checksheetService.commonGETCall(AppSettingsModule.punchListitem + this.checkSheet + "/" + this.lineNo).subscribe((data: any) => {
+
+      data.forEach((item, index) => {
+        this.punchList.push(new punch(item.punchNo, item.description, '', ''));
+      });
+    },
+      (err) => {
+      });
   }
 
   confirm() {
-      // do stuff
-      this.close();
+    this.close();
   }
 
   close() {
-      this.bsModalRef.hide();
+    this.bsModalRef.hide();
   }
 
 }
 
 export class punch {
   constructor(
-    public id: number,
+    public punchNo: number,
     public description: string,
     public typeCode: string,
     public category: string,
-    ) { }
+  ) { }
 }

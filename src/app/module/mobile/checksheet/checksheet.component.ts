@@ -14,7 +14,7 @@ export class ChecksheetComponent implements OnInit {
 
   public initialConfig = {};
   bsModalRef: BsModalRef;
-
+  checkSheet: String = 'E22A';
 
 
   checks: Array<any>;
@@ -30,6 +30,7 @@ export class ChecksheetComponent implements OnInit {
 
   categoryCursor = 0;
   cursor = 0;
+
 
 
 
@@ -70,10 +71,13 @@ export class ChecksheetComponent implements OnInit {
 
 
 
-  viewPunchList(lineNo) {
+  viewPunchList(lineNo, description) {
 
     const initialState = {
-      lineNo: lineNo
+      lineNo: lineNo,
+      checkSheet: this.checkSheet,
+      description: description
+
   };
   this.bsModalRef = this.modalService.show(PunchlistComponent, {initialState});
   this.bsModalRef.content.closeBtnName = 'Close';

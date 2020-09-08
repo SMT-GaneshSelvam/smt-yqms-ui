@@ -1,6 +1,6 @@
 <div class="modal-header">
 
-    <h4>SMT PunchList</h4>
+    PunchList for {{description}}
 
     <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
 
@@ -18,19 +18,28 @@
 
             <table class="table table-bordered">                
                 <thead>
-                    <tr style="background-color: #007bff;color:#fff;font-size: 0.75rem;">
-                        <th scope="col">Item No</th>
-                        <th colspan="8" scope="col">Description of Punch Item</th>
-                        <th scope="col">Punchlist Type Code</th>
-                        <th scope="col">Category (A/B/C) </th>
+                    <tr style="background-color: #007bff;color:#fff;font-size: 1rem;">
+                        <th scope="col" style="font-weight: normal;">Item No</th>
+                        <th colspan="8" style="font-weight: normal;" scope="col">Description of Punch Item</th>
+                        <th scope="col" style="font-weight: normal;">Punchlist Type Code</th>
+                        <th scope="col" style="font-weight: normal;">Category (A/B/C) </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let punch of punchList">
-                        <th scope="row">{{punch.id}}</th>
+                    <tr *ngFor="let punch of punchList" style="font-size: 0.75rem;">
+                        <th scope="row">{{punch.punchNo}}</th>
                         <td colspan="8">{{punch.description}}</td>
-                        <td>{{punch.typeCode}}</td>
-                        <td>{{punch.category}}</td>
+                        <td>
+                            <input type="text" id="typeCode" name="typeCode">
+                        </td>
+                        <td>  
+                        <select class="form-control" id="sel1">
+                            <option>Select Category</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                          </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>
