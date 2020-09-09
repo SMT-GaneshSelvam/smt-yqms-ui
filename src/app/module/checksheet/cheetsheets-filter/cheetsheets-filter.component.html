@@ -18,20 +18,20 @@
   
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-            <div class="filterContainer" *ngIf="showHideFilter" style="font-size: 0.60rem;overflow-y: hidden;">
+            <div class="filterContainer" *ngIf="showHideFilter" style="font-size: 0.75rem;overflow-y: hidden;">
 
                 <div class="d-flex flex-nowrap justify-content-between">
             
                     <div class="d-flex flex-column mr-1 ml-1">
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Unit:</label>
                             <ng-multiselect-dropdown [data]="unitList" [(ngModel)]="unitSelectedList" [settings]="dropdownSettings"
                                 (onSelect)="onUnitChange($event)" (onDeSelect)="onUnitChange($event)" (onSelectAll)="onSelectAll($event)">
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">System:</label>
                             <ng-multiselect-dropdown [data]="systemList" [(ngModel)]="systemSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onSystemChange($event)" (onDeSelect)="onSystemChange($event)"
@@ -40,7 +40,7 @@
                         </div>
             
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">SubSystem:</label>
                             <ng-multiselect-dropdown [data]="subSystemList" [(ngModel)]="subSystemSelectedList"
                                 [settings]="dropdownSettings" (onChange)="onSubSystemChange($event)"
@@ -52,7 +52,7 @@
             
                     <div class="d-flex flex-column mr-1">
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Location:</label>
                             <ng-multiselect-dropdown [data]="locationList" [(ngModel)]="locationSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onLocationChange($event)" (onDeSelect)="onLocationChange($event)"
@@ -60,14 +60,14 @@
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Area:</label>
                             <ng-multiselect-dropdown [data]="areaList" [(ngModel)]="areaSelectedList" [settings]="dropdownSettings"
                                 (onSelect)="onAreaChange($event)" (onDeSelect)="onAreaChange($event)" (onSelectAll)="onSelectAll($event)">
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Sub Area:</label>
                             <ng-multiselect-dropdown [data]="subAreaList" [(ngModel)]="subAreaSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onSubAreaChange($event)"
@@ -75,7 +75,7 @@
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Contractor:</label>
                             <ng-multiselect-dropdown [data]="contractorList" [(ngModel)]="contractorSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onContractorChange($event)"
@@ -87,14 +87,14 @@
             
                     <div class="d-flex flex-column mr-1">
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Type:</label>
                             <ng-multiselect-dropdown [data]="typeList" [(ngModel)]="typeSelectedList" [settings]="dropdownSettings"
                                 (onSelect)="onTypeChange($event)" (onDeSelect)="onTypeChange($event)" (onSelectAll)="onSelectAll($event)">
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">SubType:</label>
                             <ng-multiselect-dropdown [data]="subTypeList" [(ngModel)]="subTypeSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onSubTypeChange($event)"
@@ -102,7 +102,7 @@
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">TagGroup:</label>
                             <ng-multiselect-dropdown [data]="tagGroupList" [(ngModel)]="tagGroupSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onTagGroupChange($event)"
@@ -114,7 +114,7 @@
             
                     <div class="d-flex flex-column mr-3">
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">ChecksheetType:</label>
                             <ng-multiselect-dropdown [data]="checkSheetTypeList" [(ngModel)]="checkSheetTypeSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onChecksheetTypeChange($event)"
@@ -122,7 +122,7 @@
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Discipline:</label>
                             <ng-multiselect-dropdown [data]="disciplineList" [(ngModel)]="disciplineSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onDisciplineChange($event)"
@@ -130,7 +130,7 @@
                             </ng-multiselect-dropdown>
                         </div>
             
-                        <div style="width: 220px !important">
+                        <div style="width: 215px !important">
                             <label style="margin-bottom: 0px;margin-top: 5px;">Check Ref:</label>
                             <ng-multiselect-dropdown [data]="checkSheetRefList" [(ngModel)]="checkSheetRefSelectedList"
                                 [settings]="dropdownSettings" (onSelect)="onCheckSheetRefChange($event)"

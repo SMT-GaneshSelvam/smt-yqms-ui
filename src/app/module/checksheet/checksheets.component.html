@@ -4,11 +4,6 @@
 <div class="row" style="margin: 6px -27px;font-size: 1.25rem">
 
     <div class="col-3">
-<!-- 
-        <div
-            style="padding: 5px 24px;color: #fff;background-color: #007bff;display: block;margin-top: 5px;text-align: center;">
-            <span>Show Location</span>
-        </div> -->
 
         <div
             style="padding: 6px 0px 6px 5px;color: #fff;background-color: #007bff;display: block;margin-top: 0px;
@@ -28,8 +23,9 @@
         <div style="overflow-y: scroll;">
 
             <div>
-                <kendo-treeview [nodes]="data" textField="text" kendoTreeViewExpandable kendoTreeViewSelectable
-                    kendoTreeViewHierarchyBinding childrenField="items" [(expandedKeys)]="expandedKeys">
+                <kendo-treeview style="height: 640px;"  [nodes]="data" textField="description" kendoTreeViewExpandable kendoTreeViewSelectable
+                    kendoTreeViewHierarchyBinding [(expandedKeys)]="expandedKeys"
+                    [children]="fetchChildren"  [hasChildren]="hasChildren">
                 </kendo-treeview>
             </div>
 
