@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
-import { FilterData } from '../checksheets.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -104,4 +103,22 @@ export class ChecksheetService {
     return this._http.get(url)
   } 
 
+}
+
+export class FilterData {
+  constructor(
+    public unit: Array<any>,
+    public system: Array<any>,
+    public subSystem: Array<any>,
+    public location: Array<any>,
+    public area: Array<any>,
+    public subArea: Array<any>,
+    public contractor: Array<any>,
+    public type: Array<any>,
+    public subType: Array<any>,
+    public tagGroup: Array<any>,
+    public checkSheetType: Array<any>,
+    public discipline: Array<any>,
+    public checkSheetRef: Array<any>,
+  ) { }
 }

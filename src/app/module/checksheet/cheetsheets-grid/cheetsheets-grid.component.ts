@@ -3,7 +3,7 @@ import { GridOptions } from 'ag-grid-community';
 import { Router } from '@angular/router';
 import { ChecksheetService } from '../resources/checksheet.service';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
-import { FilterData } from '../checksheets.component';
+import { FilterData } from '../resources/checksheet.service';
 
 @Component({
   selector: 'app-cheetsheets-grid',

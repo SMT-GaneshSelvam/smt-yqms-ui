@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { GridOptions } from 'ag-grid-community';
 import { Router } from '@angular/router';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
-import { PunchListFilterData } from '../punchlists.component';
+import { PunchListFilterData } from '../resources/punchlist.service';
 import { PunchlistService } from '../resources/punchlist.service';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PunchlistService} from '../resources/punchlist.service';
 import * as _ from 'lodash';
-import { PunchListFilterData } from '../punchlists.component';
+import { PunchListFilterData } from '../resources/punchlist.service';
 
 @Component({
   selector: 'app-punchlists-filter',

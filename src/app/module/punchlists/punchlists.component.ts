@@ -39,20 +39,3 @@ export class PunchlistsComponent implements OnInit {
 
 }
 
-export class PunchListFilterData {
-  constructor(
-    public punchListNumber: number,
-    public unit: Array<any>,
-    public system: Array<any>,
-    public subSystem: Array<any>,
-    public location: Array<any>,
-    public area: Array<any>,
-    public subArea: Array<any>,
-    public category: Array<any>,
-    public defectType: Array<any>,
-    public priority: Array<any>,
-    public discipline: Array<any>,
-    public responsibleGroup: Array<any>,
-    public workpack: Array<any>,
-  ) { }
-}

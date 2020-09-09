@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChecksheetService} from '../resources/checksheet.service';
 import * as _ from 'lodash';
-import { FilterData } from '../checksheets.component';
+import { FilterData } from '../resources/checksheet.service';
 
 @Component({
   selector: 'app-cheetsheets-filter',
