@@ -45,12 +45,12 @@ export class ChecksheetService {
 
   public getSystemsByUnit(unit) {
     let url = AppSettingsModule.getSystemsByUnit + "?unitRef=" + unit;
-    return this._http.get(url)
+    return this._http.get<any[]>(url)
   }
 
   public getSubSystemsByUnitAndSystem(unit,system) {
     let url = AppSettingsModule.getSubSystemsBySystem + "?unitRef=" + unit + "&systemRef=" + system;
-    return this._http.get(url)
+    return this._http.get<any[]>(url)
   }
   
   public getAllLocations() {
