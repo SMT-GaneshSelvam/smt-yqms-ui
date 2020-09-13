@@ -1,9 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { CheckSheetService } from '../resources/checksheet.service';
 import { AppSettingsModule } from 'src/app/core/app-settings/app-settings.module';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { PunchlistComponent } from '../punchlist/punchlist.component';
+import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
   selector: 'app-checksheet',
@@ -35,11 +35,11 @@ export class ChecksheetComponent implements OnInit {
 
 
 
-  constructor(private checksheetService: CheckSheetService, private modalService: BsModalService) { }
+  constructor(private httpService: HttpService, private modalService: BsModalService) { }
 
   ngOnInit() {
 
-    this.checksheetService.commonGETCall(AppSettingsModule.checkSheetItem + 'E22A').subscribe((data: any) => {
+    this.httpService.get(AppSettingsModule.checkSheetItem + 'E22A').subscribe((data: any) => {
 
       var group = "";
       data.forEach((item, index) => {

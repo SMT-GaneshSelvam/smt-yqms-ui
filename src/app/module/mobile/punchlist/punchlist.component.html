@@ -26,21 +26,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let punch of punchList" style="font-size: 0.75rem;">
-                        <th scope="row">{{punch.punchNo}}</th>
-                        <td colspan="8">{{punch.description}}</td>
-                        <td>
-                            <input style="height: 24px;width: 100%;padding:1px;font-size: 0.75rem;" type="text" id="typeCode" name="typeCode">
-                        </td>
-                        <td>  
-                        <select class="form-control" style="height: 24px;width: 100%;padding:1px;font-size: 0.75rem;" id="sel1">
-                            <option>Select Category</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                          </select>
-                        </td>
-                    </tr>
+                        <ng-container [formGroup]="punchListForm"  (ngSubmit)="confirm()">
+                            <ng-container formArrayName = "punchListArray">
+                            <ng-container *ngFor="let punch of punchListArray.controls;let i=index" >
+                                <tr [formGroupName]="i"                          
+                                style="font-size: 0.75rem;">
+                                    <td scope="row"> {{i+1}}</td>
+                                    <td colspan="8">
+                                        <input style="height: 24px; width: 100%;
+                                        padding:1px;font-size: 0.75rem;border: none;" 
+                                        type="text" id="description" name="description" 
+                                        formControlName="description">
+                                    </td>
+                                    <td>
+                                        <input style="height: 24px; width: 100%;
+                                        padding:1px;font-size: 0.75rem;" 
+                                        type="text" id="typeCode" name="typeCode" 
+                                        formControlName="typeCode">
+                                    </td>
+                                    <td>  
+                                        <input style="height: 24px; width: 100%;
+                                        padding:1px;font-size: 0.75rem;" 
+                                        type="text" id="category" name="category" 
+                                        formControlName="category">
+                                    </td>
+                                </tr>
+                            </ng-container>
+                            </ng-container>
+                        </ng-container>
+
+
+
                 </tbody>
             </table>
         </div>
