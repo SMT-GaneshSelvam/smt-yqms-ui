@@ -4,7 +4,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { PunchlistComponent } from '../punchlist/punchlist.component';
 import { HttpService } from 'src/app/core/services/http.service';
-import { MobileService } from '../resources/mobile.service';
+import { Check, MobileService } from '../resources/mobile.service';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-checksheet',
@@ -19,52 +20,83 @@ export class ChecksheetComponent implements OnInit {
   checks: Array<any>;
 
   categories:Array<any> = [];
-
-  totalCategories = ["IDENTIFICATION","INSTALLATION","ENVIRONMENT"];
   totalChecks = [];
-
-
   categoryCursor = 0;
   cursor = 0;
+  checkSheetForm: FormGroup;
 
   constructor(
     private httpService: HttpService, 
     private modalService: BsModalService,
-    private mobileService: MobileService) { }
+    private mobileService: MobileService,
+    private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
 
+    this.initForm();
+
+  }
+
+  initForm = () => {
+
+    this.checkSheetForm = this.formBuilder.group({
+      checkListArray: this.formBuilder.array([
+      ])
+    });
+
     this.httpService.get(AppSettingsModule.checkSheetItem + 'E22A').subscribe((data: any) => {
 
-      var group = "";
+      let group = "";
       data.forEach((item, index) => {
         if (group!==item.group){
-          this.totalChecks.push(new check(item.group, 0, ''));
+          this.totalChecks.push(new Check(item.group, 0, '', false, false, false));
         }
         group=item.group;
-        this.totalChecks.push(new check(item.group, item.lineNo, item.description));        
+        this.totalChecks.push(new Check(item.group, item.lineNo, item.description, false, false, false));        
       });
-      this.checks = [];
-      this.checks.push(this.totalChecks[this.cursor]);
-      this.checks.push(this.totalChecks[++this.cursor]);
+
+      let item = this.totalChecks[this.cursor];        
+      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
+      item = this.totalChecks[++this.cursor];   
+      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
     },
       (err) => {
       });
-
-
+      
   }
+
+  addCheckList(group, lineNo, description, yes, no, na): void {
+    (<FormArray>this.checkSheetForm.get('checkListArray')).push(this.addCheckListGroup(group, lineNo, description, yes, no, na));
+  }
+
+  get checkListArray(): FormArray {
+    return this.checkSheetForm.get('checkListArray') as FormArray;
+  }
+
+  addCheckListGroup(group, lineNo, description, yes, no, na): FormGroup {
+    return this.formBuilder.group({
+      group: group,
+      lineNo: lineNo,
+      description: description,
+      yes: yes,
+      no: no,
+      na: na
+    });
+  }
+
+
 
   pushNext(){
     
-    this.checks.push(this.totalChecks[++this.cursor]); 
+    let item = this.totalChecks[++this.cursor];        
+    this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
 
     if((this.totalChecks[this.cursor].lineNo==0)){
-      this.checks.push(this.totalChecks[++this.cursor]); 
+      item = this.totalChecks[++this.cursor];
+      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na); 
     }
 
   }
-
-
 
   viewPunchList(lineNo, description) {
 
@@ -83,22 +115,26 @@ export class ChecksheetComponent implements OnInit {
 saveCheckSheet (){
 
   console.log("SMT");
+
   this.mobileService.punchListMap.forEach((item,index)=>{
     console.log(item);
   });
+
+  let checkList:Check[] = [];
+
+  this.checkListArray.controls.forEach((item, index) => {
+    let check = new Check(item.value.group, item.value.lineNo, item.value.description, item.value.yes, item.value.no, item.value.na );
+    checkList.push(check);
+  });
+
+  console.log(checkList);
+
+  this.close();
+
 }
 
 close(){
-
 }
 
-
-}
-
-export class check {
-  constructor(
-    public group: string,
-    public lineNo: number,
-    public description: string) { }
 }
 

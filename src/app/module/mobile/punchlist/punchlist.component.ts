@@ -18,7 +18,6 @@ export class PunchlistComponent implements OnInit {
   public description;
   public punchListForm: FormGroup;
 
-
   constructor(
     private bsModalRef: BsModalRef,
     private translateService: TranslateService,
@@ -26,29 +25,28 @@ export class PunchlistComponent implements OnInit {
     private formBuilder: FormBuilder,
     private mobileService: MobileService
   ) {
-    this.punchListForm = this.formBuilder.group({
-      name: [''],
-      punchListArray: this.formBuilder.array([
-      ])
-    });
+
   }
 
   ngOnInit() {
-
-    this.httpService.get(AppSettingsModule.punchListitem + this.checkSheet + "/" + this.lineNo).subscribe((data: any) => {
-
-      this.initForm();
-      data.forEach((item, index) => {
-        this.addPunchList(item.punchNo, item.description);
-      });
-
-    },
-      (err) => {
-      });
+    this.initForm();
   }
 
   initForm = () => {
 
+    this.punchListForm = this.formBuilder.group({
+      punchListArray: this.formBuilder.array([
+      ])
+    });
+
+    this.httpService.get(AppSettingsModule.punchListitem + this.checkSheet + "/" + this.lineNo).subscribe((data: any) => {
+      data.forEach((item, index) => {
+        this.addPunchList(item.punchNo, item.description);
+      });
+    },
+      (err) => {
+      });
+      
   }
 
   addPunchList(punchNo, description): void {
@@ -78,6 +76,8 @@ export class PunchlistComponent implements OnInit {
     });
 
     this.mobileService.punchListMap.set(this.lineNo,punchList);
+
+    this.close();
 
   }
 

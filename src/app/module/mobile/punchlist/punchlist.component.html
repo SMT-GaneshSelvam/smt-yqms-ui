@@ -31,11 +31,7 @@
                             <ng-container *ngFor="let punch of punchListArray.controls;let i=index">
                                 <tr [formGroupName]="i" style="font-size: 0.75rem;">
                                     <td scope="row"> {{i+1}}</td>
-                                    <td colspan="8">
-                                        <input style="height: 24px; width: 100%;
-                                        padding:1px;font-size: 0.75rem;border: none;" type="text" id="description"
-                                            name="description" formControlName="description">
-                                    </td>
+                                    <td colspan="8">{{punch.value.description}}</td>
                                     <td>
                                         <input style="height: 24px; width: 100%;
                                         padding:1px;font-size: 0.75rem;" type="text" id="typeCode" name="typeCode"

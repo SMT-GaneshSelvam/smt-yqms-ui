@@ -21,3 +21,14 @@ export class Punch {
     public category: string,
   ) { }
 }
+
+export class Check {
+  constructor(
+    public group: string,
+    public lineNo: number,
+    public description: string,
+    public yes: Boolean,
+    public no: Boolean,
+    public na: Boolean) { }
+}
+
