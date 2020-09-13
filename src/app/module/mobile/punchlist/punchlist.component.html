@@ -16,7 +16,7 @@
 
         <div class="col-12">
 
-            <table class="table table-bordered">                
+            <table class="table table-bordered">
                 <thead style="line-height: 1rem;">
                     <tr style="background-color: #007bff;color:#fff;font-size: 0.75rem;">
                         <th scope="col" style="font-weight: normal;">Item No</th>
@@ -26,37 +26,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <ng-container [formGroup]="punchListForm"  (ngSubmit)="confirm()">
-                            <ng-container formArrayName = "punchListArray">
-                            <ng-container *ngFor="let punch of punchListArray.controls;let i=index" >
-                                <tr [formGroupName]="i"                          
-                                style="font-size: 0.75rem;">
+                    <ng-container [formGroup]="punchListForm" (ngSubmit)="confirm()">
+                        <ng-container formArrayName="punchListArray">
+                            <ng-container *ngFor="let punch of punchListArray.controls;let i=index">
+                                <tr [formGroupName]="i" style="font-size: 0.75rem;">
                                     <td scope="row"> {{i+1}}</td>
                                     <td colspan="8">
                                         <input style="height: 24px; width: 100%;
-                                        padding:1px;font-size: 0.75rem;border: none;" 
-                                        type="text" id="description" name="description" 
-                                        formControlName="description">
+                                        padding:1px;font-size: 0.75rem;border: none;" type="text" id="description"
+                                            name="description" formControlName="description">
                                     </td>
                                     <td>
                                         <input style="height: 24px; width: 100%;
-                                        padding:1px;font-size: 0.75rem;" 
-                                        type="text" id="typeCode" name="typeCode" 
-                                        formControlName="typeCode">
+                                        padding:1px;font-size: 0.75rem;" type="text" id="typeCode" name="typeCode"
+                                            formControlName="typeCode">
                                     </td>
-                                    <td>  
-                                        <input style="height: 24px; width: 100%;
-                                        padding:1px;font-size: 0.75rem;" 
-                                        type="text" id="category" name="category" 
-                                        formControlName="category">
+                                    <td>
+                                        <select name="category" id="category" formControlName="category" style="height: 24px; width: 100%;
+                                        padding:1px;font-size: 0.75rem;">
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                        </select>
                                     </td>
                                 </tr>
                             </ng-container>
-                            </ng-container>
                         </ng-container>
-
-
-
+                    </ng-container>
                 </tbody>
             </table>
         </div>
@@ -65,7 +61,7 @@
 
     <div class="ibox-row-padding">
 
-        <hr class="hr-line"/>
+        <hr class="hr-line" />
 
     </div>
 
@@ -73,7 +69,8 @@
 
         <div class="col-sm-6 m-b-xs">
 
-            <button type="button" class="btn btn-primary btn-block" (click)="confirm()">{{ 'Save' | translate }}</button>
+            <button type="button" class="btn btn-primary btn-block"
+                (click)="confirm()">{{ 'Save' | translate }}</button>
 
         </div>
 
@@ -86,4 +83,3 @@
     </div>
 
 </div>
-
