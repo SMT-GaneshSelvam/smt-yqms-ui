@@ -402,7 +402,27 @@
                     </ng-container>
                 </tbody>
             </table>
+
+            <div class="row">
+
+                <div class="col-sm-6 m-b-xs">
+        
+                    <button type="button" class="btn btn-primary btn-block"
+                        (click)="saveCheckSheet()">{{ 'Save' }}</button>
+        
+                </div>
+        
+                <div class="col-sm-6">
+        
+                    <button class="btn btn-dark btn-block" type="button" (click)="close()">{{ 'Cancel' }}</button>
+        
+                </div>
+        
+            </div>
+
         </div>
+
+
 
     </div>
 

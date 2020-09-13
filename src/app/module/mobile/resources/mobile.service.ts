@@ -5,9 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class MobileService {
 
-  punchLists:Array<Array<Punch>> = [[]];
-
   constructor() { }
+
+  public punchListMap : Map<number, Punch[]> = new Map<number, Punch[]>();
+
+
   
 }
 

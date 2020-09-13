@@ -4,6 +4,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { PunchlistComponent } from '../punchlist/punchlist.component';
 import { HttpService } from 'src/app/core/services/http.service';
+import { MobileService } from '../resources/mobile.service';
 
 @Component({
   selector: 'app-checksheet',
@@ -15,27 +16,21 @@ export class ChecksheetComponent implements OnInit {
   public initialConfig = {};
   bsModalRef: BsModalRef;
   checkSheet: String = 'E22A';
-
-
   checks: Array<any>;
 
   categories:Array<any> = [];
 
   totalCategories = ["IDENTIFICATION","INSTALLATION","ENVIRONMENT"];
-
-
-
   totalChecks = [];
 
 
   categoryCursor = 0;
   cursor = 0;
 
-
-
-
-
-  constructor(private httpService: HttpService, private modalService: BsModalService) { }
+  constructor(
+    private httpService: HttpService, 
+    private modalService: BsModalService,
+    private mobileService: MobileService) { }
 
   ngOnInit() {
 
@@ -85,6 +80,17 @@ export class ChecksheetComponent implements OnInit {
 
 }
 
+saveCheckSheet (){
+
+  console.log("SMT");
+  this.mobileService.punchListMap.forEach((item,index)=>{
+    console.log(item);
+  });
+}
+
+close(){
+
+}
 
 
 }
