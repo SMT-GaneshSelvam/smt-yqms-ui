@@ -384,23 +384,25 @@
                                     <td>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" 
-                                            name="yes" id="inlineRadio1" 
-                                            value="option1" formControlName="yes" (click)="pushNext()">
+                                            name="valueSelected_{{check.value.lineNo}}"
+                                            value="Yes" formControlName="valueSelected_{{check.value.lineNo}}"
+                                            (click)="pushNext()">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" 
-                                            name="no" id="inlineRadio2" 
-                                            value="option2" formControlName="no" 
+                                            name="valueSelected_{{check.value.lineNo}}"
+                                            value="No" formControlName="valueSelected_{{check.value.lineNo}}"
                                             (click)="viewPunchList(check.value.lineNo, check.description)">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" 
-                                            name="na" id="inlineRadio3" 
-                                            value="option3" formControlName="na" (click)="pushNext()">
+                                            name="valueSelected_{{check.value.lineNo}}"
+                                            value="NA" formControlName="valueSelected_{{check.value.lineNo}}"
+                                            (click)="pushNext()">
                                         </div>
                                     </td>
                                 </tr>

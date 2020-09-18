@@ -49,38 +49,36 @@ export class ChecksheetComponent implements OnInit {
       let group = "";
       data.forEach((item, index) => {
         if (group!==item.group){
-          this.totalChecks.push(new Check(item.group, 0, '', false, false, false));
+          this.totalChecks.push(new Check(item.group, 0, '',''));
         }
         group=item.group;
-        this.totalChecks.push(new Check(item.group, item.lineNo, item.description, false, false, false));        
+        this.totalChecks.push(new Check(item.group, item.lineNo, item.description,''));        
       });
 
       let item = this.totalChecks[this.cursor];        
-      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
+      this.addCheckList(item.group, item.lineNo, item.description, '');
       item = this.totalChecks[++this.cursor];   
-      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
+      this.addCheckList(item.group, item.lineNo, item.description, '');
     },
       (err) => {
       });
       
   }
 
-  addCheckList(group, lineNo, description, yes, no, na): void {
-    (<FormArray>this.checkSheetForm.get('checkListArray')).push(this.addCheckListGroup(group, lineNo, description, yes, no, na));
+  addCheckList(group, lineNo, description, valueSelected): void {
+    (<FormArray>this.checkSheetForm.get('checkListArray')).push(this.addCheckListGroup(group, lineNo, description, valueSelected));
   }
 
   get checkListArray(): FormArray {
     return this.checkSheetForm.get('checkListArray') as FormArray;
   }
 
-  addCheckListGroup(group, lineNo, description, yes, no, na): FormGroup {
+  addCheckListGroup(group, lineNo, description, valueSelected): FormGroup {
     return this.formBuilder.group({
       group: group,
       lineNo: lineNo,
       description: description,
-      yes: yes,
-      no: no,
-      na: na
+      ['valueSelected_' + lineNo]: valueSelected
     });
   }
 
@@ -89,11 +87,11 @@ export class ChecksheetComponent implements OnInit {
   pushNext(){
     
     let item = this.totalChecks[++this.cursor];        
-    this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na);
+    this.addCheckList(item.group, item.lineNo, item.description, this.cursor);
 
     if((this.totalChecks[this.cursor].lineNo==0)){
       item = this.totalChecks[++this.cursor];
-      this.addCheckList(item.group, item.lineNo, item.description, item.yes, item.no, item.na); 
+      this.addCheckList(item.group, item.lineNo, item.description, this.cursor); 
     }
 
   }
@@ -123,7 +121,7 @@ saveCheckSheet (){
   let checkList:Check[] = [];
 
   this.checkListArray.controls.forEach((item, index) => {
-    let check = new Check(item.value.group, item.value.lineNo, item.value.description, item.value.yes, item.value.no, item.value.na );
+    let check = new Check(item.value.group, item.value.lineNo, item.value.description, item.value['valueSelected_'+item.value.lineNo] );
     checkList.push(check);
   });
 
